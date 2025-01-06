@@ -2,23 +2,25 @@ body {
   overflow: auto;
   max-width: 1280px;
 }
+
 .text {
-  font-family: "GmarketSansMedium";
+  font-family: "GangwonEduPowerExtraBoldA";
   line-height: 1.5;
-  -webkit-text-stroke: 0.5px black;
 }
 /** header **/
 .container {
   padding: 0 30px;
 }
+
 .logo {
-  width: 50px;
-  height: 30px;
+  width: 60px;
+  height: 50px;
 }
 .icon {
   width: 25px;
   height: 25px;
 }
+
 .header {
   width: 100%;
   height: 68px;
@@ -27,18 +29,18 @@ body {
   justify-content: space-between;
   align-items: center;
   font-weight: 900;
-  background-color: beige;
+  background-color: white;
 }
 .headerMenu {
   display: flex;
-  gap: 20px;
+  gap: 35px;
 }
 .menu {
   display: none;
 }
 @font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
@@ -46,6 +48,7 @@ body {
 
 /**헤더 반응형 768px 일 때**/
 @media screen and (max-width: 768px) {
+  /* header */
   .menu {
     display: block;
   }
@@ -53,6 +56,10 @@ body {
     display: none;
   }
   .headerMenu {
+    display: none;
+  }
+  /* main1 */
+  .main1 {
     display: none;
   }
 }
@@ -63,14 +70,68 @@ body {
 }
 /* main jin */
 /* main1 */
-main1 {
+
+.imgcontainer {
+  position: relative;
 }
-.main1bread {
-  border-radius: 30px;
-  width: 100%;
-  height: 300px;
+.main1text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  font-family: "GmarketSansMedium";
+  font-size: 35px;
+  font-weight: 900;
 }
 
+.main1text2 {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  font-family: "GmarketSansMedium";
+  font-size: 65px;
+  font-weight: 900;
+  -webkit-text-stroke: 2px white;
+}
+.main1bread {
+  border-radius: 25px;
+  width: 100%;
+  height: 280px;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.btn {
+  width: 40px;
+  height: 40px;
+}
+.leftbtn {
+  color: white;
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translate(50%, -50%);
+}
+.rightbtn:hover {
+  cursor: pointer;
+}
+.leftbtn:hover {
+  cursor: pointer;
+}
+.rightbtn {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(50%, -50%);
+}
 /* main park */
 
 /* main5 부분 */
