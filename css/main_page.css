@@ -35,6 +35,9 @@ body {
   display: flex;
   gap: 35px;
 }
+.headerMenu:hover{
+    cursor: pointer;
+}
 .menu {
   display: none;
 }
@@ -133,6 +136,67 @@ body {
   transform: translate(50%, -50%);
 }
 /* main2 */
+.main2{
+    display: flex;
+    gap: 10px;
+}
+.history{
+    border-radius: 25PX;
+    width: 25%; height: 300PX;
+    background-color: red;
+}
+.way{
+    border-radius: 25PX;
+    width: 50%; 
+    height: 300PX;
+    background-color: blue;
+}
+.careers{
+    border-radius: 25PX;
+    width: 25%; height: 300PX;
+    background-color: black;
+}
+
+
+/* main3 */
+.main3{
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+.foodLeft{
+    width: 50%; height: 500PX;
+    background-color: aqua;
+    border-radius: 25px;
+}
+.foodRight{
+    width: 50%; height: 500px;
+}
+.bigbox{
+    padding-bottom: 10px;
+    gap: 10px;
+    display: flex;
+}
+.box1{
+    border-radius: 25px;
+    width: 50%; height: 245px;
+    background-color: beige;
+}
+.box2{
+    border-radius: 25px;
+    width: 50%; height: 245px;
+    background-color: blueviolet;
+}
+.box3{
+    border-radius: 25px;
+    width: 50%; height: 245px;
+    background-color: beige;
+}
+.box4{
+    border-radius: 25px;
+    width: 50%; height: 245px;
+    background-color: blueviolet;
+}
 
 /* main park */
 
