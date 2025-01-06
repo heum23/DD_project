@@ -54,3 +54,9 @@ body{
     }
 }
 /** header **/
+/**main**/
+.mainWrap{
+    width: 100%;
+    background-color: antiquewhite;
+}
+
