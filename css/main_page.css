@@ -1,10 +1,16 @@
 body{
     overflow: auto;
     max-width: 1280px;
+    
+}
+.text{
+    font-family:'GmarketSansMedium' ;
+    line-height: 1.5;
+    -webkit-text-stroke: 0.5px black;
 }
 /** header **/
 .container{
-    
+    padding: 0 30px;
 }
 .logo{
     width: 50px;
@@ -17,7 +23,6 @@ body{
 .header{
     width: 100%;
     height: 68px;
-    padding:0 20px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -54,9 +59,19 @@ body{
     }
 }
 /** header **/
-/**main**/
+/**main **/
 .mainWrap{
+    width: 100%;  
+}
+/* main jin */
+/* main1 */
+main1{
+
+}
+.main1bread{
+    border-radius: 30px;
     width: 100%;
-    background-color: antiquewhite;
+    height: 300px;
 }
 
+/* main park */
