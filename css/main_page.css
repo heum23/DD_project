@@ -1,4 +1,56 @@
+body{
+    overflow: auto;
+    max-width: 1280px;
+}
+/** header **/
+.container{
+    
+}
 .logo{
     width: 50px;
     height: 30px;
 }
+.icon{
+    width: 25px;
+    height: 25px;
+}
+.header{
+    width: 100%;
+    height: 68px;
+    padding:0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 900;
+    background-color: beige;
+}
+.headerMenu{
+    display: flex;
+    gap: 20px;
+    
+}
+.menu{
+    display: none;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/**헤더 반응형 768px 일 때**/
+@media screen and (max-width: 768px) {
+    .menu{
+        display: block;
+    }
+    .earth{
+        display: none;
+    }
+    .headerMenu{
+        display: none;
+    }
+}
+/** header **/
