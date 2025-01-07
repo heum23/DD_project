@@ -214,7 +214,7 @@
         </script>
 
         <!-- main6 -->
-        <div class="main6">
+        <div class="main6 fade_in_left">
           <div class="main6Left">
             <div class="support">
               <img
@@ -226,6 +226,62 @@
           <div class="main6Right"></div>
         </div>
       </div>
+
+      <!-- <script>
+        // main6 오른쪽에서 왼쪽으로 나타나는 효과
+        document.addEventListener("DOMContentLoaded", function () {
+          const main6 = document.querySelector(".main6");
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+                  main6.classList.add("visible");
+                } else {
+                  main6.classList.remove("visible");
+                }
+              });
+            },
+            {
+              threshold: [0, 0.2],
+            }
+          );
+
+          observer.observe(main6);
+        });
+      </script> -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const fadeElement = document.querySelector(".main5");
+          const fadeInLeftElement = document.querySelector(".fade_in_left");
+
+          const observerOptions = {
+            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+          };
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              const boundingRect = entry.boundingClientRect;
+              const viewportHeight = window.innerHeight;
+
+              // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
+              if (boundingRect.top <= viewportHeight * 0.8) {
+                entry.target.classList.add("visible");
+              } else {
+                entry.target.classList.remove("visible");
+              }
+            });
+          }, observerOptions);
+
+          if (fadeElement) {
+            observer.observe(fadeElement);
+          }
+
+          if (fadeInLeftElement) {
+            observer.observe(fadeInLeftElement);
+          }
+        });
+      </script>
 
       <!-- footer -->
       <div class="footer">
