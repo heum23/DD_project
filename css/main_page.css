@@ -1,11 +1,8 @@
 body {
-  overflow: auto;
-  max-width: 1800px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 1600px;
   margin: 0;
-  height: 100%; /* 전체 화면 높이 */
-  display: flex; /* Flexbox 활성화 */
-  justify-content: center; /* 수평 중앙 정렬 */
-  align-items: center; /* 수직 중앙 정렬 */
 }
 /* 숨김 후 나타남 아래래 */
 .hidden1 {
@@ -13,7 +10,6 @@ body {
   transform: translateY(50px); /* 아래에서 출발 */
   transition: all 0.8s ease-in-out;
 }
-
 .visible {
   opacity: 1;
   transform: translateY(0);
@@ -39,6 +35,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%; /* 100%로 제한 */
+  max-width: 100vw;
 }
 
 .logo {
@@ -51,18 +49,20 @@ body {
 }
 
 .header {
-  width: 105%;
+  width: 100%;
   height: 100px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  padding: 0 20px;
 }
 .headerMenu {
   display: flex;
   gap: 40px;
   font-size: 20px;
+  
 }
 .headerMenu:hover {
   cursor: pointer;
@@ -90,12 +90,13 @@ body {
   .headerMenu {
     display: none;
   }
+  
 }
 /** header **/
 /**main **/
 .mainWrap {
-  width: 105%;
-  padding: 0 5px;
+  width: 100%;
+  padding: 0 20px;
 }
 /* main jin */
 /* main1 */
@@ -103,8 +104,10 @@ body {
   .main1 {
     display: none;
   }
-}
-@media (max-width: 1000px) {
+  .mainWrap{
+    width: 100%;
+    padding: 0 0;
+  }
   .main2 {
     flex-wrap: wrap; /* 줄 바꿈을 가능하게 함 */
   }
@@ -123,6 +126,7 @@ body {
     height: auto;
   }
 }
+ 
 
 .d-block {
   width: 100%;
@@ -159,15 +163,13 @@ body {
   -webkit-text-stroke: 2px white;
   z-index: 1;
 }
-.carousel-control-prev-icon {
-  height: 50px;
-  width: 50px;
+.carousel-control-prev-icon{
+  height: 50px; width: 50px;
   color: white;
   margin-left: -120px;
 }
-.carousel-control-next-icon {
-  height: 50px;
-  width: 50px;
+.carousel-control-next-icon{
+  height: 50px; width: 50px;
   color: white;
   margin-right: -120px;
 }
@@ -177,48 +179,50 @@ body {
   display: flex;
   gap: 10px;
 }
-.history {
+.history{
   position: relative;
   width: 25%;
   height: 300px;
   overflow: hidden;
   border-radius: 25px;
   z-index: 0;
+
 }
-.historyimg {
+.historyimg{
   width: 100%;
   height: 300px;
   object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
   transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
-.historyimg:hover {
+.historyimg:hover{
   cursor: pointer;
   transform: scale(1.2); /* 이미지 크기 20% 확대 */
   transform-origin: center; /* 확대 중심을 중앙으로 설정 */
 }
-.way {
+.way{
   position: relative;
   width: 50%;
   height: 300px;
   overflow: hidden;
   border-radius: 25px;
   z-index: 0;
+  
 }
-.careers {
+.careers{
   position: relative;
   width: 25%;
   height: 300px;
   overflow: hidden;
   border-radius: 25px;
   z-index: 0;
+ 
 }
 .backText {
   color: white;
   font-family: "GangwonEduPowerExtraBoldA";
   text-align: start;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 20px; left: 20px;
   font-size: 24px;
   font-weight: 700;
   z-index: 1;
@@ -232,8 +236,16 @@ body {
 .foodLeft {
   width: 50%;
   height: 700px;
-  background-color: aqua;
+ 
   border-radius: 25px;
+}
+.foodimg{
+  position: relative;
+}
+.main3left{
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 .foodRight {
   width: 50%;
@@ -249,6 +261,13 @@ body {
   width: 50%;
   height: 345px;
   background-color: beige;
+  opacity: 0; /* 기본적으로 숨겨짐 */
+  transform: translateY(50px); /* 아래로 숨겨짐 */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* 부드러운 애니메이션 */
+}
+.box1.visible {
+  opacity: 1; /* 보이게 설정 */
+  transform: translateY(0); /* 원래 위치로 애니메이션 */
 }
 .box2 {
   border-radius: 25px;
@@ -278,7 +297,7 @@ body {
   justify-content: space-between;
   gap: 10px;
   padding-top: 10px;
-  height: 545px;
+  height: 455px;
 }
 
 .main5Left,
@@ -287,6 +306,9 @@ body {
   height: 100%;
   background-color: green;
   border-radius: 25px;
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: center; */
 }
 
 /* main5 나타나기 */
@@ -338,8 +360,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
-  width: 100%;
-  height: 100%;
   aspect-ratio: 1 / 1;
 }
 
@@ -469,6 +489,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 .backTxt1,
@@ -508,7 +529,7 @@ body {
 
 .main6Left,
 .main6Right {
-  width: 50%; /* 전체 너비의 50%에서 간격의 절반을 뺌 */
+  width: calc(50% - 5px); /* 전체 너비의 50%에서 간격의 절반을 뺌 */
   height: 100%;
   background-color: blue;
   border-radius: 25px;
@@ -517,34 +538,8 @@ body {
 .support {
   position: relative;
   height: 100%;
-  overflow: hidden;
 }
 .support img {
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  object-fit: cover;
-}
-
-.main6Right {
-  position: relative;
-}
-
-.support_txt {
-  position: absolute;
-  color: white;
-  font-size: 40px;
-  -webkit-text-stroke: 1px white;
-  top: 10px;
-  left: 20px;
-}
-
-.question {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-.question img {
   width: 100%;
   height: 100%;
   border-radius: 25px;
