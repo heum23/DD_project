@@ -33,7 +33,7 @@ body {
 }
 .headerMenu {
   display: flex;
-  gap: 35px;
+  gap: 30px;
 }
 .headerMenu:hover {
   cursor: pointer;
@@ -73,7 +73,12 @@ body {
 }
 /* main jin */
 /* main1 */
-
+.d-block{
+  width: 100%;
+  height: 280px;
+  border-radius: 25px;
+  z-index: 0;
+}
 .imgcontainer {
   position: relative;
 }
@@ -86,6 +91,7 @@ body {
   font-family: "GmarketSansMedium";
   font-size: 35px;
   font-weight: 900;
+  z-index: 1;
 }
 
 .main1text2 {
@@ -100,41 +106,9 @@ body {
   font-size: 65px;
   font-weight: 900;
   -webkit-text-stroke: 2px white;
+  z-index: 1;
 }
-.main1bread {
-  border-radius: 25px;
-  width: 100%;
-  height: 280px;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-}
-.hidden {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.btn {
-  width: 40px;
-  height: 40px;
-}
-.leftbtn {
-  color: white;
-  position: absolute;
-  top: 50%;
-  right: 3%;
-  transform: translate(50%, -50%);
-}
-.rightbtn:hover {
-  cursor: pointer;
-}
-.leftbtn:hover {
-  cursor: pointer;
-}
-.rightbtn {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  transform: translate(50%, -50%);
-}
+
 /* main2 */
 .main2 {
   display: flex;
