@@ -82,10 +82,6 @@ body {
   .headerMenu {
     display: none;
   }
-  /* main1 */
-  .main1 {
-    display: none;
-  }
 }
 /** header **/
 /**main **/
@@ -94,9 +90,31 @@ body {
 }
 /* main jin */
 /* main1 */
+@media screen and (max-width: 1000px){
+  .main1{
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .main2 {
+      flex-wrap: wrap; /* 줄 바꿈을 가능하게 함 */
+    }
+  
+    .history, .careers {
+      width: 47.5% !important;
+       /* 각각 너비 50% */
+      height: auto;
+    }
+  
+    .way {
+      width: 100% !important; /* 파란색 박스가 너비 100% */
+      order: +1;   /* 파란색 박스를 위로 이동 */
+      height: auto;
+    }
+  }
+}
 .d-block {
   width: 100%;
-  height: 280px;
+  height: 250px;
   border-radius: 25px;
   z-index: 0;
 }
@@ -137,22 +155,90 @@ body {
   gap: 10px;
 }
 .history {
-  border-radius: 25px;
-  width: 25%;
-  height: 300px;
-  background-color: red;
+      position: relative;
+      width: 25%;
+      height: 250px;
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .history::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/mainpage_img/main_img_jin/history.jpg');
+      background-size: 150%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-size 1.0s ease-in-out;
+      z-index: -1; /* 텍스트나 다른 내용 위에 오지 않도록 설정 */
+    }
+
+    .history:hover::before {
+      background-size: 170%; /* 이미지가 확대되는 비율 */
+    }
+.backText{
+  color: white;
+  font-family: "GangwonEduPowerExtraBoldA";
+  text-align: start;
+  margin-top: 20px; margin-left: 25px;
+  font-size: 24px;
+  font-weight: 700;
 }
 .way {
-  border-radius: 25px;
+  position: relative;
   width: 50%;
-  height: 300px;
-  background-color: blue;
+  height: 250px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.way::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/mainpage_img/main_img_jin/way.jpg');
+  background-size: 150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size 1.0s ease-in-out;
+  z-index: -1; /* 텍스트나 다른 내용 위에 오지 않도록 설정 */
+}
+
+.way:hover::before {
+  background-size: 170%; /* 이미지가 확대되는 비율 */
 }
 .careers {
-  border-radius: 25px;
+  position: relative;
   width: 25%;
-  height: 300px;
-  background-color: black;
+  height: 250px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.careers::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/mainpage_img/main_img_jin/careers.png');
+  background-size: 170%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size 1.0s ease-in-out;
+  z-index: -1; /* 텍스트나 다른 내용 위에 오지 않도록 설정 */
+}
+
+.careers:hover::before {
+  background-size: 190%; /* 이미지가 확대되는 비율 */
 }
 
 /* main3 */
