@@ -47,6 +47,9 @@ body {
   width: 25px;
   height: 25px;
 }
+.icon:hover{
+  cursor: pointer;
+}
 
 .header {
   width: 100%;
