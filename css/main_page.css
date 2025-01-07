@@ -1,6 +1,11 @@
 body {
   overflow: auto;
-  max-width: 1440px;
+  max-width: 1800px;
+  margin: 0;
+  height: 100%; /* 전체 화면 높이 */
+  display: flex; /* Flexbox 활성화 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
 }
 /* 숨김 후 나타남 아래래 */
 .hidden1 {
@@ -26,15 +31,18 @@ body {
 }
 .text {
   font-family: "GangwonEduPowerExtraBoldA";
-  line-height: 1.5;
+  line-height: 80;
 }
 /** header **/
 .container {
-  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
-  width: 60px;
+  width: 80px;
   height: 50px;
 }
 .icon {
@@ -43,18 +51,18 @@ body {
 }
 
 .header {
-  width: 100%;
-  height: 68px;
+  width: 105%;
+  height: 100px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 900;
   background-color: white;
 }
 .headerMenu {
   display: flex;
-  gap: 30px;
+  gap: 40px;
+  font-size: 20px;
 }
 .headerMenu:hover {
   cursor: pointer;
@@ -86,7 +94,8 @@ body {
 /** header **/
 /**main **/
 .mainWrap {
-  width: 100%;
+  width: 105%;
+  padding: 0 5px;
 }
 /* main jin */
 /* main1 */
@@ -94,28 +103,30 @@ body {
   .main1 {
     display: none;
   }
-  @media (max-width: 768px) {
-    .main2 {
-      flex-wrap: wrap; /* 줄 바꿈을 가능하게 함 */
-    }
+}
+@media (max-width: 1000px) {
+  .main2 {
+    flex-wrap: wrap; /* 줄 바꿈을 가능하게 함 */
+  }
 
-    .history,
-    .careers {
-      width: 47.5% !important;
-      /* 각각 너비 50% */
-      height: auto;
-    }
+  .history,
+  .careers {
+    width: 48.5% !important;
+    /* 각각 너비 50% */
+    height: auto;
+    border-radius: 25px;
+  }
 
-    .way {
-      width: 100% !important; /* 파란색 박스가 너비 100% */
-      order: +1; /* 파란색 박스를 위로 이동 */
-      height: auto;
-    }
+  .way {
+    width: 100% !important; /* 파란색 박스가 너비 100% */
+    order: +1; /* 파란색 박스를 위로 이동 */
+    height: auto;
   }
 }
+
 .d-block {
   width: 100%;
-  height: 250px;
+  height: 300px;
   border-radius: 25px;
   z-index: 0;
 }
@@ -148,7 +159,18 @@ body {
   -webkit-text-stroke: 2px white;
   z-index: 1;
 }
-
+.carousel-control-prev-icon {
+  height: 50px;
+  width: 50px;
+  color: white;
+  margin-left: -120px;
+}
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  color: white;
+  margin-right: -120px;
+}
 /* main2 */
 .main2 {
   padding-top: 10px;
@@ -158,91 +180,49 @@ body {
 .history {
   position: relative;
   width: 25%;
-  height: 250px;
-  border-radius: 25px;
+  height: 300px;
   overflow: hidden;
+  border-radius: 25px;
+  z-index: 0;
 }
-
-.history::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.historyimg {
   width: 100%;
-  height: 100%;
-  background-image: url("/mainpage_img/main_img_jin/history.jpg");
-  background-size: 170%;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-size 1s ease-in-out;
-  z-index: -1; /* 텍스트나 다른 내용 위에 오지 않도록 설정 */
+  height: 300px;
+  object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
+  transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
-
-.history:hover::before {
-  background-size: 190%; /* 이미지가 확대되는 비율 */
+.historyimg:hover {
+  cursor: pointer;
+  transform: scale(1.2); /* 이미지 크기 20% 확대 */
+  transform-origin: center; /* 확대 중심을 중앙으로 설정 */
+}
+.way {
+  position: relative;
+  width: 50%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 25px;
+  z-index: 0;
+}
+.careers {
+  position: relative;
+  width: 25%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 25px;
+  z-index: 0;
 }
 .backText {
   color: white;
   font-family: "GangwonEduPowerExtraBoldA";
   text-align: start;
-  margin-top: 20px;
-  margin-left: 25px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   font-size: 24px;
   font-weight: 700;
+  z-index: 1;
 }
-.way {
-  position: relative;
-  width: 50%;
-  height: 250px;
-  border-radius: 25px;
-  overflow: hidden;
-}
-
-.way::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/mainpage_img/main_img_jin/way.jpg");
-  background-size: 150%;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-size 1s ease-in-out;
-  z-index: -1; /* 텍스트나 다른 내용 위에 오지 않도록 설정 */
-}
-
-.way:hover::before {
-  background-size: 170%; /* 이미지가 확대되는 비율 */
-}
-.careers {
-  position: relative;
-  width: 25%;
-  height: 250px;
-  border-radius: 25px;
-  overflow: hidden;
-}
-
-.careers::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/mainpage_img/main_img_jin/careers.png");
-  background-size: 210%;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-size 1s ease-in-out;
-  z-index: -1; /* 텍스트나 다른 내용 위에 오지 않도록 설정 */
-}
-
-.careers:hover::before {
-  background-size: 190%; /* 이미지가 확대되는 비율 */
-}
-
 /* main3 */
 .main3 {
   padding-top: 10px;
@@ -251,13 +231,13 @@ body {
 }
 .foodLeft {
   width: 50%;
-  height: 500px;
+  height: 700px;
   background-color: aqua;
   border-radius: 25px;
 }
 .foodRight {
   width: 50%;
-  height: 500px;
+  height: 700px;
 }
 .bigbox {
   padding-bottom: 10px;
@@ -267,25 +247,25 @@ body {
 .box1 {
   border-radius: 25px;
   width: 50%;
-  height: 245px;
+  height: 345px;
   background-color: beige;
 }
 .box2 {
   border-radius: 25px;
   width: 50%;
-  height: 245px;
+  height: 345px;
   background-color: blueviolet;
 }
 .box3 {
   border-radius: 25px;
   width: 50%;
-  height: 245px;
+  height: 345px;
   background-color: beige;
 }
 .box4 {
   border-radius: 25px;
   width: 50%;
-  height: 245px;
+  height: 345px;
   background-color: blueviolet;
 }
 
