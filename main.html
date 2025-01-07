@@ -87,44 +87,103 @@
           <div class=""></div>
         </div>
         <!-- main5 -->
-        <div class="main5">
+        <div class="main5 fade_in">
           <div class="main5Left">
             <div class="main5LeftWrap">
-              <div class="slide1"></div>
-              <div class="slide2">
+              <div class="slide"></div>
+              <div class="slide slide_txt">
                 <div class="text_box">
-                  <p class="text_title">D&D Now</p>
+                  <p class="text_title">D&D NOW</p>
                   <span class="text_content">
-                    "D&D의 다양한 소식을"
-                    <br class="more" />
-                    "만나보세요."
+                    D&D의 다양한 소식을 만나보세요.
                   </span>
                 </div>
+                <div class="paging">
+                  <div class="paging_arrow">
+                    <img
+                      src="/mainpage_img/main_img_park/arrow_prev.png"
+                      alt="이전"
+                    />
+                  </div>
+                  <div class="paging_num">
+                    <span>01</span>
+                    <span>/03</span>
+                  </div>
+                  <div class="paging_arrow">
+                    <img
+                      src="/mainpage_img/main_img_park/arrow_next.png"
+                      alt="다음"
+                    />
+                  </div>
+                </div>
               </div>
-              <div class="slide3"></div>
-              <div class="slide4"></div>
+              <div class="slide"></div>
+              <div class="slide"></div>
             </div>
           </div>
           <div class="main5Right">
             <div clss="swiperWrap">
-              <div class="">
-                <img src="" , alt="EVENT" />
-              </div>
-              <div class="">
-                <img src="" , alt="EVENT" />
+              <div class="backEvent">
+                <img src="/mainpage_img/main_img_park/event.jpg" alt="EVENT" />
               </div>
             </div>
             <div class="swiperWord">
-              <div class="">EVENTS</div>
-              <div class="">MAGAZINE</div>
+              <div class="backTxt1">EVENTS</div>
+              <div class="backTxt2">MAGAZINE</div>
             </div>
           </div>
         </div>
+        <!-- main5 나타나기 함수 -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const fadeElement = document.querySelector(".main5");
 
-        <!-- footer -->
-        <div class="footer">
-          <div class=""></div>
-          <div class=""></div>
+            if (fadeElement) {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    const boundingRect = entry.boundingClientRect;
+                    const viewportHeight = window.innerHeight;
+
+                    // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
+                    if (boundingRect.top <= viewportHeight * 0.8) {
+                      entry.target.classList.add("visible");
+                    } else {
+                      entry.target.classList.remove("visible");
+                    }
+                  });
+                },
+                {
+                  threshold: [
+                    0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1,
+                  ],
+                }
+              );
+
+              observer.observe(fadeElement);
+            }
+          });
+        </script>
+
+        <!-- main6 -->
+        <div class="main6">
+          <div class="main6Left">
+            <div class="support">
+              <img
+                src="/mainpage_img/main_img_park/support.png"
+                alt="SUPPORT"
+              />
+            </div>
+          </div>
+          <div class="main6Right"></div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div class="footer">
+        <div class="footerWrap">
+          <div class="footerBox1"></div>
+          <div class="footerBox2"></div>
         </div>
       </div>
     </div>

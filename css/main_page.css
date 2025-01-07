@@ -211,52 +211,192 @@ body {
 .main5 {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 10px;
 }
 
-.main5Left {
-  width: 50%;
-  height: 500px;
-  background-color: pink;
-  display: flex;
+.main5Left,
+.main5Right {
+  width: calc(50% - 5px); /* 전체 너비의 50%에서 간격의 절반을 뺌 */
+  background-color: green;
   border-radius: 25px;
 }
 
-.main5LeftWrap {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+/* main5 나타나기 */
+.fade_in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade_in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 반응형일 때 main5 나타나기 효과 없앰 */
+@media screen and (max-width: 768px) {
+  .fade_in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* 반응형일 때 main박스 위치 이동과 크기 비율 유지 */
+/* .main5 {
   display: flex;
   flex-wrap: wrap;
 }
 
-.slide1 {
-  width: 50%;
-  height: 50%;
-  background-color: red;
+.main5Left,
+.main5Right {
+  flex: 1 1 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .main5 {
+    flex-direction: column-reverse;
+  }
+
+  .main5Left,
+  .main5Right {
+    width: 100%;
+  }
+} */
+
+/* main5Left 부분 */
+.main5LeftWrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  aspect-ratio: 1 / 1;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-color: pink;
   border-radius: 25px;
 }
 
-.slide2 {
-  width: 50%;
-  height: 50%;
-  background-color: orange;
-  border-radius: 25px;
+/* 슬라이드 2의 내용 정렬을 위한 추가 스타일 */
+.slide_txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
 }
-.slide3 {
-  width: 50%;
-  height: 50%;
+
+.text_box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.text_title {
+  font-size: 20px;
+  font-weight: 800;
+}
+.text_content {
+  box-sizing: border-box;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.paging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 75px;
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+.paging_arrow,
+.paging_num {
+  display: flex;
+  align-items: center;
+}
+.paging_num {
+  margin: 0 10px;
+}
+
+/* main5Right 부분 */
+.main5Right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: green;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+}
+
+.backEvent {
+  position: relative;
+}
+
+.backTxt1 {
+  position: absolute;
+  color: white;
+  font-size: 65px;
+  font-weight: 900;
+  -webkit-text-stroke: 2px white;
+  top: 150px;
+  right: 30px;
+}
+
+.backTxt2 {
+  position: absolute;
+  color: white;
+  font-size: 65px;
+  font-weight: 900;
+  -webkit-text-stroke: 2px white;
+  bottom: 180px;
+  right: 30px;
+}
+
+/* main6 부분 */
+.main6 {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  box-sizing: border-box;
+  padding-top: 10px;
+}
+
+.main6Left,
+.main6Right {
+  width: calc(50% - 5px); /* 전체 너비의 50%에서 간격의 절반을 뺌 */
   background-color: blue;
   border-radius: 25px;
 }
-.slide4 {
-  width: 50%;
-  height: 50%;
-  background-color: violet;
-  border-radius: 25px;
+
+.support {
+  img {
+    width: 100%;
+    border-radius: 25px;
+  }
 }
 
-.main5Right {
-  width: 50%;
-  background-color: yellow;
-  border-radius: 25px;
+/* footer */
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: gray;
+}
+
+.footerWarp {
+  width: 100%;
+  padding: 30px 30px;
+  background-color: black;
 }
