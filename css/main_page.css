@@ -123,6 +123,12 @@ body {
     order: +1; /* 파란색 박스를 위로 이동 */
     height: auto;
   }
+  .box1,
+  .box2,
+  .box3,
+  .box4{
+    height: auto;
+  }
 }
 
 .d-block {
@@ -512,6 +518,9 @@ body {
 
 /* footer */
 .footer {
+  width: 100%;
   background-color: gray;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
