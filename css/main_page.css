@@ -2,7 +2,28 @@ body {
   overflow: auto;
   max-width: 1280px;
 }
+/* 숨김 후 나타남 아래래 */
+.hidden1 {
+  opacity: 0;
+  transform: translateY(50px); /* 아래에서 출발 */
+  transition: all 0.8s ease-in-out;
+}
 
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+    /* 숨김 후 나타남 오른쪽쪽 */
+    .hidden {
+      opacity: 0;
+      transform: translateX(100px); /* 오른쪽에서 출발 */
+      transition: all 0.5s ease-in-out;
+  }
+
+  .visible {
+      opacity: 1;
+      transform: translateX(0);
+  }
 .text {
   font-family: "GangwonEduPowerExtraBoldA";
   line-height: 1.5;
@@ -111,6 +132,7 @@ body {
 
 /* main2 */
 .main2 {
+  padding-top: 10px;
   display: flex;
   gap: 10px;
 }
