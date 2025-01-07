@@ -30,7 +30,7 @@
           />
         </div>
         <div class="headerMenu">
-          <div class="text">ABOUT D&D 1</div>
+          <div class="text">ABOUT D&D</div>
           <div class="text">HISTORY</div>
           <div class="text">FOOD</div>
           <div class="text">D&D NOW</div>
@@ -110,15 +110,9 @@
         </div>
         <!-- main2 -->
         <div class="main2 hidden">
-          <div onclick="getReady()" class="history">
-            <div class="backText">History</div>
-          </div>
-          <div onclick="getReady()" class="way">
-            <div class="backText">Way</div>
-          </div>
-          <div onclick="getReady()" class="careers">
-            <div class="backText">Careers</div>
-          </div>
+          <div class="history"></div>
+          <div class="way"></div>
+          <div class="careers"></div>
         </div>
         <!-- main3 -->
         <div class="main3">
@@ -227,13 +221,22 @@
                 src="/mainpage_img/main_img_park/support.png"
                 alt="SUPPORT"
               />
+              <div class="support_txt">support</div>
             </div>
           </div>
-          <div class="main6Right"></div>
+          <div class="main6Right">
+            <div class="qustion">
+              <img
+                src="/mainpage_img/main_img_park/qustion.png"
+                alt="QUESTION"
+              />
+              <div class="question_txt">Q & A</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- <script>
+      <script>
         // main6 오른쪽에서 왼쪽으로 나타나는 효과
         document.addEventListener("DOMContentLoaded", function () {
           const main6 = document.querySelector(".main6");
@@ -255,39 +258,8 @@
 
           observer.observe(main6);
         });
-      </script> -->
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const fadeElement = document.querySelector(".main5");
-          const fadeInLeftElement = document.querySelector(".fade_in_left");
-
-          const observerOptions = {
-            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-          };
-
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              const boundingRect = entry.boundingClientRect;
-              const viewportHeight = window.innerHeight;
-
-              // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
-              if (boundingRect.top <= viewportHeight * 0.8) {
-                entry.target.classList.add("visible");
-              } else {
-                entry.target.classList.remove("visible");
-              }
-            });
-          }, observerOptions);
-
-          if (fadeElement) {
-            observer.observe(fadeElement);
-          }
-
-          if (fadeInLeftElement) {
-            observer.observe(fadeInLeftElement);
-          }
-        });
       </script>
+      <script></script>
 
       <!-- footer -->
       <div class="footer">
