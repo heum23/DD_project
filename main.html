@@ -245,6 +245,20 @@
             }
           });
         </script>
+        <script>
+          // backTxt2를 누를 때 이미지 체인지
+          document
+            .querySelector(".backTxt2")
+            .addEventListener("click", function () {
+              // slide에 있는 이미지들을 변경
+              document.getElementById("slide1").src =
+                "/mainpage_img/main_img_park/new_image1.jpg"; // 새 이미지 1
+              document.getElementById("slide2").src =
+                "/mainpage_img/main_img_park/new_image2.jpg"; // 새 이미지 2
+              document.getElementById("slide3").src =
+                "/mainpage_img/main_img_park/new_image3.jpg"; // 새 이미지 3
+            });
+        </script>
 
         <!-- main6 -->
         <div class="main6 fade_in_left">
@@ -273,36 +287,36 @@
 
       <script>
         // main6 나타나는 함수 (오른쪽에서 왼쪽으로)
-        // document.addEventListener("DOMContentLoaded", function () {
-        //   const fadeElement = document.querySelector(".main4");
-        //   const fadeInLeftElement = document.querySelector(".fade_in_left");
+        document.addEventListener("DOMContentLoaded", function () {
+          const fadeElement = document.querySelector(".main4");
+          const fadeInLeftElement = document.querySelector(".fade_in_left");
 
-        //   const observerOptions = {
-        //     threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-        //   };
+          const observerOptions = {
+            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+          };
 
-        //   const observer = new IntersectionObserver((entries) => {
-        //     entries.forEach((entry) => {
-        //       const boundingRect = entry.boundingClientRect;
-        //       const viewportHeight = window.innerHeight;
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              const boundingRect = entry.boundingClientRect;
+              const viewportHeight = window.innerHeight;
 
-        //       // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
-        //       if (boundingRect.top <= viewportHeight * 0.8) {
-        //         entry.target.classList.add("visible");
-        //       } else {
-        //         entry.target.classList.remove("visible");
-        //       }
-        //     });
-        //   }, observerOptions);
+              // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
+              if (boundingRect.top <= viewportHeight * 0.8) {
+                entry.target.classList.add("visible");
+              } else {
+                entry.target.classList.remove("visible");
+              }
+            });
+          }, observerOptions);
 
-        //   if (fadeElement) {
-        //     observer.observe(fadeElement);
-        //   }
+          if (fadeElement) {
+            observer.observe(fadeElement);
+          }
 
-        //   if (fadeInLeftElement) {
-        //     observer.observe(fadeInLeftElement);
-        //   }
-        // });
+          if (fadeInLeftElement) {
+            observer.observe(fadeInLeftElement);
+          }
+        });
       </script>
     </div>
     <!-- footer -->
@@ -311,7 +325,7 @@
         <div class="footerBox1">
           <div class="f_info">
             <img src="mainpage_img/header_img/logo.png" alt="logo" />
-            <div>서울특별시 마포구 숭문4길 6</div>
+            <div class="f_address">서울특별시 마포구 숭문4길 6</div>
             <div class="f_privacy">
               <div>개인정보처리방침</div>
               <div>이메일수집 거부</div>
@@ -384,9 +398,44 @@
             <p>Copyright D&D All rights reserverd.</p>
           </div>
           <div class="f_sns">
-            <div><img src="#" alt="" /></div>
-            <div><img src="#" alt="" /></div>
-            <div><img src="#" alt="" /></div>
+            <div>
+              <a href="https://www.facebook.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_facebook.svg"
+                  alt=""
+                  class="default-img"
+                />
+                <!-- <img
+                src="/mainpage_img/main_img_park/f_facebook_hover.svg"
+                alt=""
+                class="hover-img"
+              /> --></a
+              >
+            </div>
+            <div>
+              <a href="https://www.instagram.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_instagram.svg"
+                  alt=""
+                  class="default-img"
+                />
+                <!-- <img
+                src="/mainpage_img/main_img_park/f_instagram_hover.svg"
+                alt=""
+                class="hover-img"
+              /> --></a
+              >
+            </div>
+            <div>
+              <a href="https://www.youtube.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_youtube.svg"
+                  alt=""
+                  class="default-img"
+                />
+                <!-- <img src="#" alt="" class="hover-img" /> --></a
+              >
+            </div>
           </div>
         </div>
       </div>
