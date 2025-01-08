@@ -146,12 +146,15 @@ body {
 
   }
 }
-
 .d-block {
   width: 100%;
   aspect-ratio: 16/4;
   border-radius: 25px;
   z-index: 0;
+}
+.d-block,.w-100{
+  transform: none !important; /* 확대 효과 제거 */
+  transition: none !important; /* 애니메이션 제거 */
 }
 .imgcontainer {
   position: relative;
@@ -214,7 +217,7 @@ body {
   object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
   transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
-.historyimg:hover {
+.historyimg:hover{
   cursor: pointer;
   transform: scale(1.2); /* 이미지 크기 20% 확대 */
   transform-origin: center; /* 확대 중심을 중앙으로 설정 */
