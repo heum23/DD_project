@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }, index * 200); // 순차적 딜레이 추가
     });
 });
-//main3 box1 나타나는 함수수
+//main3 box1 나타나는 함수
 document.addEventListener('DOMContentLoaded', function() {
     const revealElements = document.querySelectorAll('.box1');
   
@@ -45,3 +45,22 @@ document.addEventListener('DOMContentLoaded', function() {
 const getReady = () => {
     alert("준비중입니다!")
 }
+//main3 클릭 시 이미지 바뀌는 함수
+const eating = document.getElementById("eat");
+const drink = document.getElementById("coffee");
+const enjoy = document.getElementById("icecream");
+
+window.changeimg = (text) => {
+  [eating, drink, enjoy].forEach(img => {
+    img.classList.remove("active");  // 모든 이미지에서 'active' 제거
+  });
+
+  if (text === 'eat') {
+    eating.classList.add("active");  // 선택된 이미지에 'active' 추가
+  } else if (text === 'drink') {
+    drink.classList.add("active");
+  } else if (text === 'enjoy') {
+    enjoy.classList.add("active");
+  }
+};
+
