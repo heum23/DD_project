@@ -38,7 +38,7 @@
             alt="icon"
           />
           <img
-          onclick="getReady()"
+            onclick="getReady()"
             class="icon earth"
             src="./mainpage_img/header_img/earth.png"
             alt="icon"
@@ -158,21 +158,14 @@
             </div>
           </div>
         </div>
+
         <!-- main4 -->
-        <div class="main4">
-          <div class="">
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-            <div class=""></div>
-          </div>
-          <div class=""></div>
-        </div>
-        <!-- main5 -->
-        <div class="main5 fade_in">
-          <div class="main5Left">
-            <div class="main5LeftWrap">
-              <div class="slide"></div>
+        <div class="main4 fade_in">
+          <div class="main4Left">
+            <div class="main4LeftWrap">
+              <div class="slide">
+                <img src="/mainpage_img/main_img_park/1_year.jpg" alt="1/3" />
+              </div>
               <div class="slide slide_txt">
                 <div class="text_box">
                   <p class="text_title">D&D NOW</p>
@@ -199,11 +192,18 @@
                   </div>
                 </div>
               </div>
-              <div class="slide"></div>
-              <div class="slide"></div>
+              <div class="slide">
+                <img
+                  src="/mainpage_img/main_img_park/oneplusone.png"
+                  alt="1/3"
+                />
+              </div>
+              <div class="slide">
+                <img src="/mainpage_img/main_img_park/discount.png" alt="1/3" />
+              </div>
             </div>
           </div>
-          <div class="main5Right">
+          <div class="main4Right">
             <div class="backEvent">
               <img src="/mainpage_img/main_img_park/event.jpg" alt="EVENT" />
               <div class="backTxt1">EVENTS</div>
@@ -211,10 +211,10 @@
             </div>
           </div>
         </div>
-        <!-- main5 나타나는 함수 (아래에서 위로) -->
+        <!-- main4 나타나는 함수 (아래에서 위로) -->
         <script>
           document.addEventListener("DOMContentLoaded", function () {
-            const fadeElement = document.querySelector(".main5");
+            const fadeElement = document.querySelector(".main4");
 
             if (fadeElement) {
               const observer = new IntersectionObserver(
@@ -256,10 +256,7 @@
           </div>
           <div class="main6Right">
             <div class="qustion">
-              <img
-                src="/mainpage_img/main_img_park/qustion.png"
-                alt="QUESTION"
-              />
+              <img src="/mainpage_img/main_img_park/QA.jpg" alt="QUESTION" />
               <div class="question_txt">Q & A</div>
             </div>
           </div>
@@ -268,43 +265,116 @@
 
       <script>
         // main6 나타나는 함수 (오른쪽에서 왼쪽으로)
-        document.addEventListener("DOMContentLoaded", function () {
-          const fadeElement = document.querySelector(".main5");
-          const fadeInLeftElement = document.querySelector(".fade_in_left");
+        // document.addEventListener("DOMContentLoaded", function () {
+        //   const fadeElement = document.querySelector(".main4");
+        //   const fadeInLeftElement = document.querySelector(".fade_in_left");
 
-          const observerOptions = {
-            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-          };
+        //   const observerOptions = {
+        //     threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+        //   };
 
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              const boundingRect = entry.boundingClientRect;
-              const viewportHeight = window.innerHeight;
+        //   const observer = new IntersectionObserver((entries) => {
+        //     entries.forEach((entry) => {
+        //       const boundingRect = entry.boundingClientRect;
+        //       const viewportHeight = window.innerHeight;
 
-              // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
-              if (boundingRect.top <= viewportHeight * 0.8) {
-                entry.target.classList.add("visible");
-              } else {
-                entry.target.classList.remove("visible");
-              }
-            });
-          }, observerOptions);
+        //       // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
+        //       if (boundingRect.top <= viewportHeight * 0.8) {
+        //         entry.target.classList.add("visible");
+        //       } else {
+        //         entry.target.classList.remove("visible");
+        //       }
+        //     });
+        //   }, observerOptions);
 
-          if (fadeElement) {
-            observer.observe(fadeElement);
-          }
+        //   if (fadeElement) {
+        //     observer.observe(fadeElement);
+        //   }
 
-          if (fadeInLeftElement) {
-            observer.observe(fadeInLeftElement);
-          }
-        });
+        //   if (fadeInLeftElement) {
+        //     observer.observe(fadeInLeftElement);
+        //   }
+        // });
       </script>
-
-      <!-- footer -->
-      <div class="footer">
-        <div class="footerWrap">
-          <div class="footerBox1">ddd</div>
-          <div class="footerBox2">ddd</div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+      <div class="footerWrap">
+        <div class="footerBox1">
+          <div class="f_info">
+            <img src="mainpage_img/header_img/logo.png" alt="logo" />
+            <div>서울특별시 마포구 숭문4길 6</div>
+            <div class="f_privacy">
+              <div>개인정보처리방침</div>
+              <div>이메일수집 거부</div>
+              <div>거래희망사전등록</div>
+              <div>고정형 영상정보처리기기 운영관리 방침</div>
+            </div>
+          </div>
+          <div class="f_aboutDD">
+            <ul>
+              <li>
+                <p class="f_sub">ABOUT D&D</p>
+              </li>
+              <li>D&D WAY</li>
+              <li>R&D</li>
+              <li>관계사</li>
+              <li>글로벌</li>
+              <li>Cl소개</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">HISTORY</p>
+              </li>
+              <li>헤리티지</li>
+              <li>연혁</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">BRAND</p>
+              </li>
+              <li>베이커리</li>
+              <li>디저트</li>
+              <li>외식</li>
+              <li>커피/음료</li>
+              <li>유통/서비스</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">D&D NOW</p>
+              </li>
+              <li>이벤트</li>
+              <li>메거진</li>
+              <li>SNS</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">ESG</p>
+              </li>
+              <li>ESG경영</li>
+              <li>정도경영</li>
+              <li>안전경영</li>
+              <li>행복한 재단</li>
+              <li>사회공헌</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">SUPPORT</p>
+              </li>
+              <li>가맹문의</li>
+              <li>위치안내</li>
+              <li>문의하기</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerBox2">
+          <div class="f_family">
+            <div class="site">
+              <p>FAMILY SITE</p>
+              <div>+</div>
+            </div>
+            <p>Copyright D&D All rights reserverd.</p>
+          </div>
         </div>
       </div>
     </div>
