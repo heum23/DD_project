@@ -153,7 +153,8 @@ body {
   border-radius: 25px;
   z-index: 0;
 }
-.d-block,.w-100{
+.d-block,
+.w-100 {
   transform: none !important; /* 확대 효과 제거 */
   transition: none !important; /* 애니메이션 제거 */
 }
@@ -218,7 +219,7 @@ body {
   object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
   transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
-.historyimg:hover{
+.historyimg:hover {
   cursor: pointer;
   transform: scale(1.2); /* 이미지 크기 20% 확대 */
   transform-origin: center; /* 확대 중심을 중앙으로 설정 */
@@ -438,16 +439,17 @@ body {
 
 .text_box {
   text-align: center;
-  margin-bottom: 20px;
-  line-height: 0;
+  margin-bottom: 30px;
+  line-height: 0.7;
 }
 .text_title {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 800;
+  -webkit-text-stroke: 1px black;
 }
 .text_content {
   box-sizing: border-box;
-  font-size: 10px;
+  color: gray;
   font-weight: 500;
 }
 
@@ -456,19 +458,24 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f5f5f5;
-  border-radius: 75px;
+  border-radius: 65px;
+  padding: 0 10px;
+  margin-top: 30px;
   img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
   }
 }
 .paging_arrow,
 .paging_num {
   display: flex;
   align-items: center;
+  font-size: 20px;
+  font-weight: bold;
 }
 .paging_num {
-  margin: 0 10px;
+  margin: 5px;
+  padding: 8px;
 }
 
 /* main4Right 부분 */
@@ -509,6 +516,7 @@ body {
   -webkit-text-stroke: 1px white;
   z-index: 2;
   text-align: center;
+  cursor: pointer;
 }
 
 /* main6 부분 */
@@ -524,7 +532,7 @@ body {
 }
 
 /* main6 오른쪽에서 왼쪽으로 나타나는 효과 */
-/* .fade_in_left {
+.fade_in_left {
   transform: translateX(100%);
   transition: transform 0.5s ease-in-out;
   opacity: 0;
@@ -533,7 +541,7 @@ body {
 .fade_in_left.visible {
   transform: translateX(0);
   opacity: 1;
-} */
+}
 
 .main6Left {
   width: 50%;
@@ -625,26 +633,39 @@ body {
 .footer img {
   width: 50px;
   height: 30px;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .f_info {
   color: rgba(0, 0, 0, 0.5);
 }
+.f_address {
+  margin-bottom: 10px;
+}
 
 .f_privacy {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   font-weight: bold;
   color: black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .f_aboutDD {
   display: flex;
   justify-content: space-between;
+  white-space: nowrap;
+  margin-bottom: 20px;
   ul,
   li {
     margin: 0;
     list-style: none;
+    margin-bottom: 10px;
   }
 }
 
@@ -669,8 +690,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 50px;
 }
 
 .f_sns {
   display: flex;
+  gap: 20px;
+}
+
+.f_sns img {
+  width: 60px;
+  height: auto;
+  max-width: 100%;
 }
