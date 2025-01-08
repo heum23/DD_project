@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+  }
+body{
+    overflow: scroll;
+    max-width: 1600px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    padding: 0 40px;
+}
+/* 강원도지자체 폰트 */
+@font-face {
+    font-family: "GangwonEduPowerExtraBoldA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* ppt 폰트 */
+  @font-face {
+    font-family: 'Freesentation-9Black';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+.logo {
+    margin-left: 40px;
+    width: 80px;
+    height: 50px;
+  }
+  .icon {
+    margin-right: 40px;
+    width: 25px;
+    height: 25px;
+  }
+  .icon:hover {
+    cursor: pointer;
+  }
+  
+  .header {
+    width: 100%;
+    aspect-ratio: 16/1;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  .headerMenu {
+    display: flex;
+    gap: 35px;
+    font-size: 20px;
+  }
+  .text {
+    font-family: "GangwonEduPowerExtraBoldA";
+    line-height: 2;
+    text-align: center;
+  }
+  .headerMenu:hover {
+    cursor: pointer;
+  }
+  .menu {
+    display: none;
+  }
+  @media screen and (max-width: 1000px) {
+    .header {
+      padding: 0 0px;
+    }
+    .headerMenu {
+      display: none;
+    }
+    .menu {
+        display: block;
+      }
+      .earth {
+        display: none;
+      }
+}
+  .top{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .way{
+    font-family: "GangwonEduPowerExtraBoldA";
+    font-size: 50px;
+  }
+  .pageBtn{
+    display: flex;
+    gap: 30px;
+  }
+  .detail1page{
+    font-family: 'Freesentation-9Black';
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    line-height: 1.9;
+    width: 100px; height: 35px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 25px;
+   
+  }
+  .detail2page{
+    font-family: 'Freesentation-9Black';
+    font-size: 20px;
+    text-align: center;
+    color:lightgray;
+    line-height: 1.9;
+    width: 100px; height: 35px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+  }
+  .main1left,.main1right{
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    aspect-ratio: 2/1;
+    overflow: hidden;
+    border-radius: 25px;
+  }
+  .overlay1,.overlay2,.overlay3{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    aspect-ratio: 2/1;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.3); /* 반투명 검정색 */
+    pointer-events: none; /* 오버레이 위에서의 클릭 이벤트 무시 */
+  }
+ 
+  .detail1{
+    padding-top: 40px;
+    gap: 10px;
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+  .leftimg{
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 2/1;
+    border-radius: 25px;
+    
+    transition: transform 0.3s ease-in-out;
+  }
+  .rightimg{
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 2/1;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .detail2{
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .detail2img{
+    border-radius: 25px;
+    width: 100%;
+    aspect-ratio: 16/5.5;
+    transition: transform 0.3s ease-in-out;
+  }
+  .rightimg:hover,.detail2img:hover,.leftimg:hover{
+    cursor: pointer;
+  transform: scale(1.2); /* 이미지 크기 20% 확대 */
+  transform-origin: center; /* 확대 중심을 중앙으로 설정 */
+  }
+  /* footer */
+  .footer {
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+    background-color: #f5f5f5;
+  }
+  
+  .footerWrap {
+    padding: 30px;
+  }
+  
+  .footerBox1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer img {
+    width: 50px;
+    height: 30px;
+  }
+  
+  .f_info {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .f_privacy {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .f_aboutDD {
+    display: flex;
+    justify-content: space-between;
+    ul,
+    li {
+      margin: 0;
+      list-style: none;
+    }
+  }
+  
+  .f_sub {
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
