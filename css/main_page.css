@@ -390,7 +390,7 @@ body {
 }
 
 /* 반응형일 때 main4 나타나기 효과 없앰 */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
   .fade_in {
     opacity: 1;
     transform: none;
@@ -532,16 +532,11 @@ body {
 }
 
 /* main6 오른쪽에서 왼쪽으로 나타나는 효과 */
-.fade_in_left {
+/* .fade_in_left {
   transform: translateX(100%);
   transition: transform 0.5s ease-in-out;
   opacity: 0;
-}
-
-.fade_in_left.visible {
-  transform: translateX(0);
-  opacity: 1;
-}
+} */
 
 .main6Left {
   width: 50%;
@@ -645,8 +640,6 @@ body {
 }
 
 .f_privacy {
-  /* display: flex;
-  flex-wrap: wrap; */
   font-weight: bold;
   color: black;
   display: grid;
@@ -660,6 +653,9 @@ body {
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
   margin-bottom: 20px;
   ul,
   li {
@@ -667,6 +663,15 @@ body {
     list-style: none;
     margin-bottom: 10px;
   }
+}
+.f_aboutDD ul {
+  flex: 1 1 150px;
+  margin-bottom: 20px;
+}
+
+.f_sub {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .f_sub {
