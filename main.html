@@ -12,12 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <script src="./js/mainpage.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
   <body>
     <div class="container">
       <!-- header -->
@@ -135,18 +129,23 @@
           <div class="foodLeft">
             <div class="foodimg">
               <img
-                class="main3left"
+                class="main3left" id="eat"
                 src="./mainpage_img/main_img_jin/main3Eat.jpg"
               />
               <img
-                class="main3left"
-                src="./mainpage_img/main_img_jin/main3coffee.jpeg"
+                class="main3left" id="coffee"
+                src="./mainpage_img/main_img_jin/main3coffee2.jpeg"
               />
               <img
-                class="main3left"
-                src="./mainpage_img/main_img_jin/main3icecream.jpg"
+                class="main3left active" id="icecream"
+                src="./mainpage_img/main_img_jin/main3icecream2.jpg"
               />
-            </div>
+              <div class="flex">
+              <div class="main3Text" onclick="changeimg('eat')">먹고</div>
+              <div class="main3Text" onclick="changeimg('drink')">마시고</div>
+              <div class="main3Text" onclick="changeimg('enjoy')">즐기자</div>
+            </div>  
+          </div>
           </div>
           <div class="foodRight">
             <div class="bigbox">
@@ -388,4 +387,10 @@
       </div>
     </div>
   </body>
+  <script src="./js/mainpage.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
 </html>
