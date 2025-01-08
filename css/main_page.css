@@ -47,7 +47,7 @@ body {
   width: 25px;
   height: 25px;
 }
-.icon:hover{
+.icon:hover {
   cursor: pointer;
 }
 
@@ -129,7 +129,7 @@ body {
   .box1,
   .box2,
   .box3,
-  .box4{
+  .box4 {
     height: auto;
   }
 }
@@ -296,26 +296,25 @@ body {
 
 /* main park */
 
-/* main5 부분 */
-.main5 {
+/* main4 부분 */
+.main4 {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  padding-top: 10px;
-  height: 700px;
+  margin-top: 10px;
+  aspect-ratio: 2/1;
 }
 
-.main5Left,
-.main5Right {
+.main4Left,
+.main4Right {
   width: calc(50% - 5px); /* 전체 너비의 50%에서 간격의 절반을 뺌 */
   height: 100%;
   background-color: green;
   border-radius: 25px;
-  /* display: flex; */
 }
 
-/* main5 나타나기 */
+/* main4 나타나기 */
 .fade_in {
   opacity: 0;
   transform: translateY(50px);
@@ -327,7 +326,7 @@ body {
   transform: translateY(0);
 }
 
-/* 반응형일 때 main5 나타나기 효과 없앰 */
+/* 반응형일 때 main4 나타나기 효과 없앰 */
 @media screen and (max-width: 1000px) {
   .fade_in {
     opacity: 1;
@@ -336,8 +335,8 @@ body {
   }
 }
 
-/* main5Left 부분 */
-.main5LeftWrap {
+/* main4Left 부분 */
+.main4LeftWrap {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -350,6 +349,20 @@ body {
   height: 100%;
   background-color: pink;
   border-radius: 25px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+  overflow: cover;
+  transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
+}
+.slide img:hover {
+  cursor: pointer;
+  transform: scale(1.1); /* 이미지 크기 20% 확대 */
+  transform-origin: center;
 }
 
 /* 슬라이드 2의 내용 정렬을 위한 추가 스타일 */
@@ -396,13 +409,13 @@ body {
   margin: 0 10px;
 }
 
-/* main5Right 부분 */
-.main5Right {
+/* main4Right 부분 */
+.main4Right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: green;
-  height: 100%;
+  aspect-ratio: 1;
 }
 
 .backEvent {
@@ -439,17 +452,17 @@ body {
 /* main6 부분 */
 .main6 {
   width: 100%;
-  height: 400px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
   box-sizing: border-box;
   padding-top: 10px;
   margin-bottom: 10px;
+  aspect-ratio: 4/1;
 }
 
 /* main6 오른쪽에서 왼쪽으로 나타나는 효과 */
-.fade_in_left {
+/* .fade_in_left {
   transform: translateX(100%);
   transition: transform 0.5s ease-in-out;
   opacity: 0;
@@ -458,15 +471,13 @@ body {
 .fade_in_left.visible {
   transform: translateX(0);
   opacity: 1;
-}
+} */
 
-.main6Left,
-.main6Right {
-  width: calc(50% - 5px); /* 전체 너비의 50%에서 간격의 절반을 뺌 */
-  height: 100%;
-  background-color: blue;
-  border-radius: 25px;
+.main6Left {
+  width: 50%;
   overflow: hidden;
+  border-radius: 25px;
+  aspect-ratio: 2/ 1;
 }
 
 .support {
@@ -475,11 +486,17 @@ body {
 }
 .support img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 2 / 1;
   border-radius: 25px;
-  object-fit: cover;
+  object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
+  transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
 
+.support img:hover {
+  cursor: pointer;
+  transform: scale(1.1); /* 이미지 크기 20% 확대 */
+  transform-origin: center;
+}
 .support_txt {
   position: absolute;
   color: white;
@@ -492,21 +509,22 @@ body {
 }
 
 .main6Right {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
+  width: 50%;
+  aspect-ratio: 2 / 1;
   background-color: blueviolet;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
 }
 .question {
   position: relative;
-  height: 100%;
-  overflow: hidden;
+  aspect-ratio: 2 / 1;
 }
 .question img {
   width: 100%;
   height: 100%;
-  border-radius: 25px;
-  object-fit: cover;
+  object-fit: fill;
+  object-position: center;
 }
 .question_txt {
   position: absolute;
@@ -522,10 +540,51 @@ body {
 /* footer */
 .footer {
   width: 100%;
-  background-color: gray;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  height: auto;
+  background-color: gainsboro;
+  /* margin: 0;
+  padding: 0; */
+}
+.footerWrap {
+  margin: 30px 30px;
+}
 
+.footerBox1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer img {
+  width: 50px;
+  height: 30px;
+}
+
+.f_info {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.f_privacy {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  color: black;
+}
+
+.f_aboutDD {
+  display: flex;
+  justify-content: space-between;
+  ul,
+  li {
+    margin: 0;
+    list-style: none;
+  }
+}
+
+.f_sub {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.site {
+  display: flex;
 }
