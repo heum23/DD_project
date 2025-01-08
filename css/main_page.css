@@ -61,7 +61,8 @@ body {
   background-color: white;
   padding: 0 40px;
   position: sticky;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   z-index: 1000;
 }
 .headerMenu {
@@ -91,8 +92,8 @@ body {
   .earth {
     display: none;
   }
- 
-  .main3Text{
+
+  .main3Text {
     font-size: 40px !important;
   }
 }
@@ -105,7 +106,7 @@ body {
 /* main jin */
 /* main1 */
 @media screen and (max-width: 1000px) {
-  .header{
+  .header {
     padding: 0 0px;
   }
   .headerMenu {
@@ -135,15 +136,15 @@ body {
     order: +1; /* 파란색 박스를 위로 이동 */
     height: auto !important;
   }
-  .foodLeft,.foodRight{
+  .foodLeft,
+  .foodRight {
     height: auto !important;
   }
   .box1,
   .box2,
   .box3,
-  .box4{
-     aspect-ratio: 1/0.5;
-
+  .box4 {
+    aspect-ratio: 1/0.5;
   }
 }
 .d-block {
@@ -260,7 +261,7 @@ body {
   aspect-ratio: 1/1;
   border-radius: 25px;
 }
-.foodRight{
+.foodRight {
   width: 50%;
   aspect-ratio: 1/1;
 }
@@ -289,22 +290,25 @@ body {
   opacity: 1; /* 활성화된 이미지 보임 */
 }
 
-.main3Text{
+.main3Text {
   color: lightgray;
   font-size: 70px;
   font-weight: 900;
   -webkit-text-stroke: 2px lightgray;
   z-index: 3;
 }
-.flex{
-  width: 100%; aspect-ratio: 1/1;
+.flex {
+  width: 100%;
+  aspect-ratio: 1/1;
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.main3Text:hover,.main3Text2:hover,.main3Text3:hover{
+.main3Text:hover,
+.main3Text2:hover,
+.main3Text3:hover {
   cursor: pointer;
   color: white;
   -webkit-text-stroke: 2px white;
@@ -542,7 +546,7 @@ body {
   position: relative;
   height: 100%;
 }
-.support img {
+.supportImg {
   width: 100%;
   aspect-ratio: 2 / 1;
   border-radius: 25px;
@@ -550,7 +554,7 @@ body {
   transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
 
-.support img:hover {
+.supportImg:hover {
   cursor: pointer;
   transform: scale(1.1); /* 이미지 크기 20% 확대 */
   transform-origin: center;
@@ -571,12 +575,13 @@ body {
   border-radius: 25px;
   overflow: hidden;
   aspect-ratio: 2/ 1;
+  position: relative;
 }
 .question {
   position: relative;
   height: 100%;
 }
-.question img {
+.questionImg {
   width: 100%;
   aspect-ratio: 2 / 1;
   object-fit: cover;
@@ -584,7 +589,7 @@ body {
   transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
 
-.question img:hover {
+.questionImg:hover {
   cursor: pointer;
   transform: scale(1.1); /* 이미지 크기 20% 확대 */
   transform-origin: center;
@@ -658,4 +663,14 @@ body {
 .site {
   display: flex;
   font-weight: bold;
+}
+
+.footerBox2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.f_sns {
+  display: flex;
 }
