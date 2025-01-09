@@ -129,21 +129,9 @@
         <div class="main3">
           <div class="foodLeft">
             <div class="foodimg">
-              <img
-                class="main3left"
-                id="eat"
-                src="./mainpage_img/main_img_jin/main3Eat.jpg"
-              />
-              <img
-                class="main3left"
-                id="coffee"
-                src="./mainpage_img/main_img_jin/main3coffee2.jpeg"
-              />
-              <img
-                class="main3left active"
-                id="icecream"
-                src="./mainpage_img/main_img_jin/main3icecream2.jpg"
-              />
+              <img class="main3left active" id="mainImage" src="./mainpage_img/main_img_jin/main3Eat.jpg" />
+              <img class="main3left" src="./mainpage_img/main_img_jin/main3coffee2.jpeg" />
+              <img class="main3left" src="./mainpage_img/main_img_jin/main3icecream2.jpg" />
               <div class="flex">
                 <div class="main3Text" onclick="changeimg('eat')">먹고</div>
                 <div class="main3Text" onclick="changeimg('drink')">마시고</div>
@@ -153,15 +141,29 @@
           </div>
           <div class="foodRight">
             <div class="bigbox">
-              <div class="box1"></div>
-              <div class="box2"></div>
+              <div class="box1">
+                <div class="breadbtn">BREAD</div>
+                <div class="detailText1">D&D의 다양한 음식을 만나보세요</div>
+                <div class="btn">
+                  <div class="previuous1" onclick="changeImageSet('previous')">
+                    <img class="btn2" src="./mainpage_img/main_img_jin/previous.png" alt="btn">
+                  </div>
+                  <div class="detailText">01/03</div>
+                  <div class="next1" onclick="changeImageSet('next')">
+                    <img class="btn2" src="./mainpage_img/main_img_jin/next.png" alt="btn">
+                  </div>
+                </div>
+              </div>
+              <div class="box2" id="box2"></div>
             </div>
             <div class="bigbox">
-              <div class="box3"></div>
-              <div class="box4"></div>
+              <div class="box3" id="box3"></div>
+              <div class="box4" id="box4"></div>
             </div>
           </div>
         </div>
+        
+        
 
         <!-- main4 -->
         <div class="main4 fade_in">
