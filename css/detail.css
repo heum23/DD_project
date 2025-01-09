@@ -134,45 +134,65 @@ body{
     aspect-ratio: 2/1;
     overflow: hidden;
     border-radius: 25px;
-    
   }
   .leftText{
-    text-align: center;
-    position: absolute;
-    top: 70px; left: 140px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
   }
   .rightText{
-    text-align: center;
-    position: absolute;
-    top: 70px; left: 140px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
   }
   .main2Text{
-    text-align: center;
-    position: absolute;
-    top: 70px; left: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
   }
   .blue{
-    width: 90px; height: 25px;
-    border-radius:15px;
-    line-height: 1.8;
+    width: 90px; height: 30px;
+    border-radius:10px;
+    line-height: 2;
     color: white;
-    font-size: 15px;
+    font-size: 1rem;
     background-color: #3cb4e5;
     margin-bottom: 20px;
   }
-  .overlay1,.overlay2,.overlay3{
+  .overlay3{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    aspect-ratio: 2/0.7;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.3); /* 반투명 검정색 */
+    pointer-events: none; /* 오버레이 위에서의 클릭 이벤트 무시 */
+  }
+  .overlay1,.overlay2{
     position: absolute;
     top: 0; left: 0;
     width: 100%;
@@ -195,10 +215,12 @@ body{
     width: 100%;
     aspect-ratio: 2/1;
     border-radius: 25px;
-    
     transition: transform 0.3s ease-in-out;
   }
   .rightimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     object-fit: cover;
     width: 100%;
     aspect-ratio: 2/1;
@@ -227,16 +249,96 @@ body{
     font-family: 'Freesentation-9Black';
     font-weight: 100px;
     color: white;
-    font-size: 32px;
+    font-size: clamp(1.8rem, 5vw, 2rem); /* 반응형 폰트 크기 */
     margin-bottom: 5px;
+    text-align: center;
+    white-space: nowrap; /* 줄 바꿈 방지 */
+    line-height: 1.2; /* 줄 간격 */
   }
+  
   .smallText{
+    display: block;
     padding-top: 5px;
     font-family: 'Freesentation-9Black';
     font-weight: 100px;
     color: white;
-    font-size: 18px;
+    font-size: clamp(1rem, 4vw, 1rem); /* 반응형 작은 텍스트 크기 */
+    text-align: center;
+    white-space: nowrap; /* 줄 바꿈 방지 */
+    line-height: 1.4; /* 줄 간격 */
   }
+  .smallText1{
+    display: block;
+    padding-top: 5px;
+    font-family: 'Freesentation-9Black';
+    font-weight: 100px;
+    color: white;
+    font-size: clamp(1rem, 4vw, 1rem); /* 반응형 작은 텍스트 크기 */
+    text-align: center;
+    white-space: nowrap; /* 줄 바꿈 방지 */
+    line-height: 1.4; /* 줄 간격 */
+  }
+.box{
+  margin-top: 20px;
+  width: 70%;
+  display: flex;
+  gap: 15px;
+}
+.box1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 13px;
+  width: 100%;
+  aspect-ratio: 2/1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.box2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 13px;
+  width: 100%;
+  aspect-ratio: 2/1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.box3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 13px;
+  width: 100%;
+  aspect-ratio: 2/1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+@media screen and (max-width:1000px) {
+  .smallText{
+    display: none !important;
+  }
+  .bigText{
+    font-size: 1.2rem;
+  }
+  .main1left,.main1right{
+    width: 100% !important;
+    flex: wrap !important;
+  }
+  .detail1{
+    flex-wrap: wrap;
+  }
+  .box{
+    flex-wrap: wrap;
+    aspect-ratio: 1/0.5;
+  }
+  .detail2img{
+    aspect-ratio: 1/1.6;
+  }
+  .overlay3{
+    aspect-ratio: 1/1.6;
+  }
+  .detail2{
+    overflow: scroll;
+  }
+}
   /* footer */
   .footer {
     margin-top: 60px;
