@@ -82,7 +82,6 @@ const moveUrl = (type) => {
   }
   window.location.href = url; // URL로 이동
 }
-
 // 이미지 세트를 관리하는 객체
 const imageSets = {
   eat: {
@@ -135,55 +134,43 @@ const imageSets = {
   }
 };
 
-// 선택된 이미지 세트를 기억할 변수
-let currentSet = "eat"; // 초기값은 'eat'
-let currentPage = 1;    // 초기 페이지는 1
+let currentSet = "eat";  // 초기값
+let currentPage = 1;     // 페이지 번호
 
-// changeimg 함수 수정
 window.changeimg = (type) => {
-  currentSet = type; // 선택된 카테고리
+  currentSet = type;
 
-  // mainLeft 이미지 변경
-  const mainLeftImage = document.querySelectorAll('.main3left');
-  for (let i = 0; i < mainLeftImage.length; i++) {
-    mainLeftImage[i].classList.remove('active');
-  }
-
-  const newMainImage = document.querySelector('.main3left:nth-child(1)');
-  newMainImage.classList.add('active');
-  newMainImage.src = imageSets[type].main;
-
-  // box2, box3, box4 이미지 변경
+  const mainLeftImage = document.querySelector('.main3left');
+  mainLeftImage.style.opacity = 0;  // 이미지 숨김
+  setTimeout(() => {
+    mainLeftImage.src = imageSets[type].main;  // 이미지 교체
+    mainLeftImage.onload = () => {
+      setTimeout(() => {
+        mainLeftImage.style.opacity = 1;  // 이미지 표시
+      }, 100);  // box 이미지와 동일한 딜레이
+    };
+  }, 300);  // box 이미지 전환 시간과 일치
+  
   updateBoxImages();
-
-  // 페이지 번호 업데이트
-  currentPage = 1;  // 글자 클릭 시 숫자를 1로 설정
+  currentPage = 1;
   updatePageNumber();
 };
 
-// 페이지 번호 업데이트 함수
-function updatePageNumber() {
-  const pageNumberElement = document.querySelector('.detailText');
-  if (pageNumberElement) {
-    pageNumberElement.textContent = `${String(currentPage).padStart(2, '0')}/0${currentSet === "eat" ? 3 : 2}`;
-  }
-}
-
 function updateBoxImages() {
-  // box2, box3, box4에 이미지 세트 업데이트
   document.querySelector("#box2").innerHTML = generateImageMarkup(imageSets[currentSet].box2);
   document.querySelector("#box3").innerHTML = generateImageMarkup(imageSets[currentSet].box3);
   document.querySelector("#box4").innerHTML = generateImageMarkup(imageSets[currentSet].box4);
-
-  // 첫 로딩 시 bread 클래스가 포함된 이미지 중 첫 번째 이미지를 띄움
-  setTimeout(() => {
-    document.querySelectorAll('.bread').forEach(img => {
-      img.style.opacity = 1; // 이미지의 opacity를 1로 설정
-    });
-  }, 100);
+  fadeInImages();
 }
 
-// 이미지 마크업 생성 함수
+function fadeInImages() {
+  setTimeout(() => {
+    document.querySelectorAll('.main3left, .bread, .drink, .icecream').forEach(img => {
+      img.style.opacity = 1;
+    });
+  }, 100);  // box와 동일한 100ms 딜레이
+}
+
 function generateImageMarkup(images) {
   return images.map(image => {
     return `<img class="${image.includes('bread') ? 'bread' : image.includes('drink') ? 'drink' : 'icecream'}" 
@@ -192,19 +179,14 @@ function generateImageMarkup(images) {
   }).join('');
 }
 
-// next와 previous 버튼 클릭시 호출되는 함수
 window.changeImageSet = (direction) => {
   let currentImages = imageSets[currentSet];
-  let box2 = document.querySelector("#box2");
-  let box3 = document.querySelector("#box3");
-  let box4 = document.querySelector("#box4");
-
-  // 페이지 번호 업데이트
+  
   if (direction === 'next') {
     if (currentPage < (currentSet === "eat" ? 3 : 2)) {
       currentPage++;
     } else {
-      currentPage = 1;  // 다음이 없으면 첫 페이지로 돌아가도록 설정
+      currentPage = 1;
     }
     currentImages.box2.push(currentImages.box2.shift());
     currentImages.box3.push(currentImages.box3.shift());
@@ -218,21 +200,24 @@ window.changeImageSet = (direction) => {
     currentImages.box4.unshift(currentImages.box4.pop());
   }
 
-  // 이미지 세트 업데이트
   updateBoxImages();
-
-  // 페이지 번호 업데이트
   updatePageNumber();
 };
 
-// 첫 로딩 시 mainLeft 이미지에 active 클래스 추가 및 box2, box3, box4 첫 번째 이미지 띄우기
+function updatePageNumber() {
+  const pageNumberElement = document.querySelector('.detailText');
+  if (pageNumberElement) {
+    pageNumberElement.textContent = `${String(currentPage).padStart(2, '0')}/0${currentSet === "eat" ? 3 : 2}`;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const mainLeftImage = document.querySelector('.main3left');
   if (mainLeftImage) {
-    mainLeftImage.classList.add('active');
+    mainLeftImage.style.transition = 'opacity 0.5s ease';
+    mainLeftImage.style.opacity = 1;
   }
 
-  // box2, box3, box4의 첫 번째 이미지 띄우기
   updateBoxImages();
-  updatePageNumber();  // 첫 로딩 시 페이지 번호 초기화
+  updatePageNumber();
 });
