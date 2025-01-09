@@ -12,7 +12,7 @@ body {
   transition: all 0.8s ease-in-out;
 }
 /* 숨김 후 나타남 오른쪽쪽 */
-.hidden2 {
+.hidden {
   opacity: 0;
   transform: translateX(100px); /* 오른쪽에서 출발 */
   transition: all 0.5s ease-in-out;
@@ -336,7 +336,7 @@ body {
   background-color: white;
   opacity: 0; /* 기본적으로 숨겨짐 */
   transform: translateY(50px); /* 아래로 숨겨짐 */
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* 부드러운 애니메이션 */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* 부드러운 애니메이션 */
 }
 .box1.visible {
   opacity: 1; /* 보이게 설정 */
@@ -501,7 +501,7 @@ body {
   transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s; /* 부드러운 전환 효과 */
 }
 
-.slide ul li.active2 {
+.slide ul li.active {
   opacity: 1;
   visibility: visible; /* 활성화된 이미지만 보이게 설정 */
   transition: opacity 0.5s ease-in-out, visibility 0s linear 0s; /* 전환 효과 */
@@ -512,7 +512,7 @@ body {
 }
 
 /* 선택된 <li>만 보이도록 */
-.slide ul li.active2 {
+.slide ul li.active {
   display: block;
 }
 
@@ -566,9 +566,6 @@ body {
   align-items: center;
   font-size: 20px;
   font-weight: bold;
-}
-.paging_arrow {
-  cursor: pointer;
 }
 .paging_num {
   margin: 5px;
@@ -635,17 +632,19 @@ body {
 }
 
 /* main5 오른쪽에서 왼쪽으로 나타나는 효과 */
-/* 기본 상태: main5와 내부 요소들은 화면 밖에 위치 */
-.main5 {
-  opacity: 0;
-  transform: translateX(100%); /* 오른쪽에서 시작 */
-  transition: transform 0.6s ease-out, opacity 0.6 ease-out;
+/* .main5 {
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
-.main5.fade_in {
+.fade_in_right {
+  transform: translateX(0);
   opacity: 1;
-  transform: translateX(0); /* 원래 위치로 이동 */
 }
+
+.fade_out_right {
+  transform: translateX(100%);
+  opacity: 0;
+} */
 
 .main5Left {
   width: 50%;
@@ -717,9 +716,6 @@ body {
   top: 10px;
   left: 30px;
 }
-.hidden {
-  display: none;
-}
 
 /* footer */
 .footer {
@@ -733,7 +729,6 @@ body {
   box-sizing: border-box;
 }
 
-/* footer 첫번째 박스 */
 .footerBox1 {
   display: flex;
   flex-wrap: wrap;
@@ -741,16 +736,17 @@ body {
 }
 
 .footer img {
-  width: 70px;
-  height: 40px;
+  width: 50px;
+  height: 30px;
   display: block;
   margin-bottom: 30px;
 }
 
-.f_address {
+.f_info {
   color: rgba(0, 0, 0, 0.5);
+}
+.f_address {
   margin-bottom: 10px;
-  font-weight: bold;
 }
 
 .f_privacy {
@@ -789,7 +785,6 @@ body {
   }
 }
 
-/* footer 두번째 박스 */
 .footerBox2 {
   display: flex;
   flex-wrap: wrap;
@@ -814,12 +809,6 @@ body {
   align-items: center;
   display: flex;
   gap: 10px;
-  margin-bottom: 1.5rem;
-}
-
-.footerBox2 p {
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.5);
 }
 
 .f_sns {
