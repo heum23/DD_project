@@ -168,6 +168,7 @@
           <div class="main4Left">
             <div class="main4LeftWrap">
               <div class="slide">
+                <!-- prev, next tab slide show!! -->
                 <ul>
                   <li>
                     <img
@@ -184,6 +185,7 @@
                     />
                   </li>
                 </ul>
+                <!-- magazine -->
               </div>
               <div class="slide slide_txt">
                 <div class="text_box">
@@ -262,7 +264,7 @@
               // 초기 상태: 첫 번째 이미지만 보이도록 설정
               slides.forEach((slide) => {
                 const items = slide.querySelectorAll("li");
-                items[0].classList.add("active");
+                items[0].classList.add("active2");
               });
 
               // backTxt1 클릭 시 첫 번째 이미지만 보이도록
@@ -279,8 +281,8 @@
               function updateSlides(index) {
                 slides.forEach((slide) => {
                   const items = slide.querySelectorAll("li");
-                  items.forEach((item) => item.classList.remove("active")); // 모든 이미지 숨기기
-                  items[index].classList.add("active"); // 클릭한 인덱스만 보여주기
+                  items.forEach((item) => item.classList.remove("active2")); // 모든 이미지 숨기기
+                  items[index].classList.add("active2"); // 클릭한 인덱스만 보여주기
                 });
               }
             });
@@ -289,7 +291,7 @@
           <!-- main4 오른쪽 -->
           <div class="main4Right">
             <div class="backEvent">
-              <img src="/mainpage_img/main_img_park/event.jpg" alt="EVENT" />
+              <img src="/mainpage_img/main_img_park/media.png" alt="EVENT" />
               <div class="backTxt1">EVENTS</div>
               <div class="backTxt2">MAGAZINE</div>
             </div>
@@ -351,37 +353,30 @@
           </div>
         </div>
       </div>
-
       <script>
-        // main5 나타나는 함수 (오른쪽에서 왼쪽으로)
-        document.addEventListener("DOMContentLoaded", function () {
-          const fadeElement = document.querySelector(".main5");
+        // DOM 요소 선택
+        const main5 = document.querySelector(".main5");
 
-          if (fadeElement) {
-            const observer = new IntersectionObserver(
-              (entries) => {
-                entries.forEach((entry) => {
-                  const boundingRect = entry.boundingClientRect;
-                  const viewportHeight = window.innerHeight;
+        // 화면에 요소가 보이는지 체크하는 함수
+        function checkScroll() {
+          // main5의 상단 위치
+          const main5Position = main5.getBoundingClientRect().top;
 
-                  // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
-                  if (boundingRect.top <= viewportHeight * 0.8) {
-                    entry.target.classList.add("fade_in_right");
-                    entry.target.classList.remove("fade_out_right");
-                  } else {
-                    entry.target.classList.remove("fade_in_right");
-                    entry.target.classList.add("fade_out_right");
-                  }
-                });
-              },
-              {
-                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-              }
-            );
-
-            observer.observe(fadeElement);
+          // 화면에 보이는지 확인 (10px 정도 여유를 두고)
+          if (main5Position <= window.innerHeight - 10) {
+            // main5와 내부 요소들이 동시에 오른쪽에서 왼쪽으로 나타나도록 fade_in 클래스 추가
+            main5.classList.add("fade_in");
+          } else {
+            // 사라지면 fade_in 클래스 제거
+            main5.classList.remove("fade_in");
           }
-        });
+        }
+
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener("scroll", checkScroll);
+
+        // 페이지 로드 시 초기 상태 확인
+        checkScroll();
       </script>
     </div>
     <!-- footer -->
