@@ -417,6 +417,31 @@ body {
   opacity: 1;
 }
 
+/* 박스 내부 이미지 확대 시 튀어나오지 않도록 */
+#box2, #box3, #box4 {
+  position: relative;
+  overflow: hidden;  /* 이미지가 박스를 벗어나지 않게 */
+  height: 100%;
+  object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
+  transition: transform 0.5s ease-in-out !important;  /* 이미지가 중앙을 기준으로 확대되도록 */
+}
+
+
+/* 이미지에 부드러운 확대 효과 추가 */
+#box2 img, #box3 img, #box4 img {
+  object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
+  transition: transform 0.5s ease-in-out !important;  /* 이미지가 중앙을 기준으로 확대되도록 */
+}
+
+/* 이미지 확대 효과 */
+#box2 img:hover, #box3 img:hover, #box4 img:hover {
+  cursor: pointer;
+  transform: scale(1.2) !important; /* 이미지 크기 20% 확대 */
+  transform-origin: center; /* 확대 중심을 중앙으로 설정 */
+  }  /* 확대와 투명도
+
+
+
 /* main park */
 
 /* main4 부분 */
