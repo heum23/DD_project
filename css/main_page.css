@@ -703,7 +703,7 @@ body {
 
 .f_aboutDD {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 .f_aboutDD ul,
 .f_aboutDD li {
