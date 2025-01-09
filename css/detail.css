@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 body{
@@ -24,7 +26,6 @@ body{
   @font-face {
     font-family: 'Freesentation-9Black';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
-    font-weight: 900;
     font-style: normal;
 }
 .logo {
@@ -111,6 +112,9 @@ body{
     border-radius: 25px;
    
   }
+  .detail2page:hover,.detail1page:hover{
+    cursor: pointer;
+  }
   .detail2page{
     font-family: 'Freesentation-9Black';
     font-size: 20px;
@@ -123,12 +127,50 @@ body{
     border-radius: 25px;
   }
   .main1left,.main1right{
+    border-radius: 25px;
     position: relative;
     display: inline-block;
     width: 50%;
     aspect-ratio: 2/1;
     overflow: hidden;
     border-radius: 25px;
+    
+  }
+  .leftText{
+    text-align: center;
+    position: absolute;
+    top: 70px; left: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .rightText{
+    text-align: center;
+    position: absolute;
+    top: 70px; left: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .main2Text{
+    text-align: center;
+    position: absolute;
+    top: 70px; left: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .blue{
+    width: 90px; height: 25px;
+    border-radius:15px;
+    line-height: 1.8;
+    color: white;
+    font-size: 15px;
+    background-color: #3cb4e5;
+    margin-bottom: 20px;
   }
   .overlay1,.overlay2,.overlay3{
     position: absolute;
@@ -142,7 +184,7 @@ body{
  
   .detail1{
     padding-top: 40px;
-    gap: 10px;
+    gap: 20px;
     display: flex;
     width: 100%;
     height: auto;
@@ -164,9 +206,10 @@ body{
     transition: transform 0.3s ease-in-out;
   }
   .detail2{
+    border-radius: 25px;
     overflow: hidden;
     position: relative;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 100%;
   }
   .detail2img{
@@ -180,12 +223,26 @@ body{
   transform: scale(1.2); /* 이미지 크기 20% 확대 */
   transform-origin: center; /* 확대 중심을 중앙으로 설정 */
   }
+  .bigText{
+    font-family: 'Freesentation-9Black';
+    font-weight: 100px;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 5px;
+  }
+  .smallText{
+    padding-top: 5px;
+    font-family: 'Freesentation-9Black';
+    font-weight: 100px;
+    color: white;
+    font-size: 18px;
+  }
   /* footer */
   .footer {
-    margin-top: 50px;
+    margin-top: 60px;
     width: 100%;
     height: auto;
-    background-color: #f5f5f5;
+    background-color: gainsboro;
   }
   
   .footerWrap {
@@ -200,26 +257,39 @@ body{
   .footer img {
     width: 50px;
     height: 30px;
+    display: block;
+    margin-bottom: 30px;
   }
   
   .f_info {
     color: rgba(0, 0, 0, 0.5);
   }
+  .f_address {
+    margin-bottom: 10px;
+  }
   
   .f_privacy {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
     font-weight: bold;
     color: black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    white-space: nowrap;
+    width: 100%;
   }
   
   .f_aboutDD {
     display: flex;
     justify-content: space-between;
+    white-space: nowrap;
+    margin-bottom: 20px;
     ul,
     li {
       margin: 0;
       list-style: none;
+      margin-bottom: 10px;
     }
   }
   
@@ -227,4 +297,5 @@ body{
     font-weight: 600;
     margin-bottom: 20px;
   }
+  
   
