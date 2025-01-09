@@ -12,7 +12,7 @@ body {
   transition: all 0.8s ease-in-out;
 }
 /* 숨김 후 나타남 오른쪽쪽 */
-.hidden {
+.hidden2 {
   opacity: 0;
   transform: translateX(100px); /* 오른쪽에서 출발 */
   transition: all 0.5s ease-in-out;
