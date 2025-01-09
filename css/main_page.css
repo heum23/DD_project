@@ -423,6 +423,7 @@ body {
 .main4 {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px;
   margin-top: 10px;
@@ -620,6 +621,21 @@ body {
   cursor: pointer;
   color: white;
   -webkit-text-stroke: 1px white;
+}
+
+/* 수정해야함!! */
+@media screen and (max-width: 1000px) {
+  .main4 {
+    display: flex;
+    flex-wrap: column; /* main4Right를 main4Left 아래로 배치 */
+    aspect-ratio: 1/2;
+  }
+
+  .main4Left,
+  .main4Right {
+    width: 100%;
+    aspect-ratio: 1/1; /* 각 요소가 전체 폭을 차지하도록 설정 */
+  }
 }
 
 /* main5 부분 */
