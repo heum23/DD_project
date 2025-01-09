@@ -373,7 +373,6 @@ body {
 .main4Right {
   width: calc(50% - 5px); /* 전체 너비의 50%에서 간격의 절반을 뺌 */
   height: 100%;
-  background-color: green;
   border-radius: 25px;
 }
 
@@ -413,16 +412,51 @@ body {
   background-color: pink;
   border-radius: 25px;
   overflow: hidden;
+  ul,
+  li {
+    list-style: none;
+  }
 }
 
-.slide img {
+.swiper_slide {
   width: 100%;
-  height: 100%;
-  /* border-radius: 25px; */
+  aspect-ratio: 1/1;
   object-fit: cover;
   transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
-.slide img:hover {
+
+/* main4 이미지 바꾸기 */
+/* 처음에 모든 <li>를 숨깁니다 */
+.slide ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  position: relative;
+}
+
+.slide ul li {
+  position: absolute;
+  opacity: 0; /* 초기에는 보이지 않도록 설정 */
+  visibility: hidden; /* 보이지 않게 설정 */
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s; /* 부드러운 전환 효과 */
+}
+
+.slide ul li.active {
+  opacity: 1;
+  visibility: visible; /* 활성화된 이미지만 보이게 설정 */
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0s; /* 전환 효과 */
+}
+
+.slide ul li {
+  display: none; /* 기본적으로 모든 <li>는 숨깁니다 */
+}
+
+/* 선택된 <li>만 보이도록 */
+.slide ul li.active {
+  display: block;
+}
+
+.swiper_slide:hover {
   cursor: pointer;
   transform: scale(1.1); /* 이미지 크기 20% 확대 */
   transform-origin: center;
@@ -510,17 +544,23 @@ body {
 .backTxt1,
 .backTxt2 {
   position: relative;
-  color: white;
+  color: lightgray;
   font-size: calc(3vw + 30px);
   font-weight: 900;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px lightgray;
   z-index: 2;
   text-align: center;
-  cursor: pointer;
 }
 
-/* main6 부분 */
-.main6 {
+.backTxt1:hover,
+.backTxt2:hover {
+  cursor: pointer;
+  color: white;
+  -webkit-text-stroke: 1px white;
+}
+
+/* main5 부분 */
+.main5 {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -531,14 +571,22 @@ body {
   aspect-ratio: 4/1;
 }
 
-/* main6 오른쪽에서 왼쪽으로 나타나는 효과 */
-/* .fade_in_left {
+/* main5 오른쪽에서 왼쪽으로 나타나는 효과 */
+/* .main5 {
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.fade_in_right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fade_out_right {
   transform: translateX(100%);
-  transition: transform 0.5s ease-in-out;
   opacity: 0;
 } */
 
-.main6Left {
+.main5Left {
   width: 50%;
   border-radius: 25px;
   overflow: hidden;
@@ -573,7 +621,7 @@ body {
   left: 30px;
 }
 
-.main6Right {
+.main5Right {
   width: 50%;
   border-radius: 25px;
   overflow: hidden;
@@ -618,10 +666,12 @@ body {
 
 .footerWrap {
   padding: 30px;
+  box-sizing: border-box;
 }
 
 .footerBox1 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -642,40 +692,29 @@ body {
 .f_privacy {
   font-weight: bold;
   color: black;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
   white-space: nowrap;
-  width: 100%;
+  box-sizing: border-box;
+  gap: 5px;
+  margin-bottom: 20px;
 }
 
 .f_aboutDD {
   display: flex;
-  justify-content: space-between;
-  white-space: nowrap;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 20px;
-  margin-bottom: 20px;
-  ul,
-  li {
-    margin: 0;
-    list-style: none;
-    margin-bottom: 10px;
-  }
+  gap: 3rem;
 }
-.f_aboutDD ul {
-  flex: 1 1 150px;
-  margin-bottom: 20px;
-}
-
-.f_sub {
-  font-weight: bold;
+.f_aboutDD ul,
+.f_aboutDD li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   margin-bottom: 10px;
 }
 
 .f_sub {
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
@@ -686,21 +725,36 @@ body {
   }
 }
 
-.site {
-  display: flex;
-  font-weight: bold;
-}
-
 .footerBox2 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-top: 50px;
+}
+.rel {
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.site {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  gap: 10px;
 }
 
 .f_sns {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .f_sns img {
