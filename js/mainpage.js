@@ -83,8 +83,6 @@ const moveUrl = (type) => {
   window.location.href = url; // URL로 이동
 }
 
-
-
 // 이미지 세트를 관리하는 객체
 const imageSets = {
   eat: {
