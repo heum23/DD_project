@@ -756,8 +756,7 @@ body {
 .f_privacy {
   font-weight: bold;
   color: black;
-  width: 400px;
-  max-width: 100%;
+  max-width: 400px;
   display: flex;
   flex-wrap: wrap;
   white-space: nowrap;
