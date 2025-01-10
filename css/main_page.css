@@ -2,7 +2,6 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   overflow: visible;
-  max-width: 1800px;
   margin: 0;
 }
 /* 숨김 후 나타남 아래래 */
@@ -29,6 +28,7 @@ body {
 }
 /** header **/
 .container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +46,12 @@ body {
 .icon {
   width: 25px;
   height: 25px;
+}
+@media screen and (min-width:1500px) {
+  .icon{
+    width: 60px;
+    height: 60px;
+  }
 }
 .icon:hover {
   cursor: pointer;
