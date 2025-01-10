@@ -188,7 +188,7 @@
         <div class="main4 fade_in">
           <div class="main4Left">
             <div class="main4LeftWrap">
-              <div class="slide">
+              <div class="slider">
                 <!-- prev, next tab slide show!! -->
                 <!-- EVENT -->
                 <img
@@ -246,7 +246,7 @@
                 </div>
               </div>
 
-              <div class="slide">
+              <div class="slider">
                 <!-- EVENT -->
                 <img
                   class="swiper_slide event_1"
@@ -275,7 +275,7 @@
                   alt="3/3"
                 />
               </div>
-              <div class="slide">
+              <div class="slider">
                 <!-- EVENT -->
                 <img
                   class="swiper_slide event_1"
@@ -351,7 +351,7 @@
         <script>
           const backTxt1 = document.querySelector(".backTxt1");
           const backTxt2 = document.querySelector(".backTxt2");
-          const slides = document.querySelectorAll(".slide");
+          const slides = document.querySelectorAll(".slider");
           const nextButtons = document.querySelectorAll(".paging_next");
           const prevButtons = document.querySelectorAll(".paging_prev");
           const pagingNums = document.querySelectorAll(
@@ -366,13 +366,13 @@
           let maxPages = 2;
 
           function updateImages(prefix, max) {
-            slides.forEach((slide) => {
-              const allImages = slide.querySelectorAll("img");
+            slides.forEach((slider) => {
+              const allImages = slider.querySelectorAll("img");
               allImages.forEach((img) => {
                 if (img.classList.contains(`${prefix}_${currentIndex}`)) {
-                  img.classList.add("active3");
+                  img.classList.add("active2");
                 } else {
-                  img.classList.remove("active3");
+                  img.classList.remove("active2");
                 }
               });
             });
