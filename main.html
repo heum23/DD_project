@@ -190,25 +190,35 @@
             <div class="main4LeftWrap">
               <div class="slide">
                 <!-- prev, next tab slide show!! -->
-                <ul>
-                  <li>
-                    <img
-                      class="swiper_slide"
-                      src="/mainpage_img/main_img_park/1_year.jpg"
-                      alt="1/2"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      class="swiper_slide"
-                      src="/mainpage_img/main_img_park/HAPPYLETTER12.png"
-                      alt="2/2"
-                    />
-                  </li>
-                </ul>
-                <!-- magazine -->
+                <!-- EVENT -->
+                <img
+                  class="swiper_slide event_1"
+                  src="/mainpage_img/main_img_park/event_img/HBD.jpeg"
+                  alt="default"
+                />
+                <img
+                  class="swiper_slide event_2"
+                  src="/mainpage_img/main_img_park/event_img/discount.png"
+                  alt="next"
+                />
+                <!-- MAGAZINE -->
+                <img
+                  class="swiper_slide magazine_1"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER12.png"
+                  alt="1/3"
+                />
+                <img
+                  class="swiper_slide magazine_2"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER09.png"
+                  alt="2/3"
+                />
+                <img
+                  class="swiper_slide magazine_3"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER06.png"
+                  alt="3/3"
+                />
               </div>
-              <div class="slide slide_txt">
+              <div class="slide_txt">
                 <div class="text_box">
                   <p class="text_title">D&D NOW</p>
                   <span class="text_content">
@@ -216,7 +226,7 @@
                   </span>
                 </div>
                 <div class="paging">
-                  <div class="paging_arrow">
+                  <div class="paging_arrow paging_prev">
                     <img
                       src="/mainpage_img/main_img_park/arrow_prev.png"
                       alt="이전"
@@ -224,9 +234,10 @@
                   </div>
                   <div class="paging_num">
                     <span>01</span>
-                    <span>/03</span>
+                    <span>/</span>
+                    <span>03</span>
                   </div>
-                  <div class="paging_arrow">
+                  <div class="paging_arrow paging_next">
                     <img
                       src="/mainpage_img/main_img_park/arrow_next.png"
                       alt="다음"
@@ -234,80 +245,67 @@
                   </div>
                 </div>
               </div>
-              <!-- 슬라이더 -->
+
               <div class="slide">
-                <ul>
-                  <li>
-                    <img
-                      class="swiper_slide"
-                      src="/mainpage_img/main_img_park/oneplusone.png"
-                      alt="1/2"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      class="swiper_slide"
-                      src="/mainpage_img/main_img_park/HAPPYLETTER11.png"
-                      alt="2/2"
-                    />
-                  </li>
-                </ul>
+                <!-- EVENT -->
+                <img
+                  class="swiper_slide event_1"
+                  src="/mainpage_img/main_img_park/event_img/newmenu.webp"
+                  alt="default"
+                />
+                <img
+                  class="swiper_slide event_2"
+                  src="/mainpage_img/main_img_park/event_img/oneplusone.png"
+                  alt="next"
+                />
+                <!-- MAGAZINE -->
+                <img
+                  class="swiper_slide magazine_1"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER11.png"
+                  alt="1/3"
+                />
+                <img
+                  class="swiper_slide magazine_2"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER08.png"
+                  alt="2/3"
+                />
+                <img
+                  class="swiper_slide magazine_3"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER05.png"
+                  alt="3/3"
+                />
               </div>
               <div class="slide">
-                <ul>
-                  <li>
-                    <img
-                      class="swiper_slide"
-                      src="/mainpage_img/main_img_park/discount.png"
-                      alt="1/2"
-                    />
-                  </li>
-                  <li>
-                    <img
-                      class="swiper_slide"
-                      src="/mainpage_img/main_img_park/HAPPYLETTER10.png"
-                      alt="2/2"
-                    />
-                  </li>
-                </ul>
+                <!-- EVENT -->
+                <img
+                  class="swiper_slide event_1"
+                  src="/mainpage_img/main_img_park/event_img/graduate.jpg"
+                  alt="default"
+                />
+                <img
+                  class="swiper_slide event_2"
+                  src="/mainpage_img/main_img_park/event_img/1_year.jpg"
+                  alt="next"
+                />
+                <!-- MAGAZINE -->
+                <img
+                  class="swiper_slide magazine_1"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER10.png"
+                  alt="1/3"
+                />
+                <img
+                  class="swiper_slide magazine_2"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER07.png"
+                  alt="2/3"
+                />
+                <img
+                  class="swiper_slide magazine_3"
+                  src="/mainpage_img/main_img_park/magazine_img/HAPPYLETTER04.png"
+                  alt="3/3"
+                />
               </div>
             </div>
           </div>
-          <script>
-            // 이미지 클릭시 바꾸기
-            document.addEventListener("DOMContentLoaded", function () {
-              // 각 텍스트를 클릭했을 때 이미지를 전환하는 함수
-              const backTxt1 = document.querySelector(".backTxt1");
-              const backTxt2 = document.querySelector(".backTxt2");
-
-              const slides = document.querySelectorAll(".slide ul");
-
-              // 초기 상태: 첫 번째 이미지만 보이도록 설정
-              slides.forEach((slide) => {
-                const items = slide.querySelectorAll("li");
-                items[0].classList.add("active2");
-              });
-
-              // backTxt1 클릭 시 첫 번째 이미지만 보이도록
-              backTxt1.addEventListener("click", function () {
-                updateSlides(0);
-              });
-
-              // backTxt2 클릭 시 두 번째 이미지만 보이도록
-              backTxt2.addEventListener("click", function () {
-                updateSlides(1);
-              });
-
-              // slides에서 해당 인덱스의 이미지를 보여주는 함수
-              function updateSlides(index) {
-                slides.forEach((slide) => {
-                  const items = slide.querySelectorAll("li");
-                  items.forEach((item) => item.classList.remove("active2")); // 모든 이미지 숨기기
-                  items[index].classList.add("active2"); // 클릭한 인덱스만 보여주기
-                });
-              }
-            });
-          </script>
 
           <!-- main4 오른쪽 -->
           <div class="main4Right">
@@ -349,11 +347,85 @@
             }
           });
         </script>
+        <!-- 텍스트 or 화살표 클릭시 이미지 전환 함수 -->
+        <script>
+          const backTxt1 = document.querySelector(".backTxt1");
+          const backTxt2 = document.querySelector(".backTxt2");
+          const slides = document.querySelectorAll(".slide");
+          const nextButtons = document.querySelectorAll(".paging_next");
+          const prevButtons = document.querySelectorAll(".paging_prev");
+          const pagingNums = document.querySelectorAll(
+            ".paging_num span:first-child"
+          );
+          const pagingTotals = document.querySelectorAll(
+            ".paging_num span:last-child"
+          );
 
+          let currentIndex = 1;
+          let isEventMode = true;
+          let maxPages = 2;
+
+          function updateImages(prefix, max) {
+            slides.forEach((slide) => {
+              const allImages = slide.querySelectorAll("img");
+              allImages.forEach((img) => {
+                if (img.classList.contains(`${prefix}_${currentIndex}`)) {
+                  img.classList.add("active3");
+                } else {
+                  img.classList.remove("active3");
+                }
+              });
+            });
+
+            updatePagingNum(currentIndex, max);
+          }
+
+          function updatePagingNum(num, total) {
+            pagingNums.forEach((span) => {
+              span.textContent = num.toString().padStart(2, "0");
+            });
+            pagingTotals.forEach((span) => {
+              span.textContent = total.toString().padStart(2, "0");
+            });
+          }
+
+          backTxt1.addEventListener("click", () => {
+            isEventMode = true;
+            currentIndex = 1;
+            maxPages = 2;
+            updateImages("event", maxPages);
+          });
+
+          backTxt2.addEventListener("click", () => {
+            isEventMode = false;
+            currentIndex = 1;
+            maxPages = 3;
+            updateImages("magazine", maxPages);
+          });
+
+          nextButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              currentIndex = currentIndex < maxPages ? currentIndex + 1 : 1;
+              updateImages(isEventMode ? "event" : "magazine", maxPages);
+            });
+          });
+
+          prevButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              currentIndex = currentIndex > 1 ? currentIndex - 1 : maxPages;
+              updateImages(isEventMode ? "event" : "magazine", maxPages);
+            });
+          });
+
+          // 페이지 로드 시 자동으로 backTxt1 클릭 트리거 (처음 이미지 default)
+          document.addEventListener("DOMContentLoaded", () => {
+            backTxt1.click();
+          });
+        </script>
         <!-- main5 -->
         <div class="main5 fade_in_left">
           <div class="main5Left">
-            <div class="support">
+            <div class="support" onclick="getReady()">
               <img
                 class="supportImg"
                 src="/mainpage_img/main_img_park/support.png"
@@ -363,10 +435,10 @@
             </div>
           </div>
           <div class="main5Right">
-            <div class="qustion">
+            <div class="qustion" onclick="getReady()">
               <img
                 class="questionImg"
-                src="/mainpage_img/main_img_park/QA.jpg"
+                src="/mainpage_img/main_img_park/question.jpg"
                 alt="QUESTION"
               />
               <div class="question_txt">Q & A</div>
