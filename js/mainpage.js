@@ -87,25 +87,25 @@ const imageSets = {
   eat: {
     main: "./mainpage_img/main_img_jin/main3Eat.jpg",  // '먹고' 카테고리
     box2: [
-      "./mainpage_img/main3_img/bread/bagle.jpg",
+      "./mainpage_img/main3_img/bread/sandwich.jpeg",
       "./mainpage_img/main3_img/bread/creambread.jpg",
       "./mainpage_img/main3_img/bread/hamburger.jpg"
     ],
     box3: [
-      "./mainpage_img/main3_img/bread/muffin.jpg",
-      "./mainpage_img/main3_img/bread/pizza.jpeg",
+      "./mainpage_img/main3_img/bread/muffin2.jpg",
+      "./mainpage_img/main3_img/bread/bagle2.jpg",
       "./mainpage_img/main3_img/bread/pizzabread.png"
     ],
     box4: [
       "./mainpage_img/main3_img/bread/potatobread.png",
       "./mainpage_img/main3_img/bread/saltbread.jpg",
-      "./mainpage_img/main3_img/bread/sandwich.jpeg"
+      "./mainpage_img/main3_img/bread/pizza.jpeg"
     ]
   },
   drink: {
     main: "./mainpage_img/main_img_jin/main3coffee2.jpeg",  // '마시고' 카테고리
     box2: [
-      "./mainpage_img/main3_img/drink/tea.jpg",
+      "./mainpage_img/main3_img/drink/tea2.png",
       "./mainpage_img/main3_img/drink/smoodie.jpeg"
     ],
     box3: [
@@ -137,40 +137,55 @@ const imageSets = {
 let currentSet = "eat";  // 초기값
 let currentPage = 1;     // 페이지 번호
 
+// main3left 이미지 전환 효과 부드럽게
 window.changeimg = (type) => {
   currentSet = type;
 
   const mainLeftImage = document.querySelector('.main3left');
-  mainLeftImage.style.opacity = 0;  // 이미지 숨김
-  setTimeout(() => {
-    mainLeftImage.src = imageSets[type].main;  // 이미지 교체
-    mainLeftImage.onload = () => {
-      setTimeout(() => {
-        mainLeftImage.style.opacity = 1;  // 이미지 표시
-      }, 100);  // box 이미지와 동일한 딜레이
-    };
-  }, 300);  // box 이미지 전환 시간과 일치
   
+  // 기존 이미지 사라짐 효과 (opacity 0)
+  mainLeftImage.style.transition = 'opacity 1.0s ease';  // 0.8s로 전환 시간 추가
+  mainLeftImage.style.opacity = 0;  // 기존 이미지 opacity 0으로 설정하여 서서히 사라짐
+
+  // 새로운 이미지 소스를 바로 변경, 기존 이미지가 사라지는 동안 이미지 교체
+  mainLeftImage.src = imageSets[type].main;  // 이미지 교체
+  
+  // 새 이미지가 로드된 후 서서히 나타나게 설정
+  mainLeftImage.onload = () => {
+    // 이미지가 로드된 후, 0.1초 뒤에 opacity 1로 설정하여 부드럽게 나타나도록 함
+    setTimeout(() => {
+      mainLeftImage.style.opacity = 1;  // 새로운 이미지가 서서히 나타나도록 설정
+    }, 100); // 100ms 딜레이로 새로운 이미지가 서서히 나타나도록 설정
+  };
+
   updateBoxImages();
   currentPage = 1;
   updatePageNumber();
 };
 
+
+
+// box2, box3, box4 이미지 업데이트 및 fadeIn 처리
 function updateBoxImages() {
+  // 각 박스 이미지들을 업데이트하고 서서히 나타나게 처리
   document.querySelector("#box2").innerHTML = generateImageMarkup(imageSets[currentSet].box2);
   document.querySelector("#box3").innerHTML = generateImageMarkup(imageSets[currentSet].box3);
   document.querySelector("#box4").innerHTML = generateImageMarkup(imageSets[currentSet].box4);
-  fadeInImages();
+
+  fadeInImages(); // fadeIn 처리
 }
 
+// 이미지들이 서서히 나타나게 하는 함수
 function fadeInImages() {
   setTimeout(() => {
-    document.querySelectorAll('.main3left, .bread, .drink, .icecream').forEach(img => {
+    // 모든 이미지 요소들이 서서히 나타나게 설정
+    document.querySelectorAll('.bread, .drink, .icecream').forEach(img => {
       img.style.opacity = 1;
     });
-  }, 100);  // box와 동일한 100ms 딜레이
+  }, 100); // box 이미지들과 동일한 100ms 딜레이
 }
 
+// 이미지 마크업 생성 함수
 function generateImageMarkup(images) {
   return images.map(image => {
     return `<img class="${image.includes('bread') ? 'bread' : image.includes('drink') ? 'drink' : 'icecream'}" 
@@ -179,6 +194,7 @@ function generateImageMarkup(images) {
   }).join('');
 }
 
+// 페이지 전환 버튼 처리
 window.changeImageSet = (direction) => {
   let currentImages = imageSets[currentSet];
   
@@ -204,6 +220,7 @@ window.changeImageSet = (direction) => {
   updatePageNumber();
 };
 
+// 페이지 번호 업데이트
 function updatePageNumber() {
   const pageNumberElement = document.querySelector('.detailText');
   if (pageNumberElement) {
@@ -211,13 +228,15 @@ function updatePageNumber() {
   }
 }
 
+// 페이지 로딩 후 초기 설정
 document.addEventListener("DOMContentLoaded", () => {
   const mainLeftImage = document.querySelector('.main3left');
   if (mainLeftImage) {
-    mainLeftImage.style.transition = 'opacity 0.5s ease';
-    mainLeftImage.style.opacity = 1;
+    mainLeftImage.style.transition = 'opacity 0.8s ease';  // 전환 시간 0.8초로 설정
+    mainLeftImage.style.opacity = 1;  // 페이지 로딩 시 첫 번째 이미지는 보이게 설정
   }
 
   updateBoxImages();
   updatePageNumber();
 });
+

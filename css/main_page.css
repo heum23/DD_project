@@ -2,7 +2,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   overflow: visible;
-  max-width: 1600px;
+  max-width: 1800px;
   margin: 0;
 }
 /* 숨김 후 나타남 아래래 */
@@ -94,7 +94,21 @@ body {
   }
 
   .main3Text {
-    font-size: 40px !important;
+    font-size: 7vw !important;
+  }
+  .btn{
+    margin-top: 10px !important;
+    height: 10px;
+  }
+  .breadbtn{
+    font-size: 9vw !important;
+  }
+  .detailText{
+    font-size: 3vw !important;
+  }
+  .btn2{
+    width: 2vw !important;
+    height: 2vw !important;
   }
 }
 /** header **/
@@ -146,6 +160,31 @@ body {
   .box4 {
     aspect-ratio: 1/0.5;
   }
+  .main3{
+    flex-direction: column;
+  }
+  .main3left{
+    width: 100% !important;
+  }
+ .foodimg{
+  width: 200% !important;
+ }
+ .bigbox{
+  width: 200%;
+ }
+ .detailText{
+  font-size: 2vw !important; 
+ }
+ .detailText1{
+  font-size: 2vw !important; 
+ }
+ .btn2{
+  width:  4vw !important;
+  height: 4vw !important;
+ }
+ .breadbtn{
+  font-size: 8vw !important;
+ }
 }
 .d-block {
   width: 100%;
@@ -277,23 +316,22 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 */
+  transition: opacity 0.8s ease-in-out; /* 부드러운 전환 효과 */
   border-radius: 25px;
-}
-
-.main3left {
-  z-index: -1;
   opacity: 0; /* 기본적으로 숨김 */
+  z-index: -1; /* 기본 z-index */
 }
 
+/* active 클래스가 적용되면 이미지가 보이도록 */
 .main3left.active {
-  z-index: 1;
-  opacity: 1; /* 활성화된 이미지 보임 */
+  z-index: 1; /* 활성화된 이미지 보임 */
+  opacity: 1; /* 활성화된 이미지만 보이게 설정 */
 }
+
 
 .main3Text {
   color: lightgray;
-  font-size: 70px;
+  font-size: 7vw;
   font-weight: 900;
   -webkit-text-stroke: 2px lightgray;
   z-index: 3;
@@ -362,7 +400,7 @@ body {
 }
 .btn {
   gap: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
   background-color: #f5f5f5;
   border-radius: 20px;
   width: 40%;
@@ -375,62 +413,60 @@ body {
   cursor: pointer;
 }
 .breadbtn {
-  font-size: 2rem;
+  line-height: 2;
+  font-size: 4vw;
   font-family: "GangwonEduPowerExtraBoldA";
 }
 .detailText {
-  font-size: 1rem;
+  font-size: 1vw;
   font-weight: 500;
 }
+.detailText1{
+  font-size: 1.2vw;
+}
 .btn2 {
-  width: 20px;
-  height: 20px;
+  width: 1vw;
+  height: 1vw;
 }
 .btn2:hover {
   cursor: pointer;
 }
+
+/* 이미지 스타일 */
 .bread,
 .drink,
 .icecream {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 이미지가 박스에 맞게 크기 조정 */
-  object-position: center; /* 이미지가 박스의 중앙에 배치되도록 */
-  border-radius: 25px; /* 둥근 모서리 */
-}
-
-.bread,
-.drink,
-.icecream {
-  width: 100%;
-  aspect-ratio: 1/1;
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* 부드러운 전환 효과 */
+  opacity: 0; /* 기본적으로 opacity 0 */
+  transition: opacity 0.5s ease-in-out; /* 부드럽게 나타나게 함 */
+  object-fit: cover; /* 이미지가 박스를 덮도록 설정 */
+  border-radius: 25px;
+  z-index: 1; /* 이미지가 다른 요소들 위에 표시되도록 */
 }
 
+/* active 클래스가 적용되면 이미지가 보이도록 */
 .bread.active,
 .drink.active,
 .icecream.active {
   opacity: 1;
+  z-index: 2; /* active된 이미지는 다른 이미지 위로 올라옴 */
 }
 
-/* 박스 내부 이미지 확대 시 튀어나오지 않도록 */
+/* box2, box3, box4에 relative positioning을 추가 */
 #box2, #box3, #box4 {
   position: relative;
   overflow: hidden;  /* 이미지가 박스를 벗어나지 않게 */
   height: 100%;
-  object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
-  transition: transform 0.5s ease-in-out !important;  /* 이미지가 중앙을 기준으로 확대되도록 */
+  width: 100%;
 }
 
-
-/* 이미지에 부드러운 확대 효과 추가 */
 #box2 img, #box3 img, #box4 img {
   object-fit: cover; /* 이미지가 박스를 벗어나지 않도록 설정 */
-  transition: transform 0.5s ease-in-out !important;  /* 이미지가 중앙을 기준으로 확대되도록 */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out !important;  /* 부드러운 전환 효과 */
 }
 
 /* 이미지 확대 효과 */
@@ -438,8 +474,7 @@ body {
   cursor: pointer;
   transform: scale(1.2) !important; /* 이미지 크기 20% 확대 */
   transform-origin: center; /* 확대 중심을 중앙으로 설정 */
-  }  /* 확대와 투명도
-
+}
 
 
 /* main park */
