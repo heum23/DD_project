@@ -85,7 +85,7 @@ const moveUrl = (type) => {
 // 이미지 세트를 관리하는 객체
 const imageSets = {
   eat: {
-    main: "./mainpage_img/main_img_jin/main3Eat.jpg",  // '먹고' 카테고리
+    main: "./mainpage_img/main_img_jin/eat2.jpg",  // '먹고' 카테고리
     box2: [
       "./mainpage_img/main3_img/bread/sandwich.jpeg",
       "./mainpage_img/main3_img/bread/creambread.jpg",
@@ -103,7 +103,7 @@ const imageSets = {
     ]
   },
   drink: {
-    main: "./mainpage_img/main_img_jin/main3coffee2.jpeg",  // '마시고' 카테고리
+    main: "./mainpage_img/main_img_jin/drink2.jpg",  // '마시고' 카테고리
     box2: [
       "./mainpage_img/main3_img/drink/tea2.png",
       "./mainpage_img/main3_img/drink/smoodie.jpeg"
@@ -118,7 +118,7 @@ const imageSets = {
     ]
   },
   enjoy: {
-    main: "./mainpage_img/main_img_jin/main3icecream2.jpg",  // '즐기고' 카테고리
+    main: "./mainpage_img/main_img_jin/enjoy.jpg",  // '즐기고' 카테고리
     box2: [
       "./mainpage_img/main3_img/icecream/choco.jpeg",
       "./mainpage_img/main3_img/icecream/mother.png"

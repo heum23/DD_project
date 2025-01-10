@@ -333,10 +333,10 @@ body{
     aspect-ratio: 1/1.6;
   }
   .overlay3{
-    aspect-ratio: 1/1.6;
+    aspect-ratio: 1/1.62;
   }
   .detail2{
-    overflow: scroll;
+    overflow: hidden;
   }
 }
   /* footer */
