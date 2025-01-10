@@ -47,8 +47,8 @@ body {
   width: 25px;
   height: 25px;
 }
-@media screen and (min-width:1500px) {
-  .icon{
+@media screen and (min-width: 1800px) {
+  .icon {
     width: 60px;
     height: 60px;
   }
