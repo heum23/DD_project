@@ -76,7 +76,7 @@ const moveUrl = (type) => {
   }else if(type === 'youtube'){
       url = "https://www.youtube.com/?hl=ko&gl=KR&app=desktop"
   }else if(type ==='way'){
-    url = 'http://127.0.0.1:5500/detail.html'
+    url = 'http://127.0.0.1:5500/detail_way_1.html'
   }else{alert("준비중입니다")
       return ;
   }

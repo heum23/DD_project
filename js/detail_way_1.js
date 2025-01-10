@@ -14,7 +14,12 @@ const moveUrl = (type) => {
         url = "https://www.instagram.com/"
     }else if(type === "youtube"){
         url = "https://www.youtube.com/?hl=ko&gl=KR&app=desktop"
-    }else{alert("준비중입니다")
+    }else if(type === 'detail2'){
+        url = 'http://127.0.0.1:5500/detail_way_2.html'
+    }else if(type ==='detail1'){
+        url = 'http://127.0.0.1:5500/detail_way_1.html'
+    }
+    else{alert("준비중입니다")
         return ;
     }
     window.location.href = url; // URL로 이동
