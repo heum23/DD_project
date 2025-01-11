@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* body {
+  overflow: scroll;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 40px;
+}
+/* 강원도지자체 폰트 */
+@font-face {
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* ppt 폰트 */
+@font-face {
+  font-family: "Freesentation-9Black";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+    format("woff2");
+  font-style: normal;
+}
+
+/* header 부분 */
+.header {
+  width: 100%;
+  aspect-ratio: 16/1;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  margin-left: 40px;
+  width: 80px;
+  height: 50px;
+}
+
+.headerMenu {
+  display: flex;
+  gap: 35px;
+  font-size: 20px;
+}
+.headerMenu:hover {
+  cursor: pointer;
+}
+.text {
+  font-family: "GangwonEduPowerExtraBoldA";
+  line-height: 2;
+  text-align: center;
+}
+
+.icon {
+  margin-right: 40px;
+  width: 25px;
+  height: 25px;
+}
+.icon:hover {
+  cursor: pointer;
+}
+.menu {
+  display: none;
+}
+
+/* header 화면이 1000 이하 일 때 */
+@media screen and (max-width: 1000px) {
+  /* .header {
+    padding: 0 0px;
+  } */
+  .headerMenu {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  .earth {
+    display: none;
+  }
+}
+
+/* mainBoard 부분 */
+.mainBoard {
+  width: 100%;
+}
+
+/* main 상단 */
+.mainWrap {
+  padding: 4rem 1rem;
+}
+.main_Top {
+  width: 100%;
+  padding: clamp(4rem, 11.11vw, 5rem) 0 clamp(4rem, 11.11vw, 6rem);
+}
+.main_Top h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+.category_list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 20px;
+  overflow: hidden;
+  flex-wrap: wrap; /* 화면 크기가 줄어들 때 아이템들이 줄바꿈 */
+}
+
+.category_item {
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5rem;
+  border: solid 1px gainsboro;
+  white-space: nowrap; /* 줄바꿈을 방지 */
+  height: 40px;
+  line-height: 40px; /* 텍스트 세로 중앙 정렬 */
+  padding: 0 15px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* 배경색과 글자색에 대한 천천히 변화하는 효과 */
+}
+
+/* category_item 클릭 시 색상 변화 */
+.category_item.active {
+  background-color: black !important; /* 배경색을 검정색으로 설정 */
+  color: white !important; /* 글자색을 흰색으로 설정 */
+}
+
+/* 1000px 이하 일 때 추가될 내용 */
+.select_Box {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .select_Box {
+    display: block;
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+  #dropdownMenuLink {
+    background-color: white;
+    color: black;
+  }
+}
+@media screen and (max-width: 768px) {
+  .select_Box {
+    display: block;
+    padding: 1rem;
+  }
+  #dropdownMenuLink {
+    width: 100%;
+    text-align: left;
+    background-color: white;
+    color: black;
+  }
+}
+
+/* main 하단 */
+.main_Bottom {
+  padding: 0 10rem 6rem 8rem;
+}
+.tab1 {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+
+.left_nav {
+  margin-top: 5rem;
+  padding-right: 2rem;
+  margin-bottom: 5rem;
+  margin-left: 0;
+  display: block;
+  position: sticky;
+  top: 40.7rem;
+  left: 0;
+  width: 13.08%;
+  height: 100vh;
+  margin-left: clamp(2.5rem, 6.94vw, 5rem);
+  height: fit-content;
+}
+.nav_list {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: right;
+  line-height: 1.33;
+  opacity: 0.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@media screen and (max-width: 1000px) {
+  .left_nav {
+    display: none;
+  }
+}
+
+.right_content {
+  height: 100%;
+  width: 100%;
+  padding-left: 4rem;
+  margin-right: 0;
+}
+.right_content_inner {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10rem;
+}
+.title_ep {
+  padding-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1800px) {
+  .main_Bottom {
+    padding: 0 5%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main_Bottom {
+    padding: 0 3%;
+  }
+  .title_ep {
+    display: none;
+  }
+  .section h2 {
+    margin: 1rem 0;
+  }
+}
+.section {
+  width: 100%;
+  padding-bottom: 4rem;
+  padding-top: 3rem;
+  margin-top: -3rem;
+}
+.section h2 {
+  font-weight: bold;
+}
+
+.img_chapter {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section p {
+  padding-top: 1rem;
+}
+
+/* 네비 스크롤 바 따라오는 것 */
+.nav_list .chap1,
+.nav_list .chap2,
+.nav_list .chap3,
+.nav_list .chap4,
+.nav_list .chap5 {
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+
+.nav_list .active {
+  color: #3cb4e5;
+  font-size: 3rem; /* 강조할 때 폰트 사이즈를 키웁니다 */
+  /* 효과가 안먹음.... */
+  opacity: 1;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav_list .active {
+    font-size: 2.4rem; /* 모바일에서는 강조 폰트 사이즈를 줄일 수 있습니다 */
+  }
+}
+/* 네비 스크롤 바 따라오는 것 */
+
+/* 배열 다시 정리!!! */
+/* tab1과 tab2 스타일을 동일하게 설정 */
+.tab1,
+.tab2 {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  /* display: none; */
+} /* 기본적으로 숨김 처리 */
+
+/* title_ep 클릭된 텍스트 색상 변경 */
+.tab-title {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.tab-title.active {
+  color: skyblue; /* 클릭된 텍스트 색상 */
+  font-weight: bold;
+}

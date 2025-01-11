@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   overflow-x: hidden;
   overflow-y: scroll;
@@ -835,13 +840,21 @@ body {
 .f_privacy {
   font-weight: bold;
   color: black;
-  max-width: 400px;
+  max-width: 420px;
   display: flex;
   flex-wrap: wrap;
   white-space: nowrap;
   box-sizing: border-box;
   gap: 5px;
   margin-bottom: 20px;
+}
+.f_privacy div::after {
+  content: "|";
+  padding-left: 5px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.f_privacy div:last-child::after {
+  content: "";
 }
 
 .f_aboutDD {

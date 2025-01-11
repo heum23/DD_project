@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/detail_3.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- header 영역 -->
+    <div class="header">
+      <div>
+        <img
+          onclick="moveUrl('dd')"
+          class="logo"
+          alt="logo"
+          src="./mainpage_img/header_img/logo.png"
+        />
+      </div>
+      <div class="headerMenu">
+        <div onclick="getReady()" class="text">ABOUT D&D</div>
+        <div onclick="getReady()" class="text">HISTORY</div>
+        <div onclick="getReady()" class="text">FOOD</div>
+        <div onclick="getReady()" class="text">D&D NOW</div>
+        <div onclick="getReady()" class="text">ESG</div>
+        <div onclick="getReady()" class="text">SUPPORT</div>
+      </div>
+      <div class="headerIcon">
+        <img
+          class="icon menu"
+          src="./mainpage_img/header_img/menu.png"
+          alt="icon"
+        />
+        <img
+          onclick="getReady()"
+          class="icon earth"
+          src="./mainpage_img/header_img/earth.png"
+          alt="icon"
+        />
+      </div>
+    </div>
+    <!-- mainBoard -->
+    <div class="mainBoard">
+      <div class="mainWrap">
+        <!-- main 상단 부분 -->
+        <div class="main_Top">
+          <h1>R&D</h1>
+          <div class="category_list">
+            <div class="category_item">효모 스토리</div>
+            <div class="category_item">효모 콘텐츠</div>
+            <div class="category_item">D&D 연구소</div>
+            <div class="category_item">사내대학</div>
+            <div class="category_item">컬리너리 아카데미</div>
+          </div>
+        </div>
+        <script>
+          // category_item 클릭 시 색상 변화하는 함수
+          document.querySelectorAll(".category_item").forEach((item) => {
+            item.addEventListener("click", function () {
+              console.log("클릭됨:", item); // 클릭한 항목 확인
+              // 모든 category_item에서 active 클래스를 제거
+              document
+                .querySelectorAll(".category_item")
+                .forEach((i) => i.classList.remove("active"));
+
+              // 클릭된 item에 active 클래스 추가
+              item.classList.add("active");
+            });
+          });
+        </script>
+
+        <!-- 드롭박스 -->
+        <div class="select_Box">
+          <a
+            class="btn btn-secondary dropdown-toggle"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            ep.1 토종효모</a
+          >
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">ep.1 토종효모</a></li>
+            <li><a class="dropdown-item" href="#">ep.2 상미종</a></li>
+          </ul>
+        </div>
+
+        <!-- main 하단 부분 -->
+        <div class="main_Bottom">
+          <!-- tab1 ep1.토종효모 -->
+          <div class="tab1" id="tab1">
+            <!-- 왼쪽 네비 바 영역 -->
+            <div class="left_nav">
+              <div class="nav_list">
+                <div class="chap1">Ch.1</div>
+                <div class="chap2">Ch.2</div>
+                <div class="chap3">Ch.3</div>
+                <div class="chap4">Ch.4</div>
+                <div class="chap5">Ch.5</div>
+              </div>
+            </div>
+            <!-- 오른쪽 콘텐츠 영역 -->
+            <div class="right_content">
+              <div class="right_content_inner">
+                <div class="title_ep">
+                  <div id="ep1" class="tab-title">ep.1 토종효모</div>
+                  <div id="ep2" class="tab-title">ep.2 상미종</div>
+                </div>
+                <div id="tab1_sec1" class="section">
+                  <h2>우리 땅에서 살아온 토종 천연효모를 찾아라</h2>
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img1.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    2005년 11월, 허영인 회장은 SPC식품생명공학연구소에 ‘토종
+                    천연효모 발굴’이라는 미션을 주었습니다. 빵 맛을 좌우하는
+                    효모의 원천 기술을 확보해 글로벌 경쟁력을 갖추기
+                    위함이었습니다. 11년의 시간과 160억 원의 비용이 투입된
+                    ‘제빵용 천연 효모 연구개발’의 서막이었습니다.
+                  </p>
+                </div>
+                <div id="tab1_sec2" class="section">
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img2.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    효모는 빵의 풍미와 식감을 부여하는 핵심 원료지만, 긴 시간과
+                    지속적인 투자가 필요해 국내 개발 사례가 드물었습니다. 이
+                    때문에 제빵 생산에는 주로 해외 상업용 이스트에 의존했는데,
+                    글로벌 시장에서의 경쟁을 위해서는 고유의 효모로 만든
+                    '우리만의 빵'이 필요하다는 게 허영인 회장의 생각이었습니다.
+                  </p>
+                </div>
+                <div id="tab1_sec3" class="section">
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img3.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    토종 천연효모 발굴 과정은 고난의 연속이었습니다. 연구진은
+                    자연이나 전통 식품 소재에서 제빵에 적합한 효모를 발굴하기
+                    위해 전국의 청정지역과 오일장을 찾아다녔습니다. 여기서
+                    분리한 효모를 배양하여 특성을 규명하였지만, 제빵에 적합하지
+                    않아 버려지기 일쑤였기 때문에 개발 필요성에 대한 회의적인
+                    시각도 있었습니다. 하지만 허영인 회장의 집념은 꺾을 수
+                    없었습니다.
+                  </p>
+                </div>
+                <div id="tab1_sec4" class="section">
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img4.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    진척이 보이지 않자 2007년 말, 허영인 회장은 한국 전통의 발효
+                    소재인 누룩에서 효모를 찾아보자고 했습니다. 통밀이 주원료인
+                    누룩에는 밀가루 환경에 적합한 유용 미생물이 많을 거라는 생각
+                    때문이었습니다. 2012년부터 산학 공동 연구를 통해 서울대
+                    농업생명과학대학 연구진이 합류하면서 누룩에서 미생물을
+                    분리하고 선별하는 실험의 속도가 나기 시작했습니다. 연구를
+                    진행하며 배양한 미생물만 1만여 종, 이 중 분리한 효모와
+                    유산균만 1천여 종에 달했고 수많은 시행착오 끝에 2015년 9월,
+                    제빵력이 탁월한 천연 효모를 발굴하는 데 성공했습니다.
+                  </p>
+                </div>
+                <div id="tab1_sec5" class="section">
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img5.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    개발한 천연효모에 SPC그룹과 서울대 그리고 그룹 창립 70년의
+                    의미를 담아 ‘SPC-SNU 70-1’이란 이름을 붙였습니다. 이후
+                    2016년 4월, ‘SPC-SNU 70-1’을 사용한 27종의 천연효모 빵을
+                    출시했습니다. 하지만 이것은 끝이 아닌 시작이었습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- tab2 ep2.상미종 -->
+          <div class="tab2" id="tab2">
+            <!-- 왼쪽 네비 바 영역 -->
+            <div class="left_nav">
+              <div class="nav_list">
+                <div class="chap1">Ch.1</div>
+                <div class="chap2">Ch.2</div>
+                <div class="chap3">Ch.3</div>
+                <div class="chap4">Ch.4</div>
+                <div class="chap5">Ch.5</div>
+              </div>
+            </div>
+            <!-- 오른쪽 콘텐츠 영역 -->
+            <div class="right_content">
+              <div class="right_content_inner">
+                <div class="title_ep">
+                  <div>ep.1 토종효모</div>
+                  <div>ep.2 상미종</div>
+                </div>
+                <div id="tab2_sec1" class="section">
+                  <h2>SPC그룹만의 특별한 발효종, ‘상미종’</h2>
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter2_img1.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    건강한 빵의 기본을 찾기 위한 SPC의 여정은 계속됐고 마침내
+                    자연계 공생 원리를 활용한 유산균 혼합 발효종 개발에
+                    성공합니다. 2016년 최초 발굴한 토종 효모에 유산균 4종을 더한
+                    이 발효종은 ‘빵의 미래’를 열기 위한 프로젝트의 두 번째
+                    결실이었습니다.
+                  </p>
+                </div>
+                <div id="tab2_sec2" class="section">
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img2.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    효모는 빵의 풍미와 식감을 부여하는 핵심 원료지만, 긴 시간과
+                    지속적인 투자가 필요해 국내 개발 사례가 드물었습니다. 이
+                    때문에 제빵 생산에는 주로 해외 상업용 이스트에 의존했는데,
+                    글로벌 시장에서의 경쟁을 위해서는 고유의 효모로 만든
+                    '우리만의 빵'이 필요하다는 게 허영인 회장의 생각이었습니다.
+                  </p>
+                </div>
+                <div id="tab2_sec3" class="section">
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img3.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    토종 천연효모 발굴 과정은 고난의 연속이었습니다. 연구진은
+                    자연이나 전통 식품 소재에서 제빵에 적합한 효모를 발굴하기
+                    위해 전국의 청정지역과 오일장을 찾아다녔습니다. 여기서
+                    분리한 효모를 배양하여 특성을 규명하였지만, 제빵에 적합하지
+                    않아 버려지기 일쑤였기 때문에 개발 필요성에 대한 회의적인
+                    시각도 있었습니다. 하지만 허영인 회장의 집념은 꺾을 수
+                    없었습니다.
+                  </p>
+                </div>
+                <div id="tab2_sec4" class="section">
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img4.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    진척이 보이지 않자 2007년 말, 허영인 회장은 한국 전통의 발효
+                    소재인 누룩에서 효모를 찾아보자고 했습니다. 통밀이 주원료인
+                    누룩에는 밀가루 환경에 적합한 유용 미생물이 많을 거라는 생각
+                    때문이었습니다. 2012년부터 산학 공동 연구를 통해 서울대
+                    농업생명과학대학 연구진이 합류하면서 누룩에서 미생물을
+                    분리하고 선별하는 실험의 속도가 나기 시작했습니다. 연구를
+                    진행하며 배양한 미생물만 1만여 종, 이 중 분리한 효모와
+                    유산균만 1천여 종에 달했고 수많은 시행착오 끝에 2015년 9월,
+                    제빵력이 탁월한 천연 효모를 발굴하는 데 성공했습니다.
+                  </p>
+                </div>
+                <div id="tab2_sec5" class="section">
+                  <img
+                    class="img_chapter"
+                    src="/detail_3_img_park/leaven_chapter1_img5.webp"
+                    alt="#"
+                  />
+                  <!-- 날짜나 이름 수정하기!!!! -->
+                  <p>
+                    개발한 천연효모에 SPC그룹과 서울대 그리고 그룹 창립 70년의
+                    의미를 담아 ‘SPC-SNU 70-1’이란 이름을 붙였습니다. 이후
+                    2016년 4월, ‘SPC-SNU 70-1’을 사용한 27종의 천연효모 빵을
+                    출시했습니다. 하지만 이것은 끝이 아닌 시작이었습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          // 스크롤 이벤트로 각 섹션의 위치에 따라 강조하는 기능
+          window.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll(".section");
+            const navItems = document.querySelectorAll(
+              ".nav_list .chap1, .nav_list .chap2, .nav_list .chap3, .nav_list .chap4, .nav_list .chap5"
+            );
+
+            sections.forEach((section, index) => {
+              const rect = section.getBoundingClientRect();
+              if (
+                rect.top <= window.innerHeight / 2 &&
+                rect.bottom >= window.innerHeight / 2
+              ) {
+                // 해당 섹션이 화면 중간에 있을 때
+                navItems.forEach((item) => item.classList.remove("active")); // 모든 'active' 제거
+                navItems[index].classList.add("active"); // 해당 nav item 강조
+              }
+            });
+          });
+
+          // 클릭 시 해당 섹션으로 스크롤 이동
+          document
+            .querySelectorAll(
+              ".nav_list .chap1, .nav_list .chap2, .nav_list .chap3, .nav_list .chap4, .nav_list .chap5"
+            )
+            .forEach((item, index) => {
+              item.addEventListener("click", () => {
+                const targetSection = document.querySelector(
+                  `#tab1_sec${index + 1}`
+                );
+                window.scrollTo({
+                  top: targetSection.offsetTop - 100, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
+                  behavior: "smooth",
+                });
+              });
+            });
+        </script>
+        <script>
+          // 토종효모와 상미종을 눌렀을 때 작용하는 함수
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
