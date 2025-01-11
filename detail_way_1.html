@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="./css/detail.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <link rel="stylesheet" href="./css/detail_way_1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
   </head>
   <body>
@@ -39,11 +39,12 @@
       </div>
     </div>
     <div class="container">
-      <div class="top">
-        <h1 class="way">D&D WAY</h1>
-        <div class="pageBtn">
-          <div class="detail1page">경영철학</div>
-          <div onclick="{getReady()}" class="detail2page">장인정신</div>
+        <div class="top">
+            <h1 class="way">D&D WAY</h1>
+            <div class="pageBtn">
+            <div onclick="(moveUrl('detail1'))" class="detail1page">경영철학</div>
+            <div onclick="{moveUrl('detail2')}" class="detail2page">장인정신</div>
+            </div>
         </div>
       </div>
       <div class="detail1">
@@ -255,6 +256,7 @@
         </div>
       </div>
     </div>
-    <script src="./js/detail.js"></script>
-  </body>
+      <script src="./js/detail_way_1.js"></script>
+</body>
 </html>
+
