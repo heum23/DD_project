@@ -15,7 +15,7 @@ body {
   transform: translateY(50px); /* 아래에서 출발 */
   transition: all 0.8s ease-in-out;
 }
-/* 숨김 후 나타남 오른쪽쪽 */
+/* 숨김 후 나타남 오른쪽 */
 .hidden2 {
   opacity: 0;
   transform: translateX(100px); /* 오른쪽에서 출발 */
@@ -26,12 +26,12 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
+/** header **/
 .text {
   font-family: 'ChosunBg';
   line-height: 2;
   text-align: center;
 }
-/** header **/
 .container {
   margin: 0 auto;
   display: flex;
@@ -232,7 +232,6 @@ body {
   font-weight: 900;
   z-index: 1;
 }
-
 .main1text2 {
   text-align: center;
   width: 100%;
@@ -247,13 +246,8 @@ body {
   -webkit-text-stroke: 2px white;
   z-index: 1;
 }
+.carousel-control-next-icon,
 .carousel-control-prev-icon {
-  height: 50px;
-  width: 50px;
-  color: white;
-  margin-left: -120px;
-}
-.carousel-control-next-icon {
   height: 50px;
   width: 50px;
   color: white;
@@ -400,18 +394,8 @@ body {
   opacity: 1; /* 보이게 설정 */
   transform: translateY(0); /* 원래 위치로 애니메이션 */
 }
-.box2 {
-  position: relative;
-  border-radius: 25px;
-  width: 50%;
-  aspect-ratio: 1/1;
-}
-.box3 {
-  position: relative;
-  border-radius: 25px;
-  width: 50%;
-  aspect-ratio: 1/1;
-}
+.box2,
+.box3,
 .box4 {
   position: relative;
   border-radius: 25px;
