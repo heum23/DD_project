@@ -27,7 +27,7 @@ body {
   transform: translateX(0);
 }
 .text {
-  font-family: "GangwonEduPowerExtraBoldA";
+  font-family: 'ChosunBg';
   line-height: 2;
   text-align: center;
 }
@@ -104,7 +104,6 @@ body {
   }
   .btn {
     margin-top: 10px !important;
-    height: 10px;
   }
   .breadbtn {
     font-size: 9vw !important;
@@ -113,8 +112,8 @@ body {
     font-size: 3vw !important;
   }
   .btn2 {
-    width: 2vw !important;
-    height: 2vw !important;
+    width: 1.3vw !important;
+    height: 1.3vw !important;
   }
 }
 /** header **/
@@ -191,11 +190,14 @@ body {
     font-size: 2vw !important;
   }
   .btn2 {
-    width: 4vw !important;
-    height: 4vw !important;
+    width: 3vw !important;
+    height: 3vw !important;
   }
   .breadbtn {
-    font-size: 8vw !important;
+    font-size: 7vw !important;
+  }
+  .btn{
+    gap: 18px !important;
   }
 }
 .d-block {
@@ -410,11 +412,12 @@ body {
   aspect-ratio: 1/1;
 }
 .btn {
-  gap: 10px;
+  gap: 25px;
   margin-top: 20px;
   background-color: #f5f5f5;
   border-radius: 20px;
-  width: 40%;
+  width: 50%;
+  aspect-ratio: 16/4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -424,16 +427,24 @@ body {
   cursor: pointer;
 }
 .breadbtn {
-  line-height: 2;
-  font-size: 4vw;
-  font-family: "GangwonEduPowerExtraBoldA";
+  line-height: 1;
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  font-weight: 800;
+  -webkit-text-stroke: 1px black;
+  margin-bottom: 10px;
 }
 .detailText {
   font-size: 1vw;
   font-weight: 500;
+  padding-top: 2px;
 }
 .detailText1 {
-  font-size: 1.2vw;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: gray;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 30px;
 }
 .btn2 {
   width: 1vw;
@@ -624,8 +635,8 @@ body {
 .paging_num {
   display: flex;
   align-items: center;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 1vw;
+  font-weight: 500;
 }
 .paging_arrow {
   cursor: pointer;
