@@ -925,3 +925,37 @@ body {
   height: auto;
   max-width: 100%;
 }
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 25px;
+  width: 3vw; height: 3vw;
+  background-color: white;
+  color:lightgray;
+  border: 1 solid lightgray;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#scrollToTop:hover {
+  background-color: lightgray;
+}
+.upimg{
+  position: absolute;
+  top: 10%; left: 15%;
+  width: 2vw;
+  height: 2vw;
+}
+@media screen and (max-width:760px) {
+  #scrollToTop{
+    width: 5vw; height: 5vw;
+  }
+  .upimg{
+    top: 20%; left: 18%;
+    width: 3vw; height: 3vw;
+  }
+}
