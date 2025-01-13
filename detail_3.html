@@ -12,6 +12,12 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/detail_3.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -80,18 +86,17 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            ep.1 토종효모</a
+            Ep.1 토종효모</a
           >
-
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li>
               <a class="dropdown-item" href="#" onclick="showTab('ep1')"
-                >ep.1 토종효모</a
+                >Ep.1 토종효모</a
               >
             </li>
             <li>
               <a class="dropdown-item" href="#" onclick="showTab('ep2')"
-                >ep.2 상미종</a
+                >Ep.2 상미종</a
               >
             </li>
           </ul>
@@ -100,7 +105,7 @@
 
         <!-- main 하단 부분 -->
         <div class="main_Bottom">
-          <!-- tab1 ep1.토종효모 -->
+          <!-- tab1 Ep1. 토종효모 -->
           <div class="tab1" id="tab1">
             <!-- 왼쪽 네비 바 영역 -->
             <div class="left_nav">
@@ -117,8 +122,8 @@
             <div class="right_content">
               <div class="right_content_inner">
                 <div class="title_ep">
-                  <div id="ep1" class="tab_title">ep.1 토종효모</div>
-                  <div id="ep2" class="tab_title">ep.2 상미종</div>
+                  <div id="ep1" class="tab_title">Ep.1 토종효모</div>
+                  <div id="ep2" class="tab_title">Ep.2 상미종</div>
                 </div>
                 <div id="tab1_sec1" class="section">
                   <h2>우리 땅에서 살아온 토종 천연효모를 찾아라</h2>
@@ -127,7 +132,6 @@
                     src="/detail_3_img_park/leaven_chapter1_img1.webp"
                     alt="#"
                   />
-                  <!-- 날짜나 이름 수정하기!!!! -->
                   <p>
                     2005년 11월, 식품생명공학연구소에 ‘토종 천연효모 발굴’이라는
                     미션을 주었습니다. 빵 맛을 좌우하는 효모의 원천 기술을
@@ -192,10 +196,10 @@
                   />
                   <!-- 날짜나 이름 수정하기!!!! -->
                   <p>
-                    개발한 천연효모에 SPC그룹과 서울대 그리고 그룹 창립 70년의
-                    의미를 담아 ‘SPC-SNU 70-1’이란 이름을 붙였습니다. 이후
-                    2016년 4월, ‘SPC-SNU 70-1’을 사용한 27종의 천연효모 빵을
-                    출시했습니다. 하지만 이것은 끝이 아닌 시작이었습니다.
+                    개발한 천연효모에 그룹 창립 70년의 의미를 담아 ‘SPC-SNU
+                    70-1’이란 이름을 붙였습니다. 이후 2016년 4월, ‘SPC-SNU
+                    70-1’을 사용한 27종의 천연효모 빵을 출시했습니다. 하지만
+                    이것은 끝이 아닌 시작이었습니다.
                   </p>
                 </div>
               </div>
@@ -356,7 +360,45 @@
                   `#tab1_sec${index + 1}`
                 );
                 window.scrollTo({
-                  top: targetSection.offsetTop - 100, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
+                  top: targetSection.offsetTop + 250, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
+                  behavior: "smooth",
+                });
+              });
+            });
+        </script>
+        <script>
+          // 스크롤 이벤트로 각 섹션의 위치에 따라 강조하는 기능 (tab2 적용)
+          window.addEventListener("scroll", () => {
+            const sections = document.querySelectorAll("#tab2 .section");
+            const navItems = document.querySelectorAll(
+              "#tab2 .nav_list .chap1, #tab2 .nav_list .chap2, #tab2 .nav_list .chap3, #tab2 .nav_list .chap4, #tab2 .nav_list .chap5"
+            );
+
+            sections.forEach((section, index) => {
+              const rect = section.getBoundingClientRect();
+              if (
+                rect.top <= window.innerHeight / 2 &&
+                rect.bottom >= window.innerHeight / 2
+              ) {
+                // 해당 섹션이 화면 중간에 있을 때
+                navItems.forEach((item) => item.classList.remove("active")); // 모든 'active' 제거
+                navItems[index].classList.add("active"); // 해당 nav item 강조
+              }
+            });
+          });
+
+          // 클릭 시 해당 섹션으로 스크롤 이동 (tab2 적용)
+          document
+            .querySelectorAll(
+              "#tab2 .nav_list .chap1, #tab2 .nav_list .chap2, #tab2 .nav_list .chap3, #tab2 .nav_list .chap4, #tab2 .nav_list .chap5"
+            )
+            .forEach((item, index) => {
+              item.addEventListener("click", () => {
+                const targetSection = document.querySelector(
+                  `#tab2_sec${index + 1}` // tab2의 섹션에 맞춰서 ID 설정
+                );
+                window.scrollTo({
+                  top: targetSection.offsetTop + 250, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
                   behavior: "smooth",
                 });
               });
@@ -434,5 +476,32 @@
         item.classList.add("active");
       });
     });
+  </script>
+
+  <script></script>
+
+  <script>
+    // URL 이동 함수
+    const moveUrl = (type) => {
+      let url;
+
+      if (type === "dd") {
+        url = "http://127.0.0.1:5500/main.html";
+      } else if (type === "facebook") {
+        url = "https://www.facebook.com/?locale=ko_KR";
+      } else if (type === "instagram") {
+        url = "https://www.instagram.com/";
+      } else if (type === "youtube") {
+        url = "https://www.youtube.com/?hl=ko&gl=KR&app=desktop";
+      } else if (type === "way") {
+        url = "http://127.0.0.1:5500/detail_way_1.html";
+      } else if (type === "about") {
+        url = "http://127.0.0.1:5500/detail_3.html";
+      } else {
+        alert("준비중입니다");
+        return;
+      }
+      window.location.href = url; // URL로 이동
+    };
   </script>
 </html>

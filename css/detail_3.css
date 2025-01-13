@@ -10,6 +10,31 @@
   align-items: center;
 } */
 
+/* 강원도지자체 폰트 */
+@font-face {
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ppt 폰트 */
+@font-face {
+  font-family: "Freesentation-9Black";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+    format("woff2");
+  font-style: normal;
+}
+
+/* 조선일보 폰트 */
+@font-face {
+  font-family: "ChosunBg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 .container {
   margin: 0 auto;
   width: 100%;
@@ -46,9 +71,9 @@
   cursor: pointer;
 }
 .text {
-  font-family: "GangwonEduPowerExtraBoldA";
-  line-height: 2;
+  font-family: "ChosunBg";
   text-align: center;
+  line-height: 2;
 }
 
 .icon {
@@ -152,6 +177,13 @@
 .select_Box {
   display: none;
 }
+#dropdownMenuLink {
+  font-weight: bold;
+}
+.dropdown-item {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 1000px) {
   .select_Box {
     margin: 0 0 0 auto;
@@ -167,10 +199,18 @@
     border: solid 1px #eaeaea;
     font-weight: bold;
     letter-spacing: -0.05rem;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 1.1rem;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dropdown-menu {
+    border-radius: 1.5rem;
+    border: solid 1px #eaeaea;
   }
   .dropdown-item {
-    width: 100%;
+    width: 200px;
     position: static;
   }
 }
@@ -182,12 +222,17 @@
   }
   #dropdownMenuLink {
     width: 100%;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 1.1rem;
     background-color: white;
     color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .dropdown-menu {
+    width: 93%;
+    border-radius: 1.5rem;
+    border: solid 1px #eaeaea;
   }
 }
 /* 드롭박스 */
@@ -225,14 +270,13 @@
 
 /* 왼쪽 네비 바 영역 */
 .left_nav {
-  margin-top: 5rem;
+  margin-top: 6rem;
   padding-right: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
   margin-left: 0;
   position: sticky;
   top: 30%;
   left: 0;
-  width: 8%;
   height: 100vh;
   height: fit-content;
   z-index: 10;
@@ -256,7 +300,8 @@
 .nav_list .chap4,
 .nav_list .chap5 {
   padding: 1rem 0;
-  text-align: right;
+  width: 150px;
+  text-align: left;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -315,6 +360,8 @@
 }
 .section p {
   padding-top: 1rem;
+  font-size: 1.5rem;
+  font-family: "Noto Sans KR", serif;
 }
 
 @media screen and (max-width: 1000px) {
