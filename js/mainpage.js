@@ -77,7 +77,10 @@ const moveUrl = (type) => {
       url = "https://www.youtube.com/?hl=ko&gl=KR&app=desktop"
   }else if(type ==='way'){
     url = 'http://127.0.0.1:5500/detail_way_1.html'
-  }else{alert("준비중입니다")
+  }else if(type ==='about'){
+    url = 'http://127.0.0.1:5500/detail_3.html'
+  }
+  else{alert("준비중입니다")
       return ;
   }
   window.location.href = url; // URL로 이동
