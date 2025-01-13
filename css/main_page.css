@@ -95,6 +95,13 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+/* 조선일보 폰트 */
+@font-face {
+  font-family: 'ChosunBg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 /**헤더 반응형 768px 일 때**/
 @media screen and (max-width: 768px) {
   /* header */
@@ -981,4 +988,7 @@ body {
     width: 3vw;
     height: 3vw;
   }
+}
+li:hover{
+  cursor: pointer;
 }

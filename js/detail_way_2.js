@@ -17,6 +17,8 @@ const moveUrl = (type) => {
         url = 'http://127.0.0.1:5500/detail_way_2.html'
     }else if(type ==='detail1'){
         url = 'http://127.0.0.1:5500/detail_way_1.html'
+    }else if(type ==='about'){
+      url = 'http://127.0.0.1:5500/detail_3.html'
     }
     else{alert("준비중입니다")
         return ;
@@ -44,3 +46,11 @@ scrollToTopBtn.addEventListener('click', () => {
     behavior: 'smooth' // 부드러운 스크롤
   });
 });
+//sweet alert
+const alert = () => {
+  Swal.fire({
+    title: "준비중입니다!",
+    icon: "warning",
+    draggable: true
+  });
+  }
