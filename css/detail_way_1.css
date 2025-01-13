@@ -351,7 +351,7 @@ body{
     margin-top: 60px;
     width: 100%;
     height: auto;
-    background-color: gainsboro;
+    background-color: #f5f5f5;
   }
   
   .footerWrap {
@@ -407,7 +407,10 @@ body{
     font-weight: bold;
     margin-bottom: 20px;
   }
-  
+  .text10{
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+  }
   /* 반응형 1000px 이하 일 때 사라짐 */
   @media screen and (max-width: 1000px) {
     .f_aboutDD {
@@ -432,6 +435,9 @@ body{
     align-items: center;
     border-radius: 50%;
     background-color: white;
+  }
+  .rel:hover{
+    cursor: pointer;
   }
   
   .site {
