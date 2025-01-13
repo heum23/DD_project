@@ -592,12 +592,19 @@ body {
   font-weight: 800;
   -webkit-text-stroke: 1px black;
 }
+
+@media screen and (max-width: 1000px) {
+  .text_title {
+    font-size: 7vw;
+  }
+}
 .text_content {
   font-size: 1rem;
   box-sizing: border-box;
   color: gray;
   font-weight: 500;
   line-height: 1.5;
+  display: flex;
 }
 
 .paging {
@@ -930,10 +937,11 @@ body {
   bottom: 30px;
   right: 30px;
   font-size: 25px;
-  width: 3vw; height: 3vw;
+  width: 3vw;
+  height: 3vw;
   background-color: white;
-  color:lightgray;
-  border: 1 solid lightgray;
+  color: lightgray;
+  border: none;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -944,18 +952,22 @@ body {
 #scrollToTop:hover {
   background-color: lightgray;
 }
-.upimg{
+.upimg {
   position: absolute;
-  top: 10%; left: 15%;
+  top: 10%;
+  left: 15%;
   width: 2vw;
   height: 2vw;
 }
-@media screen and (max-width:760px) {
-  #scrollToTop{
-    width: 5vw; height: 5vw;
+@media screen and (max-width: 760px) {
+  #scrollToTop {
+    width: 5vw;
+    height: 5vw;
   }
-  .upimg{
-    top: 20%; left: 18%;
-    width: 3vw; height: 3vw;
+  .upimg {
+    top: 20%;
+    left: 18%;
+    width: 3vw;
+    height: 3vw;
   }
 }
