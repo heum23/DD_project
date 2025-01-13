@@ -101,8 +101,19 @@
 
 /* main 상단 */
 .mainWrap {
-  padding: 4rem 1rem;
+  padding: 0 8% 4rem;
 }
+@media screen and (max-width: 1000px) {
+  .mainWrap {
+    padding: 0 2rem 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainWrap {
+    padding: 0 1.5rem 2rem;
+  }
+}
+
 .main_Top {
   width: 100%;
   padding: clamp(4rem, 11.11vw, 5rem) 0 clamp(4rem, 11.11vw, 6rem);
@@ -110,7 +121,8 @@
 .main_Top h1 {
   text-align: center;
   font-weight: 900;
-  font-size: clamp(1.8rem, 5vw, 3rem);
+  -webkit-text-stroke: 2px black;
+  font-size: clamp(2rem, 6vw, 4rem);
 }
 .category_list {
   width: 100%;
@@ -120,7 +132,7 @@
   margin-top: 1.5rem;
   gap: 20px;
   overflow: hidden;
-  flex-wrap: wrap; /* 화면 크기가 줄어들 때 아이템들이 줄바꿈 */
+  /* flex-wrap: wrap; */
 }
 
 .category_item {
@@ -139,8 +151,8 @@
 
 /* category_item 클릭 시 색상 변화 */
 .category_item.active {
-  background-color: black !important; /* 배경색을 검정색으로 설정 */
-  color: white !important; /* 글자색을 흰색으로 설정 */
+  background-color: black;
+  color: white;
 }
 
 /* 1000px 이하 일 때 추가될 내용 */
@@ -149,54 +161,104 @@
 }
 @media screen and (max-width: 1000px) {
   .select_Box {
-    display: block;
     margin: 0 0 0 auto;
+    max-width: 20rem;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
   }
   #dropdownMenuLink {
     background-color: white;
     color: black;
+    border-radius: 2.5rem;
+    border: solid 1px #eaeaea;
+    font-weight: bold;
+    letter-spacing: -0.05rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .dropdown-item {
+    width: 100%;
+    position: static;
   }
 }
 @media screen and (max-width: 768px) {
+  .category_list {
+    overflow-x: scroll;
+    justify-content: flex-start;
+  }
+  .category_list::-webkit-scrollbar {
+    display: none; /* 스크롤 바 숨기기 */
+  }
+
   .select_Box {
-    display: block;
-    padding: 1rem;
+    display: flex;
+    max-width: none;
+    min-width: 10rem;
   }
   #dropdownMenuLink {
     width: 100%;
-    text-align: left;
+    padding: 0.5rem 0.75rem;
     background-color: white;
     color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
+/* 드롭박스 */
 
 /* main 하단 */
 .main_Bottom {
-  padding: 0 10rem 6rem 8rem;
+  padding: 0;
+  position: relative;
 }
-.tab1 {
+.tab1,
+.tab2 {
   display: flex;
   gap: 0;
   width: 100%;
-  position: relative;
+  height: 100%;
   padding: 0;
 }
+
+#tab1 {
+  display: flex;
+}
+#tab2 {
+  display: none;
+}
+/* 기본적으로 tab1 화면일 때 ep1 색상 고정 */
+#tab1 .tab_title#ep1 {
+  color: skyblue;
+}
+/* 기본적으로 tab2 화면일 때 ep2 색상 고정 */
+#tab2 .tab_title#ep2 {
+  color: skyblue;
+}
+
+/* 모바일에서 탭 간 전환이 잘 되도록 display 설정 */
+/* @media screen and (max-width: 1000px) {
+  #tab1 {
+    display: flex;
+  }
+  #tab2 {
+    display: none;
+  }
+} */
 
 .left_nav {
   margin-top: 5rem;
   padding-right: 2rem;
   margin-bottom: 5rem;
   margin-left: 0;
-  display: block;
+  /* display: block; */
   position: sticky;
-  top: 40.7rem;
+  top: 30.7rem;
   left: 0;
-  width: 13.08%;
+  width: 8%;
   height: 100vh;
-  margin-left: clamp(2.5rem, 6.94vw, 5rem);
   height: fit-content;
+  z-index: 10;
 }
 .nav_list {
   width: 100%;
@@ -236,14 +298,9 @@
   font-weight: bold;
 }
 
-@media screen and (max-width: 1800px) {
-  .main_Bottom {
-    padding: 0 5%;
-  }
-}
 @media screen and (max-width: 1000px) {
-  .main_Bottom {
-    padding: 0 3%;
+  .right_content {
+    padding: 0;
   }
   .title_ep {
     display: none;
@@ -256,10 +313,11 @@
   width: 100%;
   padding-bottom: 4rem;
   padding-top: 3rem;
-  margin-top: -3rem;
+  /* margin-top: -3rem; */
 }
 .section h2 {
   font-weight: bold;
+  letter-spacing: -0.3rem;
 }
 
 .img_chapter {
@@ -280,13 +338,14 @@
 .nav_list .chap5 {
   transition: all 0.3s ease;
   padding: 1rem 0;
+  text-align: end;
+  /* cursor: pointer; */
 }
 
 .nav_list .active {
   color: #3cb4e5;
   font-size: 3rem; /* 강조할 때 폰트 사이즈를 키웁니다 */
-  /* 효과가 안먹음.... */
-  opacity: 1;
+  opacity: 1; /* 효과가 안먹음.... */
 }
 
 @media screen and (max-width: 1000px) {
@@ -294,28 +353,5 @@
     font-size: 2.4rem; /* 모바일에서는 강조 폰트 사이즈를 줄일 수 있습니다 */
   }
 }
-/* 네비 스크롤 바 따라오는 것 */
 
 /* 배열 다시 정리!!! */
-/* tab1과 tab2 스타일을 동일하게 설정 */
-.tab1,
-.tab2 {
-  display: flex;
-  gap: 0;
-  width: 100%;
-  position: relative;
-  padding: 0;
-  /* display: none; */
-} /* 기본적으로 숨김 처리 */
-
-/* title_ep 클릭된 텍스트 색상 변경 */
-.tab-title {
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.tab-title.active {
-  color: skyblue; /* 클릭된 텍스트 색상 */
-  font-weight: bold;
-}

@@ -57,11 +57,13 @@
         <div class="main_Top">
           <h1>R&D</h1>
           <div class="category_list">
-            <div class="category_item">효모 스토리</div>
-            <div class="category_item">효모 콘텐츠</div>
-            <div class="category_item">D&D 연구소</div>
-            <div class="category_item">사내대학</div>
-            <div class="category_item">컬리너리 아카데미</div>
+            <div class="category_item active">효모 스토리</div>
+            <div onclick="getReady()" class="category_item">효모 콘텐츠</div>
+            <div onclick="getReady()" class="category_item">D&D 연구소</div>
+            <div onclick="getReady()" class="category_item">사내대학</div>
+            <div onclick="getReady()" class="category_item">
+              컬리너리 아카데미
+            </div>
           </div>
         </div>
         <script>
@@ -94,10 +96,19 @@
           >
 
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#">ep.1 토종효모</a></li>
-            <li><a class="dropdown-item" href="#">ep.2 상미종</a></li>
+            <li>
+              <a class="dropdown-item" href="#" onclick="showTab('ep1')"
+                >ep.1 토종효모</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" onclick="showTab('ep2')"
+                >ep.2 상미종</a
+              >
+            </li>
           </ul>
         </div>
+        <!-- 드롭박스 -->
 
         <!-- main 하단 부분 -->
         <div class="main_Bottom">
@@ -114,11 +125,12 @@
               </div>
             </div>
             <!-- 오른쪽 콘텐츠 영역 -->
+            <!-- 오른쪽 콘텐츠 영역 -->
             <div class="right_content">
               <div class="right_content_inner">
                 <div class="title_ep">
-                  <div id="ep1" class="tab-title">ep.1 토종효모</div>
-                  <div id="ep2" class="tab-title">ep.2 상미종</div>
+                  <div id="ep1" class="tab_title">ep.1 토종효모</div>
+                  <div id="ep2" class="tab_title">ep.2 상미종</div>
                 </div>
                 <div id="tab1_sec1" class="section">
                   <h2>우리 땅에서 살아온 토종 천연효모를 찾아라</h2>
@@ -221,9 +233,10 @@
             <div class="right_content">
               <div class="right_content_inner">
                 <div class="title_ep">
-                  <div>ep.1 토종효모</div>
-                  <div>ep.2 상미종</div>
+                  <div id="ep1" class="tab_title">ep.1 토종효모</div>
+                  <div id="ep2" class="tab_title">ep.2 상미종</div>
                 </div>
+
                 <div id="tab2_sec1" class="section">
                   <h2>SPC그룹만의 특별한 발효종, ‘상미종’</h2>
                   <img
@@ -243,66 +256,70 @@
                 <div id="tab2_sec2" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img2.webp"
+                    src="/detail_3_img_park/leaven_chapter2_img2.webp"
                     alt="#"
                   />
                   <!-- 날짜나 이름 수정하기!!!! -->
                   <p>
-                    효모는 빵의 풍미와 식감을 부여하는 핵심 원료지만, 긴 시간과
-                    지속적인 투자가 필요해 국내 개발 사례가 드물었습니다. 이
-                    때문에 제빵 생산에는 주로 해외 상업용 이스트에 의존했는데,
-                    글로벌 시장에서의 경쟁을 위해서는 고유의 효모로 만든
-                    '우리만의 빵'이 필요하다는 게 허영인 회장의 생각이었습니다.
+                    발효는 인류가 가장 오랫동안 건강하고 안전하게 식품을
+                    섭취하기 위해 이용한 식품 가공 기술로, 그 과정 속에서 다양한
+                    유기물의 분해와 유용물질이 생산되기 때문에 식품의 풍미,
+                    영양성 및 저장성이 높아지는 장점이 있습니다. 이로 인해 현재
+                    발효기술은 식품의 부가가치를 높이는 최고의 기술로 인정받고
+                    있으며, 발효의 주체인 미생물에 관한 연구 또한 다양하게
+                    이뤄지고 있습니다.
                   </p>
                 </div>
                 <div id="tab2_sec3" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img3.webp"
+                    src="/detail_3_img_park/leaven_chapter2_img3.webp"
                     alt="#"
                   />
                   <!-- 날짜나 이름 수정하기!!!! -->
                   <p>
-                    토종 천연효모 발굴 과정은 고난의 연속이었습니다. 연구진은
-                    자연이나 전통 식품 소재에서 제빵에 적합한 효모를 발굴하기
-                    위해 전국의 청정지역과 오일장을 찾아다녔습니다. 여기서
-                    분리한 효모를 배양하여 특성을 규명하였지만, 제빵에 적합하지
-                    않아 버려지기 일쑤였기 때문에 개발 필요성에 대한 회의적인
-                    시각도 있었습니다. 하지만 허영인 회장의 집념은 꺾을 수
-                    없었습니다.
+                    기원전 2000년 전 만들어진 최초 빵에는 효모뿐만 아니라 다양한
+                    유산균이 발효에 관여했을 것으로 추정되며, 현재에는 효모와
+                    유산균으로 만든 빵(사워도우)가 풍미와 건강 유익성이
+                    우수하다는 연구결과가 많이 발표되고 있습니다. 2016년
+                    성공적으로 토종 천연효모의 상용화에 성공한 SPC는 건강하고
+                    맛있는 빵을 개발하기 위해 효모와 유산균 협력 발효 공정을
+                    구축하기 위한 연구에 착수하였습니다.
                   </p>
                 </div>
                 <div id="tab2_sec4" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img4.webp"
+                    src="/detail_3_img_park/leaven_chapter2_img4.webp"
                     alt="#"
                   />
                   <!-- 날짜나 이름 수정하기!!!! -->
                   <p>
-                    진척이 보이지 않자 2007년 말, 허영인 회장은 한국 전통의 발효
-                    소재인 누룩에서 효모를 찾아보자고 했습니다. 통밀이 주원료인
-                    누룩에는 밀가루 환경에 적합한 유용 미생물이 많을 거라는 생각
-                    때문이었습니다. 2012년부터 산학 공동 연구를 통해 서울대
-                    농업생명과학대학 연구진이 합류하면서 누룩에서 미생물을
-                    분리하고 선별하는 실험의 속도가 나기 시작했습니다. 연구를
-                    진행하며 배양한 미생물만 1만여 종, 이 중 분리한 효모와
-                    유산균만 1천여 종에 달했고 수많은 시행착오 끝에 2015년 9월,
-                    제빵력이 탁월한 천연 효모를 발굴하는 데 성공했습니다.
+                    마침내 2020년 9월, SPC는 토종 효모에 유산균 4종을 더한
+                    발효종을 개발했고 그룹의 모태인 ‘상미당’에 ‘건강한 맛’의
+                    의미를 더해 ‘상미종’이라 칭했습니다. 상미종은 효모와
+                    유산균을 최적의 비율로 혼합해 상큼하고 구수한 풍미와
+                    쫄깃하며 부드러운 식감을 내는 것이 특징입니다. 기술자의
+                    경험과 감각에만 의존해 제조한 과거의 발효종과 달리 과학적인
+                    발효공정으로 만들어진 상미종은 대량생산 공정에 매우 적합하고
+                    우수한 품질을 일정하게 유지할 수 있었습니다. 상미종의 개발은
+                    국내 제빵 기술과 연구 우수성을 세계에 알리고 효모 유산균
+                    빵의 대중화를 이끌었습니다.
                   </p>
                 </div>
                 <div id="tab2_sec5" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img5.webp"
+                    src="/detail_3_img_park/leaven_chapter2_img5.webp"
                     alt="#"
                   />
                   <!-- 날짜나 이름 수정하기!!!! -->
                   <p>
-                    개발한 천연효모에 SPC그룹과 서울대 그리고 그룹 창립 70년의
-                    의미를 담아 ‘SPC-SNU 70-1’이란 이름을 붙였습니다. 이후
-                    2016년 4월, ‘SPC-SNU 70-1’을 사용한 27종의 천연효모 빵을
-                    출시했습니다. 하지만 이것은 끝이 아닌 시작이었습니다.
+                    상미종 기술은 파리바게뜨의 시그니처 브레드뿐만 아니라 다양한
+                    브랜드의 제품 (발효 커피, 호빵, 도넛, 아이스크림 등)에
+                    활용되고 있습니다. SPC는 미생물 분야에 원천기술과 79년
+                    이상의 발효기술을 더욱 발전시켜 소비자들의 건강까지 생각한
+                    혁신 제품을 선보일 예정입니다.
                   </p>
                 </div>
               </div>
@@ -347,10 +364,74 @@
               });
             });
         </script>
-        <script>
-          // 토종효모와 상미종을 눌렀을 때 작용하는 함수
-        </script>
       </div>
     </div>
   </body>
+
+  <script>
+    //클릭 시 준비중입니다! 띄우는 함수
+    const getReady = () => {
+      alert("준비중입니다!");
+    };
+  </script>
+
+  <script>
+    // 각 탭 제목 클릭 시 전환 기능만 처리
+    document.querySelectorAll(".tab_title").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // 탭을 전환
+        if (tab.id === "ep1") {
+          // tab1 보이고 tab2 숨기기
+          document.getElementById("tab1").style.display = "flex";
+          document.getElementById("tab2").style.display = "none";
+          document.getElementById("dropdownMenuLink").textContent =
+            "ep.1 토종효모";
+          document.getElementById("ep1").classList.add("active");
+          document.getElementById("ep2").classList.remove("active");
+        }
+        // 'ep2'를 클릭한 경우
+        else if (tab.id === "ep2") {
+          // tab2 보이고 tab1 숨기기
+          document.getElementById("tab2").style.display = "flex";
+          document.getElementById("tab1").style.display = "none";
+          document.getElementById("dropdownMenuLink").textContent =
+            "ep.2 상미종";
+          document.getElementById("ep1").classList.remove("active");
+          document.getElementById("ep2").classList.add("active");
+        }
+      });
+    });
+
+    // 드롭다운 클릭 시 해당 탭으로 전환
+    function showTab(tab) {
+      if (tab === "ep1") {
+        document.getElementById("tab1").style.display = "flex";
+        document.getElementById("tab2").style.display = "none";
+        document.getElementById("dropdownMenuLink").textContent =
+          "ep.1 토종효모";
+        document.getElementById("ep1").classList.add("active");
+        document.getElementById("ep2").classList.remove("active");
+      } else if (tab === "ep2") {
+        document.getElementById("tab1").style.display = "none";
+        document.getElementById("tab2").style.display = "flex";
+        document.getElementById("dropdownMenuLink").textContent = "ep.2 상미종";
+        document.getElementById("ep1").classList.remove("active");
+        document.getElementById("ep2").classList.add("active");
+      }
+    }
+
+    // tab_title 클릭 시 색상 변화하는 함수
+    document.querySelectorAll(".tab_title").forEach((item) => {
+      item.addEventListener("click", function () {
+        console.log("클릭됨:", item); // 클릭한 항목 확인
+        // 모든 tab_title에서 active 클래스를 제거
+        document
+          .querySelectorAll(".tab_title")
+          .forEach((i) => i.classList.remove("active"));
+
+        // 클릭된 item에 active 클래스 추가
+        item.classList.add("active");
+      });
+    });
+  </script>
 </html>
