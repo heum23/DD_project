@@ -473,8 +473,8 @@ body{
     font-size: 25px;
     width: 3vw; height: 3vw;
     background-color: white;
-    color:black;
-    border: 1 solid black;
+    color:lightgray;
+    border: 1px solid lightgray;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
