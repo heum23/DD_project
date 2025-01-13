@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -26,11 +27,11 @@
         </div>
         <div class="headerMenu">
           <div onclick="moveUrl('about')" class="text">ABOUT D&D</div>
-          <div onclick="getReady()" class="text">HISTORY</div>
-          <div onclick="getReady()" class="text">FOOD</div>
-          <div onclick="getReady()" class="text">D&D NOW</div>
-          <div onclick="getReady()" class="text">ESG</div>
-          <div onclick="getReady()" class="text">SUPPORT</div>
+          <div onclick="alert()" class="text">HISTORY</div>
+          <div onclick="alert()" class="text">FOOD</div>
+          <div onclick="alert()" class="text">D&D NOW</div>
+          <div onclick="alert()" class="text">ESG</div>
+          <div onclick="alert()" class="text">SUPPORT</div>
         </div>
         <div class="headerIcon">
           <img
@@ -100,7 +101,7 @@
         </div>
         <!-- main2 -->
         <div class="main2 hidden2">
-          <div onclick="getReady()" class="history">
+          <div onclick="alert()" class="history">
             <img
               class="historyimg"
               src="./mainpage_img/main_img_jin/history.jpg"
@@ -116,7 +117,7 @@
             />
             <div class="backText">Way</div>
           </div>
-          <div onclick="getReady()" class="careers">
+          <div onclick="alert()" class="careers">
             <img
               class="historyimg"
               src="./mainpage_img/main_img_jin/careers.png"
@@ -425,7 +426,7 @@
         <!-- main5 -->
         <div class="main5 fade_in_left">
           <div class="main5Left">
-            <div class="support" onclick="getReady()">
+            <div class="support" onclick="alert()">
               <img
                 class="supportImg"
                 src="/mainpage_img/main_img_park/support.png"
@@ -435,7 +436,7 @@
             </div>
           </div>
           <div class="main5Right">
-            <div class="qustion" onclick="getReady()">
+            <div class="qustion" onclick="alert()">
               <img
                 class="questionImg"
                 src="/mainpage_img/main_img_park/question.jpg"
@@ -491,54 +492,54 @@
               <li>
                 <p class="f_sub">ABOUT D&D</p>
               </li>
-              <li>D&D WAY</li>
-              <li>R&D</li>
-              <li>관계사</li>
-              <li>글로벌</li>
-              <li>Cl소개</li>
+              <li onclick="moveUrl('way')">D&D WAY</li>
+              <li onclick="moveUrl('about')">R&D</li>
+              <li onclick="alert()">관계사</li>
+              <li onclick="alert()">글로벌</li>
+              <li onclick="alert()">Cl소개</li>
             </ul>
             <ul>
               <li>
                 <p class="f_sub">HISTORY</p>
               </li>
-              <li>헤리티지</li>
-              <li>연혁</li>
+              <li onclick="alert()">헤리티지</li>
+              <li onclick="alert()">연혁</li>
             </ul>
             <ul>
               <li>
                 <p class="f_sub">BRAND</p>
               </li>
-              <li>베이커리</li>
-              <li>디저트</li>
-              <li>외식</li>
-              <li>커피/음료</li>
-              <li>유통/서비스</li>
+              <li onclick="alert()">베이커리</li>
+              <li onclick="alert()">디저트</li>
+              <li onclick="alert()">외식</li>
+              <li onclick="alert()">커피/음료</li>
+              <li onclick="alert()">유통/서비스</li>
             </ul>
             <ul>
               <li>
                 <p class="f_sub">D&D NOW</p>
               </li>
-              <li>이벤트</li>
-              <li>메거진</li>
-              <li>SNS</li>
+              <li onclick="alert()">이벤트</li>
+              <li onclick="alert()">메거진</li>
+              <li onclick="alert()">SNS</li>
             </ul>
             <ul>
               <li>
                 <p class="f_sub">ESG</p>
               </li>
-              <li>ESG경영</li>
-              <li>정도경영</li>
-              <li>안전경영</li>
-              <li>행복한 재단</li>
-              <li>사회공헌</li>
+              <li onclick="alert()">ESG경영</li>
+              <li onclick="alert()">정도경영</li>
+              <li onclick="alert()">안전경영</li>
+              <li onclick="alert()">행복한 재단</li>
+              <li onclick="alert()">사회공헌</li>
             </ul>
             <ul>
               <li>
                 <p class="f_sub">SUPPORT</p>
               </li>
-              <li>가맹문의</li>
-              <li>위치안내</li>
-              <li>문의하기</li>
+              <li onclick="alert()">가맹문의</li>
+              <li onclick="alert()">위치안내</li>
+              <li onclick="alert()">문의하기</li>
             </ul>
           </div>
         </div>
@@ -605,6 +606,7 @@
     </button>
   </body>
   <script src="./js/mainpage.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

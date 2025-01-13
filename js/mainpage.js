@@ -264,3 +264,11 @@ scrollToTopBtn.addEventListener('click', () => {
     behavior: 'smooth' // 부드러운 스크롤
   });
 });
+//sweet alert
+const alert = () => {
+Swal.fire({
+  title: "준비중입니다!",
+  icon: "warning",
+  draggable: true
+});
+}

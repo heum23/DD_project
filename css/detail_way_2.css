@@ -474,6 +474,7 @@ body{
     width: 3vw; height: 3vw;
     background-color: white;
     color:lightgray;
+    border: none;
     border: 1px solid lightgray;
     border-radius: 50%;
     cursor: pointer;
@@ -499,4 +500,7 @@ body{
       top: 20%; left: 18%;
       width: 3vw; height: 3vw;
     }
+  }
+  li:hover{
+    cursor: pointer;
   }

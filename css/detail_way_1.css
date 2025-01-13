@@ -28,6 +28,13 @@ body{
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
     font-style: normal;
 }
+/* 조선일보 폰트 */
+@font-face {
+  font-family: 'ChosunBg';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 .logo {
     margin-left: 40px;
     width: 80px;
@@ -461,6 +468,7 @@ body{
     width: 3vw; height: 3vw;
     background-color: white;
     color:black;
+    border: none;
     border: 1 solid black;
     border-radius: 50%;
     cursor: pointer;
@@ -486,4 +494,7 @@ body{
       top: 20%; left: 18%;
       width: 3vw; height: 3vw;
     }
+  }
+  li:hover{
+    cursor: pointer;
   }
