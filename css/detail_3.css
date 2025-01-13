@@ -15,23 +15,8 @@
   width: 100%;
   padding: 10px 40px;
 }
-/* 강원도지자체 폰트 */
-@font-face {
-  font-family: "GangwonEduPowerExtraBoldA";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-/* ppt 폰트 */
-@font-face {
-  font-family: "Freesentation-9Black";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
-    format("woff2");
-  font-style: normal;
-}
 
-/* header 부분 */
+/* header */
 .header {
   width: 100%;
   aspect-ratio: 16/1;
@@ -93,13 +78,12 @@
     display: none;
   }
 }
+/* header */
 
-/* mainBoard 부분 */
+/* mainBoard */
 .mainBoard {
   width: 100%;
 }
-
-/* main 상단 */
 .mainWrap {
   padding: 0 8% 4rem;
 }
@@ -114,6 +98,7 @@
   }
 }
 
+/* main 상단 부분 */
 .main_Top {
   width: 100%;
   padding: clamp(4rem, 11.11vw, 5rem) 0 clamp(4rem, 11.11vw, 6rem);
@@ -134,7 +119,6 @@
   overflow: hidden;
   /* flex-wrap: wrap; */
 }
-
 .category_item {
   color: gray;
   display: flex;
@@ -148,14 +132,23 @@
   padding: 0 15px;
   transition: background-color 0.3s ease, color 0.3s ease; /* 배경색과 글자색에 대한 천천히 변화하는 효과 */
 }
-
 /* category_item 클릭 시 색상 변화 */
 .category_item.active {
   background-color: black;
   color: white;
 }
+@media screen and (max-width: 768px) {
+  .category_list {
+    overflow-x: scroll;
+    justify-content: flex-start;
+  }
+  .category_list::-webkit-scrollbar {
+    display: none; /* 스크롤 바 숨기기 */
+  }
+}
+/* main 상단 부분 */
 
-/* 1000px 이하 일 때 추가될 내용 */
+/* 드롭박스 */
 .select_Box {
   display: none;
 }
@@ -182,14 +175,6 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .category_list {
-    overflow-x: scroll;
-    justify-content: flex-start;
-  }
-  .category_list::-webkit-scrollbar {
-    display: none; /* 스크롤 바 숨기기 */
-  }
-
   .select_Box {
     display: flex;
     max-width: none;
@@ -207,7 +192,7 @@
 }
 /* 드롭박스 */
 
-/* main 하단 */
+/* main 하단 부분 */
 .main_Bottom {
   padding: 0;
   position: relative;
@@ -238,6 +223,7 @@
   cursor: pointer;
 }
 
+/* 왼쪽 네비 바 영역 */
 .left_nav {
   margin-top: 5rem;
   padding-right: 2rem;
@@ -258,17 +244,40 @@
   font-weight: 600;
   text-align: right;
   line-height: 1.33;
+  box-sizing: border-box;
   opacity: 0.5;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.nav_list .chap1,
+.nav_list .chap2,
+.nav_list .chap3,
+.nav_list .chap4,
+.nav_list .chap5 {
+  padding: 1rem 0;
+  text-align: right;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav_list .active {
+  color: #3cb4e5;
+  font-size: 3rem; /* 강조할 때 폰트 크기 */
+  opacity: 1;
 }
 
 @media screen and (max-width: 1000px) {
   .left_nav {
     display: none;
   }
+  .nav_list .active {
+    font-size: 2.4rem;
+  }
 }
+/* 왼쪽 네비 바 영역 */
 
+/* 오른쪽 콘텐츠 영역 */
 .right_content {
   height: 100%;
   width: 100%;
@@ -281,13 +290,31 @@
   margin-bottom: 10rem;
 }
 .title_ep {
-  padding-bottom: 1.5rem;
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 20px;
   font-weight: bold;
+  gap: 20px;
+  padding-bottom: 1.5rem;
   cursor: pointer;
+}
+.section {
+  width: 100%;
+  padding-bottom: 4rem;
+  padding-top: 3rem;
+  /* margin-top: -3rem; */
+}
+.section h2 {
+  font-weight: bold;
+  letter-spacing: -0.3rem;
+}
+.img_chapter {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.section p {
+  padding-top: 1rem;
 }
 
 @media screen and (max-width: 1000px) {
@@ -301,49 +328,6 @@
     margin: 1rem 0;
   }
 }
-.section {
-  width: 100%;
-  padding-bottom: 4rem;
-  padding-top: 3rem;
-  /* margin-top: -3rem; */
-}
-.section h2 {
-  font-weight: bold;
-  letter-spacing: -0.3rem;
-}
+/* 오른쪽 콘텐츠 영역 */
 
-.img_chapter {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.section p {
-  padding-top: 1rem;
-}
-
-/* 네비 스크롤 바 따라오는 것 */
-.nav_list .chap1,
-.nav_list .chap2,
-.nav_list .chap3,
-.nav_list .chap4,
-.nav_list .chap5 {
-  transition: all 0.3s ease;
-  padding: 1rem 0;
-  text-align: right;
-  cursor: pointer;
-}
-
-.nav_list .active {
-  color: #3cb4e5;
-  font-size: 3rem; /* 강조할 때 폰트 사이즈를 키웁니다 */
-  opacity: 1; /* 효과가 안먹음.... */
-}
-
-@media screen and (max-width: 1000px) {
-  .nav_list .active {
-    font-size: 2.4rem; /* 모바일에서는 강조 폰트 사이즈를 줄일 수 있습니다 */
-  }
-}
-
-/* 배열 다시 정리!!! */
+/* footer */
