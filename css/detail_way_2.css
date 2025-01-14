@@ -49,6 +49,7 @@ body {
   margin-left: 40px;
   width: 80px;
   height: 50px;
+  cursor: pointer;
 }
 .icon {
   margin-right: 40px;

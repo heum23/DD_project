@@ -60,6 +60,7 @@
   margin-left: 40px;
   width: 80px;
   height: 50px;
+  cursor: pointer;
 }
 
 .headerMenu {
@@ -368,7 +369,7 @@
   font-family: "Noto Sans KR", serif;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1240px) {
   .right_content {
     padding: 0;
   }
