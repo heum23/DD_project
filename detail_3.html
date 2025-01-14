@@ -12,10 +12,17 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap");
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/detail_3.css" />
@@ -35,12 +42,12 @@
         />
       </div>
       <div class="headerMenu">
-        <div onclick="getReady()" class="text">ABOUT D&D</div>
-        <div onclick="getReady()" class="text">HISTORY</div>
-        <div onclick="getReady()" class="text">FOOD</div>
-        <div onclick="getReady()" class="text">D&D NOW</div>
-        <div onclick="getReady()" class="text">ESG</div>
-        <div onclick="getReady()" class="text">SUPPORT</div>
+        <div onclick="moveUrl('about')" class="text">ABOUT D&D</div>
+        <div onclick="alert()" class="text">HISTORY</div>
+        <div onclick="alert()" class="text">FOOD</div>
+        <div onclick="alert()" class="text">D&D NOW</div>
+        <div onclick="alert()" class="text">ESG</div>
+        <div onclick="alert()" class="text">SUPPORT</div>
       </div>
       <div class="headerIcon">
         <img
@@ -49,7 +56,7 @@
           alt="icon"
         />
         <img
-          onclick="getReady()"
+          onclick="alert()"
           class="icon earth"
           src="./mainpage_img/header_img/earth.png"
           alt="icon"
@@ -66,12 +73,10 @@
           <h1>R&D</h1>
           <div class="category_list">
             <div class="category_item active">효모 스토리</div>
-            <div onclick="getReady()" class="category_item">효모 콘텐츠</div>
-            <div onclick="getReady()" class="category_item">D&D 연구소</div>
-            <div onclick="getReady()" class="category_item">사내대학</div>
-            <div onclick="getReady()" class="category_item">
-              컬리너리 아카데미
-            </div>
+            <div onclick="alert()" class="category_item">효모 콘텐츠</div>
+            <div onclick="alert()" class="category_item">D&D 연구소</div>
+            <div onclick="alert()" class="category_item">사내대학</div>
+            <div onclick="alert()" class="category_item">컬리너리 아카데미</div>
           </div>
         </div>
         <!-- main 상단 부분 -->
@@ -129,7 +134,7 @@
                   <h2>우리 땅에서 살아온 토종 천연효모를 찾아라</h2>
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img1.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter1_img1.webp"
                     alt="#"
                   />
                   <p>
@@ -143,7 +148,7 @@
                 <div id="tab1_sec2" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img2.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter1_img2.webp"
                     alt="#"
                   />
                   <p>
@@ -157,7 +162,7 @@
                 <div id="tab1_sec3" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img3.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter1_img3.webp"
                     alt="#"
                   />
                   <p>
@@ -172,7 +177,7 @@
                 <div id="tab1_sec4" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img4.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter1_img4.webp"
                     alt="#"
                   />
                   <!-- 날짜나 이름 수정하기!!!! -->
@@ -191,7 +196,7 @@
                 <div id="tab1_sec5" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter1_img5.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter1_img5.webp"
                     alt="#"
                   />
                   <!-- 날짜나 이름 수정하기!!!! -->
@@ -232,7 +237,7 @@
                   <h2>특별한 발효종, ‘상미종’</h2>
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter2_img1.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter2_img1.webp"
                     alt="#"
                   />
                   <p>
@@ -245,7 +250,7 @@
                 <div id="tab2_sec2" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter2_img2.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter2_img2.webp"
                     alt="#"
                   />
                   <p>
@@ -261,7 +266,7 @@
                 <div id="tab2_sec3" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter2_img3.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter2_img3.webp"
                     alt="#"
                   />
                   <p>
@@ -277,7 +282,7 @@
                 <div id="tab2_sec4" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter2_img4.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter2_img4.webp"
                     alt="#"
                   />
                   <p>
@@ -295,7 +300,7 @@
                 <div id="tab2_sec5" class="section">
                   <img
                     class="img_chapter"
-                    src="/detail_3_img_park/leaven_chapter2_img5.webp"
+                    src="/detail_img/detail_3_park/leaven_chapter2_img5.webp"
                     alt="#"
                   />
                   <p>
@@ -312,196 +317,139 @@
           </div>
         </div>
         <!-- main 하단 부분 -->
-
-        <script>
-          // category_item 클릭 시 색상 변화하는 함수
-          document.querySelectorAll(".category_item").forEach((item) => {
-            item.addEventListener("click", function () {
-              console.log("클릭됨:", item); // 클릭한 항목 확인
-              // 모든 category_item에서 active 클래스를 제거
-              document
-                .querySelectorAll(".category_item")
-                .forEach((i) => i.classList.remove("active"));
-
-              // 클릭된 item에 active 클래스 추가
-              item.classList.add("active");
-            });
-          });
-        </script>
-        <script>
-          // 스크롤 이벤트로 각 섹션의 위치에 따라 강조하는 기능
-          window.addEventListener("scroll", () => {
-            const sections = document.querySelectorAll(".section");
-            const navItems = document.querySelectorAll(
-              ".nav_list .chap1, .nav_list .chap2, .nav_list .chap3, .nav_list .chap4, .nav_list .chap5"
-            );
-
-            sections.forEach((section, index) => {
-              const rect = section.getBoundingClientRect();
-              if (
-                rect.top <= window.innerHeight / 2 &&
-                rect.bottom >= window.innerHeight / 2
-              ) {
-                // 해당 섹션이 화면 중간에 있을 때
-                navItems.forEach((item) => item.classList.remove("active")); // 모든 'active' 제거
-                navItems[index].classList.add("active"); // 해당 nav item 강조
-              }
-            });
-          });
-
-          // 클릭 시 해당 섹션으로 스크롤 이동
-          document
-            .querySelectorAll(
-              ".nav_list .chap1, .nav_list .chap2, .nav_list .chap3, .nav_list .chap4, .nav_list .chap5"
-            )
-            .forEach((item, index) => {
-              item.addEventListener("click", () => {
-                const targetSection = document.querySelector(
-                  `#tab1_sec${index + 1}`
-                );
-                window.scrollTo({
-                  top: targetSection.offsetTop + 250, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
-                  behavior: "smooth",
-                });
-              });
-            });
-        </script>
-        <script>
-          // 스크롤 이벤트로 각 섹션의 위치에 따라 강조하는 기능 (tab2 적용)
-          window.addEventListener("scroll", () => {
-            const sections = document.querySelectorAll("#tab2 .section");
-            const navItems = document.querySelectorAll(
-              "#tab2 .nav_list .chap1, #tab2 .nav_list .chap2, #tab2 .nav_list .chap3, #tab2 .nav_list .chap4, #tab2 .nav_list .chap5"
-            );
-
-            sections.forEach((section, index) => {
-              const rect = section.getBoundingClientRect();
-              if (
-                rect.top <= window.innerHeight / 2 &&
-                rect.bottom >= window.innerHeight / 2
-              ) {
-                // 해당 섹션이 화면 중간에 있을 때
-                navItems.forEach((item) => item.classList.remove("active")); // 모든 'active' 제거
-                navItems[index].classList.add("active"); // 해당 nav item 강조
-              }
-            });
-          });
-
-          // 클릭 시 해당 섹션으로 스크롤 이동 (tab2 적용)
-          document
-            .querySelectorAll(
-              "#tab2 .nav_list .chap1, #tab2 .nav_list .chap2, #tab2 .nav_list .chap3, #tab2 .nav_list .chap4, #tab2 .nav_list .chap5"
-            )
-            .forEach((item, index) => {
-              item.addEventListener("click", () => {
-                const targetSection = document.querySelector(
-                  `#tab2_sec${index + 1}` // tab2의 섹션에 맞춰서 ID 설정
-                );
-                window.scrollTo({
-                  top: targetSection.offsetTop + 250, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
-                  behavior: "smooth",
-                });
-              });
-            });
-        </script>
       </div>
     </div>
 
     <!-- footer -->
-    <div class="footer"></div>
+    <div class="footer">
+      <div class="footerWrap">
+        <!-- footer 첫번째 박스 -->
+        <div class="footerBox1">
+          <!-- footer 첫번째 박스 왼쪽 영역 -->
+          <div class="f_info">
+            <img src="./detail_img/detail_jin/logo3.png" alt="logo" />
+            <div class="f_address">서울특별시 마포구 숭문4길 6</div>
+            <div class="f_privacy">
+              <div>개인정보처리방침</div>
+              <div>이메일수집 거부</div>
+              <div>거래희망사전등록</div>
+              <div>고정형 영상정보처리기기 운영관리 방침</div>
+            </div>
+          </div>
+
+          <!-- footer 첫번째 박스 오른쪽 영역 -->
+          <div class="f_aboutDD">
+            <ul>
+              <li>
+                <p class="f_sub">ABOUT D&D</p>
+              </li>
+              <li class="text10" onclick="moveUrl('way')">D&D WAY</li>
+              <li class="text10" onclick="moveUrl('about')">R&D</li>
+              <li class="text10" onclick="alert()">관계사</li>
+              <li class="text10" onclick="alert()">글로벌</li>
+              <li class="text10" onclick="alert()">Cl소개</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">HISTORY</p>
+              </li>
+              <li class="text10" onclick="alert()">헤리티지</li>
+              <li class="text10" onclick="alert()">연혁</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">BRAND</p>
+              </li>
+              <li class="text10" onclick="alert()">베이커리</li>
+              <li class="text10" onclick="alert()">디저트</li>
+              <li class="text10" onclick="alert()">외식</li>
+              <li class="text10" onclick="alert()">커피/음료</li>
+              <li class="text10" onclick="alert()">유통/서비스</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">D&D NOW</p>
+              </li>
+              <li class="text10" onclick="alert()">이벤트</li>
+              <li class="text10" onclick="alert()">메거진</li>
+              <li class="text10" onclick="alert()">SNS</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">ESG</p>
+              </li>
+              <li class="text10" onclick="alert()">ESG경영</li>
+              <li class="text10" onclick="alert()">정도경영</li>
+              <li class="text10" onclick="alert()">안전경영</li>
+              <li class="text10" onclick="alert()">행복한 재단</li>
+              <li class="text10" onclick="alert()">사회공헌</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">SUPPORT</p>
+              </li>
+              <li class="text10" onclick="alert()">가맹문의</li>
+              <li class="text10" onclick="alert()">위치안내</li>
+              <li class="text10" onclick="alert()">문의하기</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- footer 두번째 박스 -->
+        <div class="footerBox2">
+          <!-- footer 두번째 박스 왼쪽 영역 -->
+          <div class="f_family">
+            <div class="site">
+              <div>FAMILY SITE</div>
+              <div onclick="alert()" class="rel">+</div>
+            </div>
+            <p>Copyright D&D All rights reserverd.</p>
+          </div>
+
+          <!-- footer 두번째 박스 오른쪽 영역 -->
+          <div class="f_sns">
+            <div class="f_sns_item">
+              <a href="https://www.facebook.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_facebook.svg"
+                  alt=""
+                  class="default-img"
+                />
+                <div class="black_overlay"></div>
+              </a>
+            </div>
+            <div class="f_sns_item">
+              <a href="https://www.instagram.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_instagram.svg"
+                  alt=""
+                  class="default-img"
+                />
+                <div class="black_overlay"></div>
+              </a>
+            </div>
+            <div class="f_sns_item">
+              <a href="https://www.youtube.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_youtube.svg"
+                  alt=""
+                  class="default-img"
+                />
+                <div class="black_overlay"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 탑 버튼 -->
+    <button class="up" id="scrollToTop" style="display: none">
+      <img class="upimg" src="./detail_img/detail2_jin/up.png" />
+    </button>
+    <!-- 탑 버튼 -->
   </body>
 
-  <script>
-    //클릭 시 준비중입니다! 띄우는 함수
-    const getReady = () => {
-      alert("준비중입니다!");
-    };
-  </script>
-
-  <script>
-    // 각 탭 제목 클릭 시 전환 기능만 처리
-    document.querySelectorAll(".tab_title").forEach((tab) => {
-      tab.addEventListener("click", () => {
-        // 탭을 전환
-        if (tab.id === "ep1") {
-          // tab1 보이고 tab2 숨기기
-          document.getElementById("tab1").style.display = "flex";
-          document.getElementById("tab2").style.display = "none";
-          document.getElementById("dropdownMenuLink").textContent =
-            "ep.1 토종효모";
-          document.getElementById("ep1").classList.add("active");
-          document.getElementById("ep2").classList.remove("active");
-        }
-        // 'ep2'를 클릭한 경우
-        else if (tab.id === "ep2") {
-          // tab2 보이고 tab1 숨기기
-          document.getElementById("tab2").style.display = "flex";
-          document.getElementById("tab1").style.display = "none";
-          document.getElementById("dropdownMenuLink").textContent =
-            "ep.2 상미종";
-          document.getElementById("ep1").classList.remove("active");
-          document.getElementById("ep2").classList.add("active");
-        }
-      });
-    });
-
-    // 드롭다운 클릭 시 해당 탭으로 전환
-    function showTab(tab) {
-      if (tab === "ep1") {
-        document.getElementById("tab1").style.display = "flex";
-        document.getElementById("tab2").style.display = "none";
-        document.getElementById("dropdownMenuLink").textContent =
-          "ep.1 토종효모";
-        document.getElementById("ep1").classList.add("active");
-        document.getElementById("ep2").classList.remove("active");
-      } else if (tab === "ep2") {
-        document.getElementById("tab1").style.display = "none";
-        document.getElementById("tab2").style.display = "flex";
-        document.getElementById("dropdownMenuLink").textContent = "ep.2 상미종";
-        document.getElementById("ep1").classList.remove("active");
-        document.getElementById("ep2").classList.add("active");
-      }
-    }
-
-    // tab_title 클릭 시 색상 변화하는 함수
-    document.querySelectorAll(".tab_title").forEach((item) => {
-      item.addEventListener("click", function () {
-        console.log("클릭됨:", item); // 클릭한 항목 확인
-        // 모든 tab_title에서 active 클래스를 제거
-        document
-          .querySelectorAll(".tab_title")
-          .forEach((i) => i.classList.remove("active"));
-
-        // 클릭된 item에 active 클래스 추가
-        item.classList.add("active");
-      });
-    });
-  </script>
-
-  <script></script>
-
-  <script>
-    // URL 이동 함수
-    const moveUrl = (type) => {
-      let url;
-
-      if (type === "dd") {
-        url = "http://127.0.0.1:5500/main.html";
-      } else if (type === "facebook") {
-        url = "https://www.facebook.com/?locale=ko_KR";
-      } else if (type === "instagram") {
-        url = "https://www.instagram.com/";
-      } else if (type === "youtube") {
-        url = "https://www.youtube.com/?hl=ko&gl=KR&app=desktop";
-      } else if (type === "way") {
-        url = "http://127.0.0.1:5500/detail_way_1.html";
-      } else if (type === "about") {
-        url = "http://127.0.0.1:5500/detail_3.html";
-      } else {
-        alert("준비중입니다");
-        return;
-      }
-      window.location.href = url; // URL로 이동
-    };
-  </script>
+  <!-- js -->
+  <script src="/js/detail_3.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 </html>

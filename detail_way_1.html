@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="./css/detail_way_1.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap");
+    </style>
+    <link rel="stylesheet" href="./css/detail_way_1.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
@@ -32,7 +38,7 @@
           alt="icon"
         />
         <img
-          onclick="getReady()"
+          onclick="alert()"
           class="icon earth"
           src="./mainpage_img/header_img/earth.png"
           alt="icon"
@@ -40,14 +46,14 @@
       </div>
     </div>
     <div class="container">
-        <div class="top">
-            <h1 class="way">D&D WAY</h1>
-            <div class="pageBtn">
-            <div onclick="(moveUrl('detail1'))" class="detail1page">경영철학</div>
-            <div onclick="{moveUrl('detail2')}" class="detail2page">장인정신</div>
-            </div>
+      <div class="top">
+        <h1 class="way">D&D WAY</h1>
+        <div class="pageBtn">
+          <div onclick="(moveUrl('detail1'))" class="detail1page">경영철학</div>
+          <div onclick="{moveUrl('detail2')}" class="detail2page">장인정신</div>
         </div>
-      
+      </div>
+
       <div class="detail1">
         <div class="main1left">
           <img
@@ -130,138 +136,137 @@
         </div>
       </div>
     </div>
-  
-      <!-- footer -->
-      <div class="footer">
-        <div class="footerWrap">
-          <div class="footerBox1">
-            <div class="f_info">
-              <img src="./detail_img/detail_jin/logo3.png" alt="logo" />
-              <div class="f_address">서울특별시 마포구 숭문4길 6</div>
-              <div class="f_privacy">
-                <div>개인정보처리방침</div>
-                <div>이메일수집 거부</div>
-                <div>거래희망사전등록</div>
-                <div>고정형 영상정보처리기기 운영관리 방침</div>
-              </div>
-            </div>
-            <div class="f_aboutDD">
-              <ul>
-                <li>
-                  <p class="f_sub">ABOUT D&D</p>
-                </li>
-                <li class="text10" onclick="moveUrl('way')">D&D WAY</li>
-                <li class="text10" onclick="moveUrl('about')">R&D</li>
-                <li class="text10" onclick="alert()">관계사</li>
-                <li class="text10" onclick="alert()">글로벌</li>
-                <li class="text10" onclick="alert()">Cl소개</li>
-              </ul>
-              <ul>
-                <li>
-                  <p class="f_sub">HISTORY</p>
-                </li>
-                <li class="text10" onclick="alert()">헤리티지</li>
-                <li class="text10" onclick="alert()">연혁</li>
-              </ul>
-              <ul>
-                <li>
-                  <p class="f_sub">BRAND</p>
-                </li>
-                <li class="text10" onclick="alert()">베이커리</li>
-                <li class="text10" onclick="alert()">디저트</li>
-                <li class="text10" onclick="alert()">외식</li>
-                <li class="text10" onclick="alert()">커피/음료</li>
-                <li class="text10" onclick="alert()">유통/서비스</li>
-              </ul>
-              <ul>
-                <li>
-                  <p class="f_sub">D&D NOW</p>
-                </li>
-                <li class="text10" onclick="alert()">이벤트</li>
-                <li class="text10" onclick="alert()">메거진</li>
-                <li class="text10" onclick="alert()">SNS</li>
-              </ul>
-              <ul>
-                <li>
-                  <p class="f_sub">ESG</p>
-                </li>
-                <li class="text10" onclick="alert()">ESG경영</li>
-                <li class="text10" onclick="alert()">정도경영</li>
-                <li class="text10" onclick="alert()">안전경영</li>
-                <li class="text10" onclick="alert()">행복한 재단</li>
-                <li class="text10" onclick="alert()">사회공헌</li>
-              </ul>
-              <ul>
-                <li>
-                  <p class="f_sub">SUPPORT</p>
-                </li>
-                <li class="text10" onclick="alert()">가맹문의</li>
-                <li class="text10" onclick="alert()">위치안내</li>
-                <li class="text10" onclick="alert()">문의하기</li>
-              </ul>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="footerWrap">
+        <!-- footer 첫번째 박스 -->
+        <div class="footerBox1">
+          <!-- footer 첫번째 박스 왼쪽 영역 -->
+          <div class="f_info">
+            <img src="./detail_img/detail_jin/logo3.png" alt="logo" />
+            <div class="f_address">서울특별시 마포구 숭문4길 6</div>
+            <div class="f_privacy">
+              <div>개인정보처리방침</div>
+              <div>이메일수집 거부</div>
+              <div>거래희망사전등록</div>
+              <div>고정형 영상정보처리기기 운영관리 방침</div>
             </div>
           </div>
-          <div class="footerBox2">
-            <div class="f_family">
-              <div class="site">
-                <div>FAMILY SITE</div>
-                <div onclick="alert()" class="rel">+</div>
-                <!-- <img
-                    class="rel"
-                    src="mainpage_img/main_img_park/plus.png"
-                    alt="플러스 버튼"
-                  /> -->
-                <!-- </div> -->
-              </div>
-              <p>Copyright D&D All rights reserverd.</p>
+
+          <!-- footer 첫번째 박스 오른쪽 영역 -->
+          <div class="f_aboutDD">
+            <ul>
+              <li>
+                <p class="f_sub">ABOUT D&D</p>
+              </li>
+              <li class="text10" onclick="moveUrl('way')">D&D WAY</li>
+              <li class="text10" onclick="moveUrl('about')">R&D</li>
+              <li class="text10" onclick="alert()">관계사</li>
+              <li class="text10" onclick="alert()">글로벌</li>
+              <li class="text10" onclick="alert()">Cl소개</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">HISTORY</p>
+              </li>
+              <li class="text10" onclick="alert()">헤리티지</li>
+              <li class="text10" onclick="alert()">연혁</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">BRAND</p>
+              </li>
+              <li class="text10" onclick="alert()">베이커리</li>
+              <li class="text10" onclick="alert()">디저트</li>
+              <li class="text10" onclick="alert()">외식</li>
+              <li class="text10" onclick="alert()">커피/음료</li>
+              <li class="text10" onclick="alert()">유통/서비스</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">D&D NOW</p>
+              </li>
+              <li class="text10" onclick="alert()">이벤트</li>
+              <li class="text10" onclick="alert()">메거진</li>
+              <li class="text10" onclick="alert()">SNS</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">ESG</p>
+              </li>
+              <li class="text10" onclick="alert()">ESG경영</li>
+              <li class="text10" onclick="alert()">정도경영</li>
+              <li class="text10" onclick="alert()">안전경영</li>
+              <li class="text10" onclick="alert()">행복한 재단</li>
+              <li class="text10" onclick="alert()">사회공헌</li>
+            </ul>
+            <ul>
+              <li>
+                <p class="f_sub">SUPPORT</p>
+              </li>
+              <li class="text10" onclick="alert()">가맹문의</li>
+              <li class="text10" onclick="alert()">위치안내</li>
+              <li class="text10" onclick="alert()">문의하기</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- footer 두번째 박스 -->
+        <div class="footerBox2">
+          <!-- footer 두번째 박스 왼쪽 영역 -->
+          <div class="f_family">
+            <div class="site">
+              <div>FAMILY SITE</div>
+              <div onclick="alert()" class="rel">+</div>
             </div>
-            <div class="f_sns">
-              <div>
-                <a href="https://www.facebook.com/" target="_blank">
-                  <img
-                    src="mainpage_img/main_img_park/f_facebook.svg"
-                    alt=""
-                    class="default-img"
-                  />
-                  <!-- <img
-                  src="/mainpage_img/main_img_park/f_facebook_hover.svg"
+            <p>Copyright D&D All rights reserverd.</p>
+          </div>
+
+          <!-- footer 두번째 박스 오른쪽 영역 -->
+          <div class="f_sns">
+            <div class="f_sns_item">
+              <a href="https://www.facebook.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_facebook.svg"
                   alt=""
-                  class="hover-img"
-                /> --></a
-                >
-              </div>
-              <div>
-                <a href="https://www.instagram.com/" target="_blank">
-                  <img
-                    src="mainpage_img/main_img_park/f_instagram.svg"
-                    alt=""
-                    class="default-img"
-                  />
-                  <!-- <img
-                  src="/mainpage_img/main_img_park/f_instagram_hover.svg"
+                  class="default-img"
+                />
+                <div class="black_overlay"></div>
+              </a>
+            </div>
+            <div class="f_sns_item">
+              <a href="https://www.instagram.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_instagram.svg"
                   alt=""
-                  class="hover-img"
-                /> --></a
-                >
-              </div>
-              <div>
-                <a href="https://www.youtube.com/" target="_blank">
-                  <img
-                    src="mainpage_img/main_img_park/f_youtube.svg"
-                    alt=""
-                    class="default-img"
-                  />
-                  <!-- <img src="#" alt="" class="hover-img" /> --></a
-                >
-              </div>
+                  class="default-img"
+                />
+                <div class="black_overlay"></div>
+              </a>
+            </div>
+            <div class="f_sns_item">
+              <a href="https://www.youtube.com/" target="_blank">
+                <img
+                  src="mainpage_img/main_img_park/f_youtube.svg"
+                  alt=""
+                  class="default-img"
+                />
+                <div class="black_overlay"></div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-    <!-- 제일 위로 올리는 버튼 -->
-    <button class="up" id="scrollToTop" style="display: none;"><img class="upimg" src="./detail_img/detail2_jin/up.png"></button>
-      <script src="./js/detail_way_1.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
-</body>
-</html>
+    </div>
+    <!-- 탑 버튼 -->
+    <button class="up" id="scrollToTop" style="display: none">
+      <img class="upimg" src="./detail_img/detail2_jin/up.png" />
+    </button>
+    <!-- 탑 버튼 -->
 
+    <!-- js -->
+    <script src="./js/detail_way_1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+  </body>
+</html>

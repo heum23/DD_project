@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updatePageNumber();
 });
 
-//제일위로 올라가는 버튼
+// 탑 버튼 (제일 위로)
 // 버튼 참조
 const scrollToTopBtn = document.getElementById("scrollToTop");
 
@@ -257,6 +257,7 @@ scrollToTopBtn.addEventListener("click", () => {
     behavior: "smooth", // 부드러운 스크롤
   });
 });
+
 //sweet alert
 const alert = () => {
   Swal.fire({
@@ -265,3 +266,126 @@ const alert = () => {
     draggable: true,
   });
 };
+
+// main4 나타나는 함수 (아래에서 위로)
+document.addEventListener("DOMContentLoaded", function () {
+  const fadeElement = document.querySelector(".main4");
+
+  if (fadeElement) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const boundingRect = entry.boundingClientRect;
+          const viewportHeight = window.innerHeight;
+
+          // 요소의 상단 20%가 뷰포트에 들어왔는지 확인
+          if (boundingRect.top <= viewportHeight * 0.8) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      },
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+      }
+    );
+
+    observer.observe(fadeElement);
+  }
+});
+
+// 텍스트 or 화살표 클릭시 이미지 전환 함수
+const backTxt1 = document.querySelector(".backTxt1");
+const backTxt2 = document.querySelector(".backTxt2");
+const slides = document.querySelectorAll(".slider");
+const nextButtons = document.querySelectorAll(".paging_next");
+const prevButtons = document.querySelectorAll(".paging_prev");
+const pagingNums = document.querySelectorAll(".paging_num span:first-child");
+const pagingTotals = document.querySelectorAll(".paging_num span:last-child");
+
+let currentIndex = 1;
+let isEventMode = true;
+let maxPages = 2;
+
+function updateImages(prefix, max) {
+  slides.forEach((slider) => {
+    const allImages = slider.querySelectorAll("img");
+    allImages.forEach((img) => {
+      if (img.classList.contains(`${prefix}_${currentIndex}`)) {
+        img.classList.add("active2");
+      } else {
+        img.classList.remove("active2");
+      }
+    });
+  });
+
+  updatePagingNum(currentIndex, max);
+}
+
+function updatePagingNum(num, total) {
+  pagingNums.forEach((span) => {
+    span.textContent = num.toString().padStart(2, "0");
+  });
+  pagingTotals.forEach((span) => {
+    span.textContent = total.toString().padStart(2, "0");
+  });
+}
+
+backTxt1.addEventListener("click", () => {
+  isEventMode = true;
+  currentIndex = 1;
+  maxPages = 2;
+  updateImages("event", maxPages);
+});
+
+backTxt2.addEventListener("click", () => {
+  isEventMode = false;
+  currentIndex = 1;
+  maxPages = 3;
+  updateImages("magazine", maxPages);
+});
+
+nextButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    currentIndex = currentIndex < maxPages ? currentIndex + 1 : 1;
+    updateImages(isEventMode ? "event" : "magazine", maxPages);
+  });
+});
+
+prevButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    currentIndex = currentIndex > 1 ? currentIndex - 1 : maxPages;
+    updateImages(isEventMode ? "event" : "magazine", maxPages);
+  });
+});
+
+// 페이지 로드 시 자동으로 backTxt1 클릭 트리거 (처음 이미지 default)
+document.addEventListener("DOMContentLoaded", () => {
+  backTxt1.click();
+});
+
+// main5 나타나는 함수
+// DOM 요소 선택
+const main5 = document.querySelector(".main5");
+
+// 화면에 요소가 보이는지 체크하는 함수
+function checkScroll() {
+  // main5의 상단 위치
+  const main5Position = main5.getBoundingClientRect().top;
+
+  // 화면에 보이는지 확인 (10px 정도 여유를 두고)
+  if (main5Position <= window.innerHeight - 10) {
+    // main5와 내부 요소들이 동시에 오른쪽에서 왼쪽으로 나타나도록 fade_in 클래스 추가
+    main5.classList.add("fade_in");
+  } else {
+    // 사라지면 fade_in 클래스 제거
+    main5.classList.remove("fade_in");
+  }
+}
+
+// 스크롤 이벤트 리스너 추가
+window.addEventListener("scroll", checkScroll);
+
+// 페이지 로드 시 초기 상태 확인
+checkScroll();

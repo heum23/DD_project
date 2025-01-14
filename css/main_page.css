@@ -28,7 +28,7 @@ body {
 }
 /** header **/
 .text {
-  font-family: 'ChosunBg';
+  font-family: "ChosunBg";
   line-height: 2;
   text-align: center;
 }
@@ -97,8 +97,9 @@ body {
 }
 /* 조선일보 폰트 */
 @font-face {
-  font-family: 'ChosunBg';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');
+  font-family: "ChosunBg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -127,7 +128,7 @@ body {
 /**main **/
 .mainWrap {
   width: 100%;
-  padding: 0 40px;
+  padding: 0 40px 40px;
 }
 /* main jin */
 /* main1 */
@@ -203,7 +204,7 @@ body {
   .breadbtn {
     font-size: 7vw !important;
   }
-  .btn{
+  .btn {
     gap: 18px !important;
   }
 }
@@ -505,7 +506,6 @@ body {
 .main4 {
   width: 100%;
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
   gap: 10px;
   margin-top: 10px;
@@ -736,11 +736,13 @@ body {
   opacity: 0;
   transform: translateX(100%); /* 오른쪽에서 시작 */
   transition: transform 0.6s ease-out, opacity 0.6 ease-out;
+  overflow: hidden;
 }
 
 .main5.fade_in {
   opacity: 1;
   transform: translateX(0); /* 원래 위치로 이동 */
+  overflow: hidden;
 }
 
 .main5Left {
@@ -822,8 +824,9 @@ body {
 }
 
 .footerWrap {
-  padding: 30px;
+  padding: 30px 50px;
   box-sizing: border-box;
+  font-family: "Noto Sans KR", serif;
 }
 
 /* footer 첫번째 박스 */
@@ -833,19 +836,20 @@ body {
   justify-content: space-between;
 }
 
-.footer img {
+/* footer 첫번째 박스 왼쪽 영역 */
+.f_info img {
+  /* 로고 */
   width: 70px;
   height: 40px;
   display: block;
   margin-bottom: 30px;
 }
-
 .f_address {
   color: rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
+
   font-weight: bold;
 }
-
 .f_privacy {
   font-weight: bold;
   color: black;
@@ -866,9 +870,11 @@ body {
   content: "";
 }
 
+/* footer 첫번째 박스 오른쪽 영역 */
 .f_aboutDD {
   display: flex;
-  gap: 2.5rem;
+  font-size: 1.1rem;
+  gap: 2rem;
 }
 .f_aboutDD ul,
 .f_aboutDD li {
@@ -877,17 +883,20 @@ body {
   list-style: none;
   margin-bottom: 10px;
 }
-
+li:hover {
+  cursor: pointer;
+}
 .f_sub {
   font-weight: bold;
   margin-bottom: 20px;
 }
-.text10{
-  color: rgba(0, 0, 0, 0.7);
+.text10 {
+  color: rgba(0, 0, 0, 0.5);
   font-weight: 500;
 }
-/* 반응형 1000px 이하 일 때 사라짐 */
+
 @media screen and (max-width: 1000px) {
+  /* 반응형 1000px 이하 일 때 사라짐 */
   .f_aboutDD {
     display: none;
   }
@@ -901,6 +910,16 @@ body {
   justify-content: space-between;
   margin-top: 50px;
 }
+
+/* footer 두번째 박스 왼쪽 영역 */
+.site {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
 .rel {
   font-size: 1.2rem;
   width: 2rem;
@@ -911,17 +930,8 @@ body {
   border-radius: 50%;
   background-color: white;
 }
-.rel:hover{
+.rel:hover {
   cursor: pointer;
-}
-
-.site {
-  display: flex;
-  font-weight: bold;
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  margin-bottom: 1.5rem;
 }
 
 .footerBox2 p {
@@ -929,17 +939,44 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 
+/* footer 두번째 박스 오른쪽 영역*/
 .f_sns {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
+.f_sns_item {
+  position: relative;
+}
 .f_sns img {
   width: 60px;
   height: auto;
   max-width: 100%;
+  transition: opacity 0.3s ease;
 }
+
+.f_sns:hover {
+  background-color: lightgray(0, 0, 0, 0.3); /* 반투명 검정색 */
+}
+
+.black_overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.f_sns_item:hover .black_overlay {
+  opacity: 1; /* 마우스 hover 시 오버레이 보이기 */
+}
+
+/* 탑 버튼 */
 #scrollToTop {
   position: fixed;
   bottom: 30px;
@@ -967,7 +1004,13 @@ body {
   width: 2vw;
   height: 2vw;
 }
-@media screen and (max-width: 760px) {
+
+@media screen and (max-width: 1000px) {
+  .footerWrap {
+    padding: 30px 30px;
+  }
+}
+@media screen and (max-width: 768px) {
   #scrollToTop {
     width: 5vw;
     height: 5vw;
@@ -978,7 +1021,4 @@ body {
     width: 3vw;
     height: 3vw;
   }
-}
-li:hover{
-  cursor: pointer;
 }

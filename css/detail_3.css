@@ -110,7 +110,7 @@
   width: 100%;
 }
 .mainWrap {
-  padding: 0 8% 4rem;
+  padding: 0 8%;
 }
 @media screen and (max-width: 1000px) {
   .mainWrap {
@@ -126,13 +126,14 @@
 /* main 상단 부분 */
 .main_Top {
   width: 100%;
-  padding: clamp(4rem, 11.11vw, 5rem) 0 clamp(4rem, 11.11vw, 6rem);
+  padding: 4rem 0;
 }
 .main_Top h1 {
   text-align: center;
-  font-weight: 900;
+  font-family: "Noto Sans KR", serif;
+  font-weight: 600;
   -webkit-text-stroke: 2px black;
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: clamp(3rem, 7vw, 3.5rem);
 }
 .category_list {
   width: 100%;
@@ -181,7 +182,7 @@
   font-weight: bold;
 }
 .dropdown-item {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 @media screen and (max-width: 1000px) {
@@ -191,6 +192,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    font-family: "Noto Sans KR", serif;
   }
   #dropdownMenuLink {
     background-color: white;
@@ -272,7 +274,7 @@
 .left_nav {
   margin-top: 6rem;
   padding-right: 2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 12rem;
   margin-left: 0;
   position: sticky;
   top: 30%;
@@ -286,7 +288,6 @@
   height: 100%;
   font-size: 1.5rem;
   font-weight: 600;
-  text-align: right;
   line-height: 1.33;
   box-sizing: border-box;
   opacity: 0.5;
@@ -299,25 +300,27 @@
 .nav_list .chap3,
 .nav_list .chap4,
 .nav_list .chap5 {
+  width: 120px;
+  text-align: right;
   padding: 1rem 0;
-  width: 150px;
-  text-align: left;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
+/* 네비 강조할 때 */
 .nav_list .active {
   color: #3cb4e5;
-  font-size: 3rem; /* 강조할 때 폰트 크기 */
+  font-size: 2.8rem;
   opacity: 1;
 }
-
+@media screen and (max-width: 1200px) {
+  .left_nav {
+    padding-right: 0;
+  }
+}
 @media screen and (max-width: 1000px) {
   .left_nav {
     display: none;
-  }
-  .nav_list .active {
-    font-size: 2.4rem;
   }
 }
 /* 왼쪽 네비 바 영역 */
@@ -339,19 +342,19 @@
   display: flex;
   align-items: center;
   font-weight: bold;
+  font-family: "Noto Sans KR", serif;
   gap: 20px;
   padding-bottom: 1.5rem;
   cursor: pointer;
 }
 .section {
   width: 100%;
-  padding-bottom: 4rem;
-  padding-top: 3rem;
-  /* margin-top: -3rem; */
+  padding-bottom: 3rem;
+  padding-top: 1rem;
 }
 .section h2 {
+  font-family: "Nanum Gothic", serif;
   font-weight: bold;
-  letter-spacing: -0.3rem;
 }
 .img_chapter {
   width: 100%;
@@ -360,14 +363,17 @@
 }
 .section p {
   padding-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: "Noto Sans KR", serif;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1440px) {
   .right_content {
     padding: 0;
   }
+}
+
+@media screen and (max-width: 1000px) {
   .title_ep {
     display: none;
   }
@@ -378,3 +384,208 @@
 /* 오른쪽 콘텐츠 영역 */
 
 /* footer */
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: #f5f5f5;
+}
+
+.footerWrap {
+  padding: 30px 50px;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", serif;
+}
+
+/* footer 첫번째 박스 */
+.footerBox1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* footer 첫번째 박스 왼쪽 영역 */
+.f_info img {
+  /* 로고 */
+  width: 70px;
+  height: 40px;
+  display: block;
+  margin-bottom: 30px;
+}
+.f_address {
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+
+  font-weight: bold;
+}
+.f_privacy {
+  font-weight: bold;
+  color: black;
+  max-width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  box-sizing: border-box;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.f_privacy div::after {
+  content: "|";
+  padding-left: 5px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.f_privacy div:last-child::after {
+  content: "";
+}
+
+/* footer 첫번째 박스 오른쪽 영역 */
+.f_aboutDD {
+  display: flex;
+  font-size: 1.1rem;
+  gap: 2rem;
+}
+.f_aboutDD ul,
+.f_aboutDD li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 10px;
+}
+li:hover {
+  cursor: pointer;
+}
+.f_sub {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.text10 {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1000px) {
+  /* 반응형 1000px 이하 일 때 사라짐 */
+  .f_aboutDD {
+    display: none;
+  }
+}
+
+/* footer 두번째 박스 */
+.footerBox2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+/* footer 두번째 박스 왼쪽 영역 */
+.site {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+.rel {
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+}
+.rel:hover {
+  cursor: pointer;
+}
+
+.footerBox2 p {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* footer 두번째 박스 오른쪽 영역*/
+.f_sns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.f_sns_item {
+  position: relative;
+}
+.f_sns img {
+  width: 60px;
+  height: auto;
+  max-width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.f_sns:hover {
+  background-color: lightgray(0, 0, 0, 0.3); /* 반투명 검정색 */
+}
+
+.black_overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 검정색 */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.f_sns_item:hover .black_overlay {
+  opacity: 1; /* 마우스 hover 시 오버레이 보이기 */
+}
+
+/* 탑 버튼 */
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 25px;
+  width: 3vw;
+  height: 3vw;
+  background-color: white;
+  color: lightgray;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#scrollToTop:hover {
+  background-color: lightgray;
+}
+.upimg {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 2vw;
+  height: 2vw;
+}
+
+@media screen and (max-width: 1000px) {
+  .footerWrap {
+    padding: 30px 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #scrollToTop {
+    width: 5vw;
+    height: 5vw;
+  }
+  .upimg {
+    top: 20%;
+    left: 18%;
+    width: 3vw;
+    height: 3vw;
+  }
+}
