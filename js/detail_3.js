@@ -85,7 +85,7 @@ document
     });
   });
 
-// 각 탭 제목 클릭 시 전환 기능만 처리
+// 각 탭 제목 클릭 시 전환 기능
 document.querySelectorAll(".tab_title").forEach((tab) => {
   tab.addEventListener("click", () => {
     // 탭을 전환

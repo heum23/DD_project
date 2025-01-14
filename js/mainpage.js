@@ -58,7 +58,7 @@ const moveUrl = (type) => {
     url = "http://127.0.0.1:5500/detail_way_1.html";
   } else if (type === "about") {
     url = "http://127.0.0.1:5500/detail_3.html";
-  } 
+  }
   window.location.href = url; // URL로 이동
 };
 // 이미지 세트를 관리하는 객체

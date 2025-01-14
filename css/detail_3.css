@@ -157,6 +157,7 @@
   line-height: 40px; /* 텍스트 세로 중앙 정렬 */
   padding: 0 15px;
   transition: background-color 0.3s ease, color 0.3s ease; /* 배경색과 글자색에 대한 천천히 변화하는 효과 */
+  cursor: pointer;
 }
 /* category_item 클릭 시 색상 변화 */
 .category_item.active {
