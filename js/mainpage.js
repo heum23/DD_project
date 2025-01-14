@@ -124,7 +124,7 @@ window.changeimg = (type) => {
   const mainLeftImage = document.querySelector(".main3left");
 
   // 전환 시간을 짧게 설정 (0.3초)
-  mainLeftImage.style.transition = "opacity 2.0s ease";
+  mainLeftImage.style.transition = "opacity 0.2s ease";
   mainLeftImage.style.opacity = 0; // 기존 이미지 서서히 사라짐
 
   // 새로운 이미지가 로드되기 전, 임시 배경 색상으로 흰 여백 최소화
