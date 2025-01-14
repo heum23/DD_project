@@ -566,14 +566,14 @@ body {
 .swiper_slide {
   width: 100%;
   aspect-ratio: 1/1;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
 }
 
 .swiper_slide:hover {
   cursor: pointer;
-  transform: scale(1.1); /* 이미지 크기 20% 확대 */
-  transform-origin: center;
+  transform: scale(1.2); /* 이미지 크기 20% 확대 */
 }
 
 /* 슬라이드 2의 내용 정렬을 위한 추가 스타일 */
