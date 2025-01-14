@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }, index * 200); // 순차적 딜레이 추가
   });
 });
+
 //main3 box1 나타나는 함수
 document.addEventListener("DOMContentLoaded", function () {
   const revealElements = document.querySelectorAll(".box1");
@@ -58,7 +59,7 @@ const moveUrl = (type) => {
     url = "http://127.0.0.1:5500/detail_way_1.html";
   } else if (type === "about") {
     url = "http://127.0.0.1:5500/detail_3.html";
-  }
+  } 
   window.location.href = url; // URL로 이동
 };
 // 이미지 세트를 관리하는 객체
@@ -122,25 +123,34 @@ window.changeimg = (type) => {
 
   const mainLeftImage = document.querySelector(".main3left");
 
-  // 기존 이미지 사라짐 효과 (opacity 0)
-  mainLeftImage.style.transition = "opacity 1.0s ease"; // 0.8s로 전환 시간 추가
-  mainLeftImage.style.opacity = 0; // 기존 이미지 opacity 0으로 설정하여 서서히 사라짐
+  // 전환 시간을 짧게 설정 (0.3초)
+  mainLeftImage.style.transition = "opacity 0.2s ease";
+  mainLeftImage.style.opacity = 0; // 기존 이미지 서서히 사라짐
 
-  // 새로운 이미지 소스를 바로 변경, 기존 이미지가 사라지는 동안 이미지 교체
-  mainLeftImage.src = imageSets[type].main; // 이미지 교체
+  // 새로운 이미지가 로드되기 전, 임시 배경 색상으로 흰 여백 최소화
+  mainLeftImage.style.backgroundColor = "#f5f5f5"; // 임시 회색 배경 추가
 
-  // 새 이미지가 로드된 후 서서히 나타나게 설정
-  mainLeftImage.onload = () => {
-    // 이미지가 로드된 후, 0.1초 뒤에 opacity 1로 설정하여 부드럽게 나타나도록 함
-    setTimeout(() => {
-      mainLeftImage.style.opacity = 1; // 새로운 이미지가 서서히 나타나도록 설정
-    }, 100); // 100ms 딜레이로 새로운 이미지가 서서히 나타나도록 설정
-  };
+  // 사라짐 효과 완료 후 이미지 변경
+  mainLeftImage.addEventListener(
+    "transitionend",
+    () => {
+      // 이미지 소스를 교체
+      mainLeftImage.src = imageSets[type].main;
+
+      // 새로운 이미지 로드 이벤트
+      mainLeftImage.onload = () => {
+        mainLeftImage.style.opacity = 1; // 새 이미지 부드럽게 나타남
+        mainLeftImage.style.backgroundColor = "transparent"; // 임시 배경 제거
+      };
+    },
+    { once: true } // 이벤트가 한 번만 실행되도록 설정
+  );
 
   updateBoxImages();
   currentPage = 1;
   updatePageNumber();
 };
+
 
 // box2, box3, box4 이미지 업데이트 및 fadeIn 처리
 function updateBoxImages() {

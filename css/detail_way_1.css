@@ -260,7 +260,7 @@ body {
 .rightimg:hover,
 .detail2img:hover,
 .leftimg:hover {
-  cursor: pointer;
+  
   transform: scale(1.2); /* 이미지 크기 20% 확대 */
   transform-origin: center; /* 확대 중심을 중앙으로 설정 */
 }
