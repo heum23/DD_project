@@ -248,8 +248,7 @@ body {
   -webkit-text-stroke: 2px white;
   z-index: 1;
 }
-.carousel-control-next-icon
-{
+.carousel-control-next-icon {
   height: 50px;
   width: 50px;
   color: white;
@@ -565,21 +564,23 @@ body {
   left: 0;
 }
 
-.slider img.active2 {
+.slider img.active {
   opacity: 1;
 }
 
-.swiper_slide {
+.slider .swiper_slide {
   width: 100%;
   aspect-ratio: 1/1;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease-in-out; /* 확대 효과 부드럽게 */
+  transform-origin: center;
+  z-index: 1;
 }
 
-.swiper_slide:hover {
+.slider .swiper_slide:hover {
   cursor: pointer;
-  transform: scale(1.2); /* 이미지 크기 20% 확대 */
+  transform: scale(1.1); /* 이미지 크기 10% 확대 */
 }
 
 /* 슬라이드 2의 내용 정렬을 위한 추가 스타일 */

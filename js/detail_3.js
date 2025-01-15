@@ -1,17 +1,3 @@
-// main 상단 category_item 클릭 시 색상 변화하는 함수
-document.querySelectorAll(".category_item").forEach((item) => {
-  item.addEventListener("click", function () {
-    console.log("클릭됨:", item); // 클릭한 항목 확인
-    // 모든 category_item에서 active 클래스를 제거
-    document
-      .querySelectorAll(".category_item")
-      .forEach((i) => i.classList.remove("active"));
-
-    // 클릭된 item에 active 클래스 추가
-    item.classList.add("active");
-  });
-});
-
 // main 하단 네비 바에 따른 스크롤 위치 지정
 // 스크롤 이벤트로 각 섹션의 위치에 따라 강조하는 기능 (tab1 적용)
 window.addEventListener("scroll", () => {
@@ -42,7 +28,7 @@ document
     item.addEventListener("click", () => {
       const targetSection = document.querySelector(`#tab1_sec${index + 1}`);
       window.scrollTo({
-        top: targetSection.offsetTop + 50, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
+        top: targetSection.offsetTop + 150, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
         behavior: "smooth",
       });
     });
@@ -79,7 +65,7 @@ document
         `#tab2_sec${index + 1}` // tab2의 섹션에 맞춰서 ID 설정
       );
       window.scrollTo({
-        top: targetSection.offsetTop + 50, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
+        top: targetSection.offsetTop + 150, // 탭이 위에 가려지지 않도록 조금 올려서 스크롤
         behavior: "smooth",
       });
     });
@@ -94,8 +80,6 @@ document.querySelectorAll(".tab_title").forEach((tab) => {
       document.getElementById("tab1").style.display = "flex";
       document.getElementById("tab2").style.display = "none";
       document.getElementById("dropdownMenuLink").textContent = "ep.1 토종효모";
-      document.getElementById("ep1").classList.add("active");
-      document.getElementById("ep2").classList.remove("active");
     }
     // 'ep2'를 클릭한 경우
     else if (tab.id === "ep2") {
@@ -103,8 +87,6 @@ document.querySelectorAll(".tab_title").forEach((tab) => {
       document.getElementById("tab2").style.display = "flex";
       document.getElementById("tab1").style.display = "none";
       document.getElementById("dropdownMenuLink").textContent = "ep.2 상미종";
-      document.getElementById("ep1").classList.remove("active");
-      document.getElementById("ep2").classList.add("active");
     }
   });
 });
@@ -115,30 +97,12 @@ function showTab(tab) {
     document.getElementById("tab1").style.display = "flex";
     document.getElementById("tab2").style.display = "none";
     document.getElementById("dropdownMenuLink").textContent = "ep.1 토종효모";
-    document.getElementById("ep1").classList.add("active");
-    document.getElementById("ep2").classList.remove("active");
   } else if (tab === "ep2") {
     document.getElementById("tab1").style.display = "none";
     document.getElementById("tab2").style.display = "flex";
     document.getElementById("dropdownMenuLink").textContent = "ep.2 상미종";
-    document.getElementById("ep1").classList.remove("active");
-    document.getElementById("ep2").classList.add("active");
   }
 }
-
-// tab_title 클릭 시 색상 변화하는 함수
-document.querySelectorAll(".tab_title").forEach((item) => {
-  item.addEventListener("click", function () {
-    console.log("클릭됨:", item); // 클릭한 항목 확인
-    // 모든 tab_title에서 active 클래스를 제거
-    document
-      .querySelectorAll(".tab_title")
-      .forEach((i) => i.classList.remove("active"));
-
-    // 클릭된 item에 active 클래스 추가
-    item.classList.add("active");
-  });
-});
 
 // URL 이동 함수
 const moveUrl = (type) => {
