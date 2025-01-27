@@ -1,6 +1,6 @@
 # D&D_ProJect
 
-<p align="center"><img src="/detailimg/logo3.png"></p>
+<p align="center"><img src="./mainpage_img/header_img/logo.png"></p>
 <div align=center>2025.01.06 ~ 2025.01.15 </div>
 
 <br>
