@@ -48,7 +48,7 @@
 
 ## 💎 D&D 란?
 
-- Dough & Dream 의 약자로 이번 프로젝트를 잘 마무리 하고자 하는 뜻입니다.
+-작은 반죽으로 시작하는 여정의 의미인 Dough & Dream 의 약자로 이번 프로젝트를 잘 마무리 하고자 하는 뜻입니다.
 
 <br>
 
@@ -64,6 +64,7 @@
 <img style="width: 200px; height:400px" src="./readme_img/detail1.jpg">
 <img style="width: 200px; height:400px" src="./readme_img/detail2.jpg">
 <img style="width: 200px; height:400px" src="./readme_img/detail4.png">
+</div>
 <br>
 
 ## 💡 주요 기능들
