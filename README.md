@@ -50,9 +50,11 @@
 
 - Dough & Dream 의 약자로 이번 프로젝트를 잘 마무리 하고자 하는 뜻입니다.
 
+<br>
+
 ## 📐 전체 UI
 
-- reference: SPC
+- reference: 파리바게트,삼립,베스킨라빈스를 자회사로 두고있는 SPC를 선택하였습니다.
 
 <br>
 <br>
@@ -74,7 +76,7 @@
 
 <br>
 
-![Image](https://github.com/user-attachments/assets/3066c005-4a7a-4b1e-a3b8-6c70cd192f4e)
+![Image](https://github.com/user-attachments/assets/5fdb8b32-daf5-4be0-b500-4e93c30be9f0)
 
 <br>
 
