@@ -767,6 +767,12 @@ body {
   aspect-ratio: 2/ 1;
 }
 
+/* 가로 스크롤바 숨기기 */
+body,
+html {
+  overflow-x: hidden;
+}
+
 .support {
   position: relative;
   height: 100%;
